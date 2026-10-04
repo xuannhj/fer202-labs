@@ -8,7 +8,7 @@ function OrchidCard({orchid}) {
   return (
     <Card className='h-100'>
       {orchid.isSpecial && (
-        <Badge bg="danger" className="position-absolute top-0 end-0 m-2 px-2 py-1">
+          <Badge className="position-absolute top-0 end-0 m-2 px-2 py-1" style={{ backgroundColor: '#ff982d', color: '#ffffff' }}>
           Special ⭐
         </Badge>
       )}
