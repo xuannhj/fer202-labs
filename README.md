@@ -1,14 +1,17 @@
 ﻿# 🎓 FER202 - Front-End Web Development with React
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Student-Nguyễn%20Phạm%20Xuân%20Nhi-blue?style=for-the-badge&logo=github" alt="Student" />
-  <img src="https://img.shields.io/badge/MSSV-SE201170-green?style=for-the-badge" alt="MSSV" />
+  <img src="https://img.shields.io/badge/STUDENT-Nguy%E1%BB%85n%20Ph%E1%BB%87m%20Xu%C3%A2n%20Nhi-C07A60?style=for-the-badge&logo=github&logoColor=F7EBE8&labelColor=2E2625" alt="Student" />
+  <img src="https://img.shields.io/badge/MSSV-SE201170-6B705C?style=for-the-badge&logoColor=F7EBE8&labelColor=2E2625" alt="MSSV" />
   <a href="https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1">
-    <img src="https://img.shields.io/badge/Notion-Live_Notebook-black?style=for-the-badge&logo=notion" alt="Notion" />
+    <img src="https://img.shields.io/badge/NOTION-LIVE_NOTEBOOK-B5838D?style=for-the-badge&logo=notion&logoColor=F7EBE8&labelColor=2E2625" alt="Notion" />
   </a>
-  <img src="https://img.shields.io/badge/Framework-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-  <img src="https://img.shields.io/badge/Build_Tool-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/UI_Library-Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
+</p>
+<p align="left">
+  <img src="https://img.shields.io/badge/FRAMEWORK-REACT-5B7065?style=for-the-badge&logo=react&logoColor=F7EBE8&labelColor=2E2625" alt="React" />
+  <img src="https://img.shields.io/badge/BUILD_TOOL-VITE-BC6C25?style=for-the-badge&logo=vite&logoColor=F7EBE8&labelColor=2E2625" alt="Vite" />
+  <img src="https://img.shields.io/badge/UI_LIBRARY-BOOTSTRAP_5-8C6D68?style=for-the-badge&logo=bootstrap&logoColor=F7EBE8&labelColor=2E2625" alt="Bootstrap" />
+  <img src="https://img.shields.io/badge/STATUS-IN_PROGRESS-DDA15E?style=for-the-badge&logoColor=F7EBE8&labelColor=2E2625" alt="Status" />
 </p>
 
 ---
