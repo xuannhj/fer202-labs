@@ -1,7 +1,7 @@
 ﻿# 🎓 FER202 - Front-End Web Development with React
 
 <p align="left">
-  <img src="https://img.shields.io/badge/STUDENT-Nguy%E1%BB%85n%20Ph%E1%BB%87m%20Xu%C3%A2n%20Nhi-FF6584?style=for-the-badge&logo=github&logoColor=white&labelColor=2B2D42" alt="Student" />
+  <img src="https://img.shields.io/badge/STUDENT-Nguy%E1%BB%85n%20Ph%E1%BA%A1m%20Xu%C3%A2n%20Nhi-FF6584?style=for-the-badge&logo=github&logoColor=white&labelColor=2B2D42" alt="Student" />
   <img src="https://img.shields.io/badge/MSSV-SE201170-06D6A0?style=for-the-badge&logoColor=white&labelColor=2B2D42" alt="MSSV" />
   <a href="https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1">
     <img src="https://img.shields.io/badge/NOTION-NHOM%20NHOM-C77DFF?style=for-the-badge&logo=notion&logoColor=white&labelColor=2B2D42" alt="Notion nhom nhom" />
