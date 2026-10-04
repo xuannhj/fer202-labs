@@ -3,6 +3,9 @@
 <p align="left">
   <img src="https://img.shields.io/badge/Student-Nguyễn%20Phạm%20Xuân%20Nhi-blue?style=for-the-badge&logo=github" alt="Student" />
   <img src="https://img.shields.io/badge/MSSV-SE201170-green?style=for-the-badge" alt="MSSV" />
+  <a href="https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1">
+    <img src="https://img.shields.io/badge/Notion-Live_Notebook-black?style=for-the-badge&logo=notion" alt="Notion" />
+  </a>
   <img src="https://img.shields.io/badge/Framework-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
   <img src="https://img.shields.io/badge/Build_Tool-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/UI_Library-Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
@@ -15,6 +18,7 @@
 - **Mã số sinh viên (MSSV):** SE201170
 - **Môn học:** FER202 - Front-End Web Development with React
 - **Repository:** [https://github.com/xuannhj/fer202-labs](https://github.com/xuannhj/fer202-labs)
+- **Sổ tay Notion:** [Nhóm Nhóm - FER202 & JS Notebook](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
 
 ---
 
@@ -42,8 +46,13 @@ FER202/
 │   ├── mock-tests/                 # Đề thi thử bấm giờ 90 phút
 │   └── README.md                   # Chiến thuật & checklist ôn thi PE
 │
-├── NOTES/                          # 📝 Ghi chú lý thuyết & bí kíp ôn tập React
-│   └── README.md
+├── NOTES/                          # 📝 Sổ tay ghi chú lý thuyết & link Notion
+│   ├── 01-js-review/               # JS ES6+, Variables, Array Methods
+│   ├── 02-bootstrap-intro/         # Bootstrap Grid & Breakpoints
+│   ├── 03-react-hooks/             # useState, useEffect
+│   ├── 04-react-router/            # React Router DOM
+│   ├── 05-lab1-components/         # Functional Components & Props
+│   └── README.md                   # Mục lục ghi chú & Bí kíp ôn thi
 │
 ├── .gitignore                      # Tự động bỏ qua node_modules, dist, zip, .env...
 └── README.md                       # Tài liệu tổng quan môn học (file này)
@@ -61,11 +70,14 @@ FER202/
 | 3 | **Week 3: React Router** | `<BrowserRouter>`, `<Routes>`, `<Route>`, `<Link>` | [`CODE/in-class/week-03-router`](./CODE/in-class/week-03-router) | ✅ Hoàn thành |
 | 4 | **Week 4: Context API** | `createContext`, `useContext`, Global State | [`CODE/in-class/week-04-context`](./CODE/in-class/week-04-context) | 🔄 Đang học |
 
-### 🏠 2. Code Tự Học & Luyện Thi (`CODE/self-study/` & `EXAMS/`)
-| STT | Phân mục | Nội dung chính | Thư mục | Trạng thái |
-| :-: | :--- | :--- | :--- | :-: |
-| 1 | **Tự học ở nhà** | Bài tập về nhà, mini project tự luyện | [`CODE/self-study`](./CODE/self-study) | 🔄 Đang cập nhật |
-| 2 | **Luyện thi PE** | Luyện đề thi thực hành PE 90 phút | [`EXAMS`](./EXAMS) | 🎯 Chuẩn bị |
+### 📝 2. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
+| STT | Chủ đề | Tóm tắt kiến thức | Thư mục ghi chú |
+| :-: | :--- | :--- | :---: |
+| 1 | **JavaScript Review** | ES6, Arrow Function, `map`, `filter`, `find` | [`NOTES/01-js-review`](./NOTES/01-js-review) |
+| 2 | **Bootstrap 5 UI** | Hệ thống Grid, Row, Col, Card, Badge | [`NOTES/02-bootstrap-intro`](./NOTES/02-bootstrap-intro) |
+| 3 | **React Hooks** | `useState`, `useEffect` và vòng đời re-render | [`NOTES/03-react-hooks`](./NOTES/03-react-hooks) |
+| 4 | **React Router** | SPA, Navigation, URL Params, 404 Page | [`NOTES/04-react-router`](./NOTES/04-react-router) |
+| 5 | **React Components** | Functional Component, JSX, Props Destructuring | [`NOTES/05-lab1-components`](./NOTES/05-lab1-components) |
 
 ---
 
@@ -94,7 +106,7 @@ npm run dev
 
 - `feat(class-w4)`: Thêm bài học / demo mới trên lớp.
 - `feat(self-study)`: Thêm bài tập tự luyện tại nhà.
-- `fix(router)`: Sửa lỗi điều hướng trang.
+- `docs(notes)`: Thêm hoặc cập nhật ghi chú lý thuyết.
 - `docs(exams)`: Thêm đề thi hoặc tài liệu ôn thi.
 
 ---
@@ -102,4 +114,5 @@ npm run dev
 ## ✍️ Tác Giả
 - **Họ và tên:** Nguyễn Phạm Xuân Nhi
 - **MSSV:** SE201170
+- **Notion:** [Nhóm Nhóm](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
 - **GitHub:** [@xuannhj](https://github.com/xuannhj)

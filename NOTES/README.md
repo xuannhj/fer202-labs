@@ -1,49 +1,55 @@
-﻿# 📝 Ghi Chú Lý Thuyết & Bí Kíp Ôn Tập FER202
+﻿# 📝 Sổ Tay Ghi Chú Lý Thuyết & Bí Kíp Ôn Thi FER202
 
-> **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170
+> **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170  
+> 🔗 **Notion Notebook (Live):** [Xem sổ tay trực tuyến trên Notion](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
 
-Tổng hợp kiến thức cốt lõi, cú pháp thường dùng và các lỗi kinh điển cần tránh trong quá trình học và làm bài thi React.
+Khu vực tổng hợp toàn bộ ghi chú học tập, tài liệu lý thuyết xuất từ Notion và bí kíp ôn thi môn **FER202 (Front-End Web Development with React)**.
 
 ---
 
-## ⚡ Tóm Tắt Kiến Thức Trọng Tâm
+## 📑 Danh Mục Ghi Chú Chi Tiết
+
+| Thư mục | Chủ đề ghi chú | Nội dung chi tiết | Link Notion |
+| :--- | :--- | :--- | :---: |
+| 📁 [`01-js-review/`](./01-js-review) | **JavaScript Review** | Khai báo biến (`let`, `const`), Arrow Functions, xử lý mảng (`map`, `filter`, `find`) | 📖 [Notion](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+| 📁 [`02-bootstrap-intro/`](./02-bootstrap-intro) | **Bootstrap 5 & UI Grid** | Hệ thống Grid (`Container`, `Row`, `Col`), Breakpoints responsive, Cards, Badges | 📖 [Notion](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+| 📁 [`03-react-hooks/`](./03-react-hooks) | **React Hooks Core** | Cơ chế hoạt động của `useState`, cập nhật mảng/object, tránh infinite re-render | 📖 [Notion](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+| 📁 [`04-react-router/`](./04-react-router) | **React Router DOM v6** | Single Page Application, cấu hình Routes, Route, Link, useParams & Dynamic URL | 📖 [Notion](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+| 📁 [`05-lab1-components/`](./05-lab1-components) | **React Components & Props** | Cú pháp JSX, Functional Components, Props Destructuring & Grid hoa lan | 📖 [Notion](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+
+---
+
+## ⚡ Tóm Tắt Bí Kíp Cốt Lõi Khi Làm Bài
 
 ### 1. Component & Props
 - **Component:** Luôn viết hoa chữ cái đầu (ví dụ: `function OrchidCard() {}`).
-- **Props:** Dữ liệu truyền một chiều từ component cha xuống con (read-only, không được gán đè trực tiếp `props.title = ...`).
+- **Props:** Dữ liệu truyền một chiều từ cha xuống con (read-only, không gán đè trực tiếp).
 - **Destructuring Props:** `function OrchidCard({ orchid, onSelect })` giúp code ngắn gọn và dễ đọc.
 
-### 2. State & React Hooks
+### 2. State & Hooks
 - **`useState`:** Quản lý trạng thái nội tại của component.
   ```jsx
   const [count, setCount] = useState(0);
-  // Khi cập nhật state phụ thuộc vào giá trị cũ:
-  setCount(prev => prev + 1);
+  setCount(prev => prev + 1); // Cập nhật dựa trên state trước
   ```
 - **`useEffect`:** Xử lý Side Effects (gọi API, timer, lắng nghe sự kiện).
   ```jsx
   useEffect(() => {
-    // Chạy 1 lần duy nhất sau khi component được render lần đầu
     fetchData();
-  }, []); // Dependency array rỗng
+  }, []); // Dependency array rỗng -> chạy 1 lần sau khi mount
   ```
 
-### 3. React Router (`react-router-dom`)
+### 3. React Router DOM
 - `<BrowserRouter>`: Bọc toàn bộ ứng dụng ở `main.jsx` hoặc `App.jsx`.
 - `<Routes>` & `<Route path="/products/:id" element={<ProductDetail />} />`.
-- `useNavigate()`: Điều hướng trang bằng code (ví dụ sau khi submit form thành công).
-- `useParams()`: Lấy tham số động từ URL (ví dụ `const { id } = useParams();`).
-
-### 4. Context API (Quản lý State Toàn Cục)
-- `createContext()`: Tạo Context.
-- `<MyContext.Provider value={{ state, actions }}>`: Cung cấp dữ liệu cho toàn bộ cây component con.
-- `useContext(MyContext)`: Tiêu thụ dữ liệu ở bất kỳ component con nào mà không cần truyền props qua nhiều tầng.
+- `useNavigate()`: Điều hướng trang bằng code (sau khi submit form).
+- `useParams()`: Lấy id động từ URL (`const { id } = useParams();`).
 
 ---
 
 ## ⚠️ Top 5 Lỗi Thường Gặp Cần Tránh Khi Thi
-1. **Quên `key` khi dùng `.map()`:** Dẫn đến warning ở console và sai lệch khi cập nhật danh sách.
-2. **Lặp vô tận (Infinite Loop) trong `useEffect`:** Cập nhật state bên trong `useEffect` mà dependency array lại chứa chính state đó.
-3. **Gọi Hooks sai quy tắc:** Gọi `useState`/`useEffect` bên trong vòng lặp `for`, câu lệnh điều kiện `if` hoặc sau lệnh `return`.
-4. **Mutate State trực tiếp:** Gán trực tiếp `list.push(newItem)` thay vì tạo mảng mới `setList([...list, newItem])`.
-5. **Quên import CSS của Bootstrap:** Quên `import 'bootstrap/dist/css/bootstrap.min.css';` dẫn đến giao diện bị vỡ.
+1. **Quên `key` khi dùng `.map()`:** Gây warning ở console và sai lệch khi render danh sách.
+2. **Infinite Loop trong `useEffect`:** Cập nhật state bên trong `useEffect` mà dependency array chứa chính state đó.
+3. **Mutate State trực tiếp:** Gán trực tiếp `list.push(newItem)` thay vì tạo mảng mới `setList([...list, newItem])`.
+4. **Quên import CSS Bootstrap:** Quên `import 'bootstrap/dist/css/bootstrap.min.css';`.
+5. **Gọi Hooks sai vị trí:** Gọi Hooks trong vòng lặp `for`, lệnh `if` hoặc sau lệnh `return`.
