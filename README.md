@@ -1,17 +1,17 @@
 ﻿# 🎓 FER202 - Front-End Web Development with React
 
 <p align="left">
-  <img src="https://img.shields.io/badge/STUDENT-Nguy%E1%BB%85n%20Ph%E1%BB%87m%20Xu%C3%A2n%20Nhi-C07A60?style=for-the-badge&logo=github&logoColor=F7EBE8&labelColor=2E2625" alt="Student" />
-  <img src="https://img.shields.io/badge/MSSV-SE201170-6B705C?style=for-the-badge&logoColor=F7EBE8&labelColor=2E2625" alt="MSSV" />
+  <img src="https://img.shields.io/badge/STUDENT-Nguy%E1%BB%85n%20Ph%E1%BB%87m%20Xu%C3%A2n%20Nhi-FF6584?style=for-the-badge&logo=github&logoColor=white&labelColor=2B2D42" alt="Student" />
+  <img src="https://img.shields.io/badge/MSSV-SE201170-06D6A0?style=for-the-badge&logoColor=white&labelColor=2B2D42" alt="MSSV" />
   <a href="https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1">
-    <img src="https://img.shields.io/badge/NOTION-NH%C3%93M%20NH%C3%93M-B5838D?style=for-the-badge&logo=notion&logoColor=F7EBE8&labelColor=2E2625" alt="Notion" />
+    <img src="https://img.shields.io/badge/NOTION-NHOM%20NHOM-C77DFF?style=for-the-badge&logo=notion&logoColor=white&labelColor=2B2D42" alt="Notion nhom nhom" />
   </a>
 </p>
 <p align="left">
-  <img src="https://img.shields.io/badge/FRAMEWORK-REACT-5B7065?style=for-the-badge&logo=react&logoColor=F7EBE8&labelColor=2E2625" alt="React" />
-  <img src="https://img.shields.io/badge/BUILD_TOOL-VITE-BC6C25?style=for-the-badge&logo=vite&logoColor=F7EBE8&labelColor=2E2625" alt="Vite" />
-  <img src="https://img.shields.io/badge/UI_LIBRARY-BOOTSTRAP_5-8C6D68?style=for-the-badge&logo=bootstrap&logoColor=F7EBE8&labelColor=2E2625" alt="Bootstrap" />
-  <img src="https://img.shields.io/badge/STATUS-IN_PROGRESS-DDA15E?style=for-the-badge&logoColor=F7EBE8&labelColor=2E2625" alt="Status" />
+  <img src="https://img.shields.io/badge/FRAMEWORK-REACT-00B4D8?style=for-the-badge&logo=react&logoColor=white&labelColor=2B2D42" alt="React" />
+  <img src="https://img.shields.io/badge/BUILD_TOOL-VITE-FF9F1C?style=for-the-badge&logo=vite&logoColor=white&labelColor=2B2D42" alt="Vite" />
+  <img src="https://img.shields.io/badge/UI_LIBRARY-BOOTSTRAP_5-8338EC?style=for-the-badge&logo=bootstrap&logoColor=white&labelColor=2B2D42" alt="Bootstrap" />
+  <img src="https://img.shields.io/badge/STATUS-IN_PROGRESS-38B000?style=for-the-badge&logoColor=white&labelColor=2B2D42" alt="Status" />
 </p>
 
 ---
@@ -21,7 +21,7 @@
 - **Mã số sinh viên (MSSV):** SE201170
 - **Môn học:** FER202 - Front-End Web Development with React
 - **Repository:** [https://github.com/xuannhj/fer202-labs](https://github.com/xuannhj/fer202-labs)
-- **Sổ tay Notion:** [Nhóm Nhóm - FER202 & JS Notebook](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
+- **Sổ tay Notion:** [nhom nhom - FER202 & JS Notebook](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
 
 ---
 
@@ -75,7 +75,7 @@ FER202/
 
 ### 📝 2. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
 | STT | Chủ đề | Tóm tắt kiến thức | Thư mục ghi chú |
-| :-: | :--- | :--- | :---: |
+| :-: | :--- | :--- | :--- |
 | 1 | **JavaScript Review** | ES6, Arrow Function, `map`, `filter`, `find` | [`NOTES/01-js-review`](./NOTES/01-js-review) |
 | 2 | **Bootstrap 5 UI** | Hệ thống Grid, Row, Col, Card, Badge | [`NOTES/02-bootstrap-intro`](./NOTES/02-bootstrap-intro) |
 | 3 | **React Hooks** | `useState`, `useEffect` và vòng đời re-render | [`NOTES/03-react-hooks`](./NOTES/03-react-hooks) |
@@ -117,5 +117,5 @@ npm run dev
 ## ✍️ Tác Giả
 - **Họ và tên:** Nguyễn Phạm Xuân Nhi
 - **MSSV:** SE201170
-- **Notion:** [Nhóm Nhóm](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
+- **Notion:** [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
 - **GitHub:** [@xuannhj](https://github.com/xuannhj)
