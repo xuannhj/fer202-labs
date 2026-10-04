@@ -1,7 +1,7 @@
 ﻿# 📝 Sổ Tay Ghi Chú Lý Thuyết & Bí Kíp Ôn Thi FER202
 
 > **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170  
-> 🔗 **Notion Notebook (Live):** [Xem sổ tay trực tuyến trên Notion](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
+> 🔗 **Notion Notebook (Nhóm Nhóm):** [Xem sổ tay trực tuyến trên Notion](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
 
 Khu vực tổng hợp toàn bộ ghi chú học tập, tài liệu lý thuyết xuất từ Notion và bí kíp ôn thi môn **FER202 (Front-End Web Development with React)**.
 

@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/STUDENT-Nguy%E1%BB%85n%20Ph%E1%BB%87m%20Xu%C3%A2n%20Nhi-C07A60?style=for-the-badge&logo=github&logoColor=F7EBE8&labelColor=2E2625" alt="Student" />
   <img src="https://img.shields.io/badge/MSSV-SE201170-6B705C?style=for-the-badge&logoColor=F7EBE8&labelColor=2E2625" alt="MSSV" />
   <a href="https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1">
-    <img src="https://img.shields.io/badge/NOTION-LIVE_NOTEBOOK-B5838D?style=for-the-badge&logo=notion&logoColor=F7EBE8&labelColor=2E2625" alt="Notion" />
+    <img src="https://img.shields.io/badge/NOTION-NH%C3%93M%20NH%C3%93M-B5838D?style=for-the-badge&logo=notion&logoColor=F7EBE8&labelColor=2E2625" alt="Notion" />
   </a>
 </p>
 <p align="left">
