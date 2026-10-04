@@ -1,16 +1,23 @@
-# React + Vite
+﻿# 📦 Week 4: React Context API & Danh Sách Yêu Thích
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170
 
-Currently, two official plugins are available:
+Dự án thực hành **Tuần 4**, áp dụng **Context API** (`createContext`, `useContext`) để quản lý State toàn cục giữa các components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🎯 Mục Tiêu Bài Học
+- Tạo và cung cấp Context (`FavContext`, `HangDongContext`).
+- Quản lý danh sách phim yêu thích (Thêm/Xóa khỏi danh sách yêu thích) mà không cần truyền props sâu (Tránh Props Drilling).
+- Tích hợp mock data với `drama.json`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Hướng Dẫn Chạy Dự Án
+```bash
+# Cài đặt thư viện
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Chạy server phát triển
+npm run dev
+```

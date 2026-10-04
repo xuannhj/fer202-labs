@@ -1,95 +1,105 @@
 ﻿# 🎓 FER202 - Front-End Web Development with React
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Course-FER202-blue?style=for-the-badge&logo=react" alt="Course FER202" />
-  <img src="https://img.shields.io/badge/Framework-React_18%2F19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-  <img src="https://img.shields.io/badge/Tool-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/UI-Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
-  <img src="https://img.shields.io/badge/Status-In_Progress-success?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/Student-Nguyễn%20Phạm%20Xuân%20Nhi-blue?style=for-the-badge&logo=github" alt="Student" />
+  <img src="https://img.shields.io/badge/MSSV-SE201170-green?style=for-the-badge" alt="MSSV" />
+  <img src="https://img.shields.io/badge/Framework-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Build_Tool-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/UI_Library-Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
 </p>
-
-Kho lưu trữ toàn bộ mã nguồn bài tập, bài thực hành Lab, ghi chú lý thuyết và tài liệu luyện thi cho môn học **FER202 (Front-End Web Development with React)**.
 
 ---
 
-## 📂 Cấu trúc Thư mục Tổng thể
+## 👤 Thông Tin Sinh Viên
+- **Họ và tên:** Nguyễn Phạm Xuân Nhi
+- **Mã số sinh viên (MSSV):** SE201170
+- **Môn học:** FER202 - Front-End Web Development with React
+- **Repository:** [https://github.com/xuannhj/fer202-labs](https://github.com/xuannhj/fer202-labs)
 
-`	ext
+---
+
+## 📂 Cấu Trúc Thư Mục Dự Án
+
+```text
 FER202/
-├── 📁 CODE/                 # Source code thực hành theo tuần & lab
-│   ├── 📁 se2041-demo-01/   # Lab 1: React Components & Bootstrap UI
-│   ├── 📁 week-03-router/   # Tuần 3: React Router & Điều hướng trang
-│   ├── 📁 week-04-context/  # Tuần 4: React Context API & State toàn cục
-│   └── 📁 node-intro/       # Ôn tập Javascript & Node.js căn bản
+├── CODE/                    # Source code thực hành theo tuần & Lab
+│   ├── se2041-demo-01/      # Lab 1: React Components, Props & Orchid Store
+│   ├── week-03-router/      # Tuần 3: React Router, Navigation & Products
+│   ├── week-04-context/     # Tuần 4: Context API, Global State & Fav List
+│   └── node-intro/          # Ôn tập Javascript căn bản & Node.js
 │
-├── 📁 LAB/                  # Đề bài & Tài liệu hướng dẫn Lab chính thức
+├── LAB/                     # Đề bài & tài liệu hướng dẫn Lab chính thức
 │   ├── Lab 1 - React Components.docx
 │   ├── Lab 2 - React Hook.docx
 │   └── Lab 3 - React Router.docx
 │
-├── 📁 EXAMS/                # 🎯 Khu vực đề thi thử & ôn luyện PE (Practical Exam)
-│   ├── 📁 past-exams/       # Đề thi thực tế các kỳ trước
-│   ├── 📁 mock-tests/       # Đề luyện tập bấm giờ
-│   └── README.md            # Hướng dẫn chi tiết & Checklist ôn thi PE
+├── EXAMS/                   # 🎯 Khu vực đề thi PE (Practical Exam) & ôn tập
+│   ├── past-exams/          # Đề thi thực tế các kỳ trước (SP, SU, FA)
+│   ├── mock-tests/          # Đề thi thử bấm giờ 90 phút
+│   └── README.md            # Chiến thuật & checklist ôn thi PE
 │
-├── 📁 NOTES/                # 📝 Ghi chú lý thuyết & Bí kíp ôn tập React
+├── NOTES/                   # 📝 Ghi chú lý thuyết & bí kíp ôn tập React
 │   └── README.md
 │
-├── .gitignore               # Cấu hình bỏ qua node_modules, build, secrets...
+├── .gitignore               # Tự động bỏ qua node_modules, dist, zip, .env...
 └── README.md                # Tài liệu tổng quan môn học (file này)
-`
+```
 
 ---
 
-## 🗺️ Bản đồ Tiến độ Học tập & Thực hành
+## 🗺️ Bản Đồ Tiến Độ Học Tập & Thực Hành
 
-| STT | Nội dung / Bài học | Chủ đề chính | Thư mục mã nguồn | Trạng thái |
+| STT | Bài học / Lab | Nội dung chính | Thư mục mã nguồn | Trạng thái |
 | :-: | :--- | :--- | :--- | :-: |
-| 1 | **Node & JS Basics** | Variables, ES6, Arrow Functions, Modules | [CODE/node-intro](./CODE/node-intro) | ✅ Xong |
-| 2 | **Lab 1: Components & Props** | JSX, Functional Components, Props, Bootstrap Grid | [CODE/se2041-demo-01](./CODE/se2041-demo-01) | ✅ Xong |
-| 3 | **Week 3: React Router** | <BrowserRouter>, <Routes>, <Route>, <Link> | [CODE/week-03-router](./CODE/week-03-router) | ✅ Xong |
-| 4 | **Week 4: Context API** | createContext, useContext, Global State | [CODE/week-04-context](./CODE/week-04-context) | 🔄 Đang học |
-| 5 | **Lab 2: React Hooks** | useState, useEffect, Custom Hooks | [CODE/lab-02](#) | ⏳ Sắp tới |
-| 6 | **Lab 3: React Router & CRUD** | Nested Routes, URL Params, Quản lý sản phẩm | [CODE/lab-03](#) | ⏳ Sắp tới |
-| 7 | **PE Exam Preparation** | Luyện đề thi thực hành PE 90 phút | [EXAMS](./EXAMS) | 🎯 Chuẩn bị |
+| 1 | **Node & JS Basics** | Variables, ES6, Arrow Functions, Modules | [`CODE/node-intro`](./CODE/node-intro) | ✅ Hoàn thành |
+| 2 | **Lab 1: Components & Props** | JSX, Functional Components, Props, Bootstrap Grid | [`CODE/se2041-demo-01`](./CODE/se2041-demo-01) | ✅ Hoàn thành |
+| 3 | **Week 3: React Router** | `<BrowserRouter>`, `<Routes>`, `<Route>`, `<Link>` | [`CODE/week-03-router`](./CODE/week-03-router) | ✅ Hoàn thành |
+| 4 | **Week 4: Context API** | `createContext`, `useContext`, Global State | [`CODE/week-04-context`](./CODE/week-04-context) | 🔄 Đang học |
+| 5 | **Lab 2: React Hooks** | `useState`, `useEffect`, Custom Hooks | [`CODE/lab-02`](./CODE) | ⏳ Sắp tới |
+| 6 | **Lab 3: React Router & CRUD** | Nested Routes, URL Params, Quản lý sản phẩm | [`CODE/lab-03`](./CODE) | ⏳ Sắp tới |
+| 7 | **PE Exam Preparation** | Luyện đề thi thực hành PE 90 phút | [`EXAMS`](./EXAMS) | 🎯 Chuẩn bị |
 
 ---
 
-## 🚀 Hướng dẫn Chạy Thử Dự án Bất kỳ
+## 🚀 Hướng Dẫn Cài Đặt & Chạy Dự Án
 
-Mỗi thư mục trong CODE/ là một dự án React/Vite độc lập. Để chạy bất kỳ tuần nào:
+Mỗi thư mục trong `CODE/` là một dự án React/Vite độc lập. Để chạy bất kỳ tuần nào:
 
-`ash
+```bash
 # 1. Di chuyển vào thư mục bài học (ví dụ: se2041-demo-01)
-cd "CODE/se2041-demo-01"
+cd CODE/se2041-demo-01
 
-# 2. Cài đặt các gói thư viện (chỉ cần chạy lần đầu)
+# 2. Cài đặt các thư viện phụ thuộc (chỉ cần chạy lần đầu)
 npm install
 
-# 3. Khởi động server phát triển
+# 3. Khởi chạy môi trường phát triển (Development Server)
 npm run dev
-`
+```
 
 ---
 
-## 📌 Quy tắc Viết Commit (Conventional Commits)
+## 📌 Quy Tắc Viết Commit (Conventional Commits)
 
-Để lịch sử Git luôn sạch sẽ và chuyên nghiệp:
+Để lịch sử Git luôn sạch sẽ, rõ ràng và chuyên nghiệp:
 
-`	ext
+```text
 <type>(<phạm vi>): <mô tả ngắn gọn hành động>
-`
+```
 
-- eat(lab1): Thêm tính năng / màn hình / component mới.
-- ix(week3): Sửa lỗi logic, sửa bug hiển thị.
-- docs(notes): Cập nhật ghi chú, đề lab hoặc tài liệu ôn thi.
-- style(ui): Chỉnh sửa giao diện, CSS, màu sắc.
-- efactor(code): Tối ưu lại cấu trúc file, dọn dẹp mã nguồn.
+- `feat(lab1)`: Thêm tính năng / component / màn hình mới.
+- `fix(week3)`: Sửa lỗi hiển thị, sửa bug state hoặc logic.
+- `docs(notes)`: Cập nhật tài liệu, đề lab hoặc bí kíp ôn thi.
+- `style(ui)`: Chỉnh sửa giao diện CSS, màu sắc, layout.
+- `refactor(code)`: Tối ưu cấu trúc mã nguồn, chia nhỏ component.
 
-*Ví dụ:* eat(lab1): complete orchid cards grid layout with badges
+*Ví dụ thực tế:*
+- `feat(lab1): complete orchid cards grid layout with bootstrap badges`
+- `fix(week4): handle favorite toggle duplicate state`
+- `docs(exams): add SP24 PE practical exam mock test`
 
 ---
 
-## 👨‍💻 Tác giả
-- Sinh viên: **FER202 Student**
-- Repository: [https://github.com/xuannhj/fer202-labs](https://github.com/xuannhj/fer202-labs)
+## ✍️ Tác Giả
+- **Họ và tên:** Nguyễn Phạm Xuân Nhi
+- **MSSV:** SE201170
+- **GitHub:** [@xuannhj](https://github.com/xuannhj)
