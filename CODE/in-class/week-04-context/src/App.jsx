@@ -78,21 +78,60 @@ tuc la ai la nguoi cua mon phai  */
 //   )
 // }
 
+// import React from 'react'
+// import Home from '../pages/Home'
+// import Fav from '../pages/Fav'
+// import { Routes } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
+// import { FavProvider } from './contexts/FavContext'
+
+// export default function App() {
+//   return (
+//     <FavProvider>
+//     <Routes>
+//       <Route path='/' element={<Home/>}/>
+//       <Route path='/fav' element={<Fav/>}/>
+//     </Routes>
+//      </FavProvider>
+//   )
+// }
+
+/* 05-10-2026
+1. Tạo counter.jsx
+2. Tao Button.jsx
+?lam sao de bam button ma counter thay doi -> dung context/ truyen props
+-> hnay hoc REDUX
+*/
+
+//https://redux.js.org/ -> 
+
 import React from 'react'
-import Home from '../pages/Home'
-import Fav from '../pages/Fav'
-import { Routes } from 'react-router-dom'
-import { Route } from 'react-router-dom'
-import { FavProvider } from './contexts/FavContext'
+import Counter from './components/Counter'
+import Button from './components/Button'
+import { Provider } from 'react-redux'
+import store from './store/store'
+
+//mình đang viết dưới dạng functional component
 
 export default function App() {
+  //REDUX: (cài npm install @reduxjs/toolkit react-redux)
+  //ý nghĩa: lưu thông tin state trong 1 cái store duy nhất,
+  //store: là nơi lưu trữ thông tin state của ứng dụng (GLOBAL) tất cả các component đều có thể truy cập vào store để lấy thông tin state về
+  //reducer: là 1 cái hàm nhận vào state hiện tại và action, trả về state mới
+  //Slice: là 1 cái file chứa reducer, action, state ban đầu
+  //(1. tạo CounterSlice.jsx trong folder src/slices)
+  //(2. tạo store.jsx trong folder src/store)
+  //(3. để sử dụng store thì bọc App bằng Provider)
+  //để provider biết store nào thì mình sẽ định nghĩa bằng thuộc tính store
+  //(4. để sử dụng state trong store thì dùng useSelector, để sử dụng action trong store thì dùng useDispatch[Counter.jsx, Button.jsx])
+
   return (
-    <FavProvider>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/fav' element={<Fav/>}/>
-    </Routes>
-     </FavProvider>
+    <>
+    <Provider store ={store}>
+    <Counter/>
+    <Button/>
+    </Provider>
+    </>
   )
 }
 

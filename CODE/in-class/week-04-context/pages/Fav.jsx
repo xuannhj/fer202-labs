@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { FavContext } from '../src/contexts/FavContext'
 export default function Fav() {
-    //len context de lay danhs ach yeu thich cua nguoi dung
+    //len context de lay danh sach yeu thich cua nguoi dung
     const {fav} = useContext(FavContext)
     console.log(fav)
   return (
