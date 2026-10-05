@@ -1,8 +1,6 @@
-﻿import React from 'react'
+import React from 'react'
 //nhận props để vẽ thẻ card cho từng bông hoa -> hiển thị thẻ card
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Badge from 'react-bootstrap/Badge';
+import { Button, Card, Badge } from 'react-bootstrap';
 
 function OrchidCard({orchid}) {
   return (

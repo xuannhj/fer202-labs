@@ -1,5 +1,4 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { Button, Card } from 'react-bootstrap';
 //thong tin cua props (info) se duoc lay ra = cach khai bao tu khoa props
 //khai bao ben trong tham so dau vao cua component
 function MyCards(props) {

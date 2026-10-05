@@ -1,4 +1,4 @@
-﻿# 🏫 In-Class Practice & Lectures (Code Ở Lớp)
+# 🏫 In-Class Practice & Lectures (Code Ở Lớp)
 
 > **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170
 
@@ -9,4 +9,4 @@ Khu vực lưu trữ các bài demo, thực hành trực tiếp trên lớp theo
 | [`node-intro/`](./node-intro) | Cú pháp JS ES6+, biến, modules | JavaScript / Node.js |
 | [`se2041-demo-01/`](./se2041-demo-01) | Functional Components, Props, Bootstrap Grid | React + Vite + Bootstrap |
 | [`week-03-router/`](./week-03-router) | React Router DOM v6, Dynamic Routing | React + React Router |
-| [`week-04-context/`](./week-04-context) | Context API, Global State | React + Context API |
+| [`week-04-context/`](./week-04-context) | Context API, Redux Toolkit, Global State | React + Context API + Redux Toolkit |
