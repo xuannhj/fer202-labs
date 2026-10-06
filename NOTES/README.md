@@ -1,4 +1,4 @@
-﻿# 📝 Sổ Tay Ghi Chú Lý Thuyết & Bí Kíp Ôn Thi FER202
+# 📝 Sổ Tay Ghi Chú Lý Thuyết & Bí Kíp Ôn Thi FER202
 
 > **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170  
 > 🔗 **Notion Notebook:** [nhom nhom (Sổ tay trực tuyến)](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
@@ -13,7 +13,7 @@ Khu vực tổng hợp toàn bộ ghi chú học tập, tài liệu lý thuyết
 | :--- | :--- | :--- | :---: |
 | 📁 [`01-js-review/`](./01-js-review) | **JavaScript Review** | Khai báo biến (`let`, `const`), Arrow Functions, xử lý mảng (`map`, `filter`, `find`) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`02-bootstrap-intro/`](./02-bootstrap-intro) | **Bootstrap 5 & UI Grid** | Hệ thống Grid (`Container`, `Row`, `Col`), Breakpoints responsive, Cards, Badges | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
-| 📁 [`03-react-hooks/`](./03-react-hooks) | **React Hooks Core** | Cơ chế hoạt động của `useState`, cập nhật mảng/object, tránh infinite re-render | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+| 📁 [`03-react-hooks/`](./03-react-hooks) | **React Hooks Core & Lab 2** | Cơ chế `useState`, Theme Sáng/Tối & Modal Popup ([Đọc ngay](./03-react-hooks/01_tong_hop_useState_theme_va_modal.md)) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`04-react-router/`](./04-react-router) | **React Router DOM v6** | Single Page Application, cấu hình Routes, Route, Link, useParams & Dynamic URL | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`05-lab1-components/`](./05-lab1-components) | **React Components & Props** | Cú pháp JSX, Functional Components, Props Destructuring & Grid hoa lan | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 
