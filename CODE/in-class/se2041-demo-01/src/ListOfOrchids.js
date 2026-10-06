@@ -1,7 +1,7 @@
 export const ListOfOrchids = [
     {
         id: '1',
-        name: 'Moth Orchid (Phalaenopsis)',
+        name: 'Moth Orchid',
         rating: 5,
         isSpecial: true,
         isNatural: true,
@@ -13,7 +13,7 @@ export const ListOfOrchids = [
     },
     {
         id: '2',
-        name: 'Boat Orchid (Cymbidium)',
+        name: 'Boat Orchid',
         rating: 4,
         isSpecial: false,
         isNatural: true,
@@ -49,7 +49,7 @@ export const ListOfOrchids = [
     },
     {
         id: '5',
-        name: 'Butterfly Orchid (Psychopsis)',
+        name: 'Butterfly Orchid',
         rating: 5,
         isSpecial: true,
         isNatural: false,
@@ -85,7 +85,7 @@ export const ListOfOrchids = [
     },
     {
         id: '8',
-        name: 'Ghost Orchid (Dendrophylax)',
+        name: 'Ghost Orchid',
         rating: 5,
         isSpecial: true,
         isNatural: true,
@@ -121,7 +121,7 @@ export const ListOfOrchids = [
     },
     {
         id: '11',
-        name: 'Lady of the Night (Brassavola)',
+        name: 'Lady of the Night',
         rating: 4,
         isSpecial: false,
         isNatural: true,
@@ -133,7 +133,7 @@ export const ListOfOrchids = [
     },
     {
         id: '12',
-        name: 'Dancing Lady Orchid (Oncidium)',
+        name: 'Dancing Lady Orchid',
         rating: 4,
         isSpecial: false,
         isNatural: false,
@@ -145,7 +145,7 @@ export const ListOfOrchids = [
     },
     {
         id: '13',
-        name: 'Crucifix Orchid (Epidendrum)',
+        name: 'Crucifix Orchid',
         rating: 3,
         isSpecial: false,
         isNatural: true,
@@ -169,7 +169,7 @@ export const ListOfOrchids = [
     },
     {
         id: '15',
-        name: "Nun's Orchid (Phaius)",
+        name: "Nun's Orchid",
         rating: 4,
         isSpecial: false,
         isNatural: true,
@@ -181,7 +181,7 @@ export const ListOfOrchids = [
     },
     {
         id: '16',
-        name: 'Jewel Orchid (Ludisia Discolor)',
+        name: 'Jewel Orchid',
         rating: 5,
         isSpecial: true,
         isNatural: true,

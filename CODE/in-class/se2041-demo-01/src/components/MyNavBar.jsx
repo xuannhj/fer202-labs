@@ -5,7 +5,7 @@ function MyNavBar() {
     <>
       <Navbar className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#home">Chiikawa</Navbar.Brand>
+          <Navbar.Brand href="#home">Orchid Garden</Navbar.Brand>
         </Container>
       </Navbar>
       <br />
