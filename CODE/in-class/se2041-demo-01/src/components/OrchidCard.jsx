@@ -3,7 +3,7 @@ import React from 'react'
 import { Button, Card, Badge } from 'react-bootstrap';
 
 //destructoring props
-function OrchidCard({ orchid }) {
+function OrchidCard({ orchid, onSelect }) {
   return (
     <Card className='h-100'>
       {orchid.isSpecial && (
@@ -34,7 +34,7 @@ function OrchidCard({ orchid }) {
   </div>
 
   {/* 2. Thêm "mt-auto" và "w-100" vào Button */}
-  <Button variant="success" className="mt-auto w-100">
+  <Button variant="success" className="mt-auto w-100" onClick = { () => {onSelect(orchid)}}>
     Explore more
   </Button>
 </Card.Body>
