@@ -1,4 +1,4 @@
-﻿# 🎓 FER202 - Front-End Web Development with React
+# 🎓 FER202 - Front-End Web Development with React
 
 <p align="left">
   <img src="https://img.shields.io/badge/STUDENT-Nguy%E1%BB%85n%20Ph%E1%BA%A1m%20Xu%C3%A2n%20Nhi-FF6584?style=for-the-badge&logo=github&logoColor=white&labelColor=2B2D42" alt="Student" />
@@ -69,7 +69,7 @@ FER202/
 | STT | Bài học / Tuần | Nội dung chính | Thư mục mã nguồn | Trạng thái |
 | :-: | :--- | :--- | :--- | :-: |
 | 1 | **Node & JS Basics** | Variables, ES6, Arrow Functions, Modules | [`CODE/in-class/node-intro`](./CODE/in-class/node-intro) | ✅ Hoàn thành |
-| 2 | **Lab 1: Components & Props** | JSX, Functional Components, Props, Bootstrap Grid | [`CODE/in-class/se2041-demo-01`](./CODE/in-class/se2041-demo-01) | ✅ Hoàn thành |
+| 2 | **Lab 1 & 2: Components, Hooks & Modal** | Props, Grid, `useState`, Modal Popup, Dark Mode & `useTheme` Custom Hook | [`CODE/in-class/se2041-demo-01`](./CODE/in-class/se2041-demo-01) | ✅ Hoàn thành |
 | 3 | **Week 3: React Router** | `<BrowserRouter>`, `<Routes>`, `<Route>`, `<Link>` | [`CODE/in-class/week-03-router`](./CODE/in-class/week-03-router) | ✅ Hoàn thành |
 | 4 | **Week 4: Context API** | `createContext`, `useContext`, Global State | [`CODE/in-class/week-04-context`](./CODE/in-class/week-04-context) | 🔄 Đang học |
 
