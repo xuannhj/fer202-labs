@@ -3,40 +3,38 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Orchid from './components/Orchid';
 import MyNavBar from './components/MyNavBar';
-import { Button, Navbar } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
+import {Modal, Button} from "react-bootstrap";
 
 export default function App() {
-  const [count, setCount] = useState(18);
-  const [theme, setTheme] = useState('light');
-  const handleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+  const [show, setShow] = useState(false);
+  const handleShow = () => {
+    show === false ? setShow(true) : setShow(false);
   }
-
   return (
     <>
-    <Navbar bg={theme} data-bs-theme={theme}>
-  <Container>
-    <Button onClick={handleTheme}>
-      {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
-    </Button>
-  </Container>
-</Navbar>
+    
+     <Button variant="primary" onClick={() => {handleShow()}}>
+        Launch demo modal
+      </Button>
 
-<br>
-</br>
-    <h3> Count: {count}</h3>
-    <Button variant = 'primary' onClick = {
-      () => {setCount(prev => prev + 1);
-        console.log(count);
-      }
-    }>+</Button>  
-    
-    
+      <Modal show={show} onHide={() => {handleShow()}}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => {handleShow()}}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={() => {handleShow()}}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       <MyNavBar />
       <Orchid />
-
-
+      
     </>
   )
 }
