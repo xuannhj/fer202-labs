@@ -105,33 +105,120 @@ tuc la ai la nguoi cua mon phai  */
 
 //https://redux.js.org/ -> 
 
-import React from 'react'
-import Counter from './components/Counter'
-import Button from './components/Button'
-import { Provider } from 'react-redux'
-import store from './store/store'
+// import React from 'react'
+// import Counter from './components/Counter'
+// import Button from './components/Button'
+// import { Provider } from 'react-redux'
+// import store from './store/store'
 
-//mình đang viết dưới dạng functional component
+// //mình đang viết dưới dạng functional component
+
+// export default function App() {
+//   //REDUX: (cài npm install @reduxjs/toolkit react-redux)
+//   //ý nghĩa: lưu thông tin state trong 1 cái store duy nhất,
+//   //store: là nơi lưu trữ thông tin state của ứng dụng (GLOBAL) tất cả các component đều có thể truy cập vào store để lấy thông tin state về
+//   //reducer: là 1 cái hàm nhận vào state hiện tại và action, trả về state mới
+//   //Slice: là 1 cái file chứa reducer, action, state ban đầu
+//   //(1. tạo CounterSlice.jsx trong folder src/slices)
+//   //(2. tạo store.jsx trong folder src/store)
+//   //(3. để sử dụng store thì bọc App bằng Provider)
+//   //để provider biết store nào thì mình sẽ định nghĩa bằng thuộc tính store
+//   //(4. để sử dụng state trong store thì dùng useSelector, để sử dụng action trong store thì dùng useDispatch[Counter.jsx, Button.jsx])
+
+//   return (
+//     <>
+//     <Provider store ={store}>
+//     <Counter/>
+//     <Button/>
+//     </Provider>
+//     </>
+//   )
+// }
+
+
+
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form, Button } from 'react-bootstrap';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { string } from 'yup';
+
+
 
 export default function App() {
-  //REDUX: (cài npm install @reduxjs/toolkit react-redux)
-  //ý nghĩa: lưu thông tin state trong 1 cái store duy nhất,
-  //store: là nơi lưu trữ thông tin state của ứng dụng (GLOBAL) tất cả các component đều có thể truy cập vào store để lấy thông tin state về
-  //reducer: là 1 cái hàm nhận vào state hiện tại và action, trả về state mới
-  //Slice: là 1 cái file chứa reducer, action, state ban đầu
-  //(1. tạo CounterSlice.jsx trong folder src/slices)
-  //(2. tạo store.jsx trong folder src/store)
-  //(3. để sử dụng store thì bọc App bằng Provider)
-  //để provider biết store nào thì mình sẽ định nghĩa bằng thuộc tính store
-  //(4. để sử dụng state trong store thì dùng useSelector, để sử dụng action trong store thì dùng useDispatch[Counter.jsx, Button.jsx])
+  //group để gom cái form control lại
+  //label: nhãn hiển thị
+  //control: input để nhập dữ liệu, select box, radio button,..
+  //=> type: email, password, text, number, date, file, radio, checkbox
 
+  //state: lưu thông tin của email
+  //check độ dài
+  //với 1 cái group thì phải có 2 cái đó
+
+  //vậy nếu nhiều group thì nhân lên rất nhiều -> sử dụng thư viện hỗ trợ validation 
+  //formik: thao tác với form + yup: validation
+  //dùng react-hook-form: thao tác với form    (swp) + zod: validation
+
+
+ //1. Cài đặt: npm install formik yup
+     //2. Cách sử dụng: 
+     //2.1: Khai báo Formik để quản lý form
+     const formik = useFormik({
+           initialValues: { //các state khởi tạo của form
+            email: '',
+            password: '',
+            check: false
+          },
+          //2.2 Import Yup
+          //Yup: là thư viện hỗ trợ tạo 1 schema - 1 object đã đc định nghĩa sẵn
+          //giúp xác thực dữ liệu 
+          validationSchema: Yup.object({//tao ra schema
+            //aps dung validation
+            email: Yup.string()
+                  .required('bat buoc nhap email'),//bat buoc phai nhap (nay chua can xuong backend - frontend da wwarning lun r)
+            password: Yup.string().required().min(6, "mat khau phai toi thieu 6 ki tu")
+          }),
+
+
+          //để xử lý khi bấm nút submit
+          onSubmit: (values) => { //đầu vào của hàm sẽ lưu các thông tin đã nhập
+            alert(JSON.stringify(values));
+            //stringnify: chuyển object thành chuỗi string,        
+           }
+     })
+     //để sử dụng dc formik, để liên kết form với formik thì cần liên kết các state 
+     //+ với các control -> đặt thuộc tính name của control giống với state đã đc định nghĩa trong initial Values
+    //=> thêm thuộc tính value để lấy giá trị của state
+     //+các hàm xử lý
+      //thêm thuộc tính onChange để cập nhật giá trị state khi nhập  
+     //+hàm submit của form
+     //thêm thuộc tính onSubmit vào FORM GỐC
+     //=> tức là khi ng dùng bấm vào button có type là submit thì sẽ gọi cái hàm onSubmit của Formirk
   return (
-    <>
-    <Provider store ={store}>
-    <Counter/>
-    <Button/>
-    </Provider>
-    </>
+    <Form onSubmit = {formik.handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control  name = "email" value = {formik.values.email} onChange = {formik.handleChange} type="email" placeholder="Enter email" />
+        <Form.Text className="text-danger">
+          {formik.errors.email}
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control name = "password" value ={formik.values.password} onChange = {formik.handleChange} type="password" placeholder="Password" />
+        <Form.Text className = "text-danger">
+          {formik.errors.password}
+        </Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check name = "check" checked= {formik.values.check} onChange = {formik.handleChange} type="checkbox" label="Check me out" />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   )
 }
 
