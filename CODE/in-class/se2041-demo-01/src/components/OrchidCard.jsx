@@ -15,9 +15,8 @@ function OrchidCard({ orchid, onSelect }) {
   </Badge>
 )}
 
-      <Card.Img variant='top' src={orchid.image} />
-      {/* 1. Thêm "d-flex flex-column" vào Card.Body */}
-<Card.Body className="d-flex flex-column">
+<Card.Img variant='top' src={orchid.image} />
+  <Card.Body className="d-flex flex-column">
   <Card.Title>{orchid.name}</Card.Title>
   <Card.Text>Xuất xứ: {orchid.origin}</Card.Text>
   <Card.Text className="text-muted mb-1">
@@ -27,13 +26,12 @@ function OrchidCard({ orchid, onSelect }) {
     <strong>Loài:</strong> {orchid.category} {orchid.isNatural ? '(Tự nhiên)' : '(Lai tạo)'}
   </Card.Text>
 
-  {/* Thêm mb-3 để khoảng cách sao & like thoáng hơn */}
+
   <div className="d-flex justify-content-between align-items-center mb-3 small">
     <span>⭐ {orchid.rating} / 5</span>
     <span>❤️ {orchid.numberOfLike} yêu thích</span>
   </div>
 
-  {/* 2. Thêm "mt-auto" và "w-100" vào Button */}
   <Button variant="success" className="mt-auto w-100" onClick = { () => {onSelect(orchid)}}>
     Explore more
   </Button>

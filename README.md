@@ -31,9 +31,9 @@
 FER202/
 ├── CODE/                           # Mã nguồn thực hành
 │   ├── in-class/                   # 🏫 1. Code học & demo trên lớp cùng thầy cô
-│   │   ├── se2041-demo-01/         # Lab 1: React Components, Props & Orchid Store
+│   │   ├── se2041-demo-01/         # Lab 1 & 2: React Components, Props & Orchid Store
 │   │   ├── week-03-router/         # Tuần 3: React Router, Navigation & Products
-│   │   ├── week-04-context/        # Tuần 4: Context API, Global State & Fav List
+│   │   ├── week-04-context/        # Tuần 4: Context API, Redux Toolkit, Formik & Yup Validation
 │   │   └── node-intro/             # Ôn tập Javascript căn bản & Node.js
 │   │
 │   └── self-study/                 # 🏠 2. Code tự học ở nhà & Bài tập về nhà
@@ -55,6 +55,7 @@ FER202/
 │   ├── 03-react-hooks/             # useState, useEffect
 │   ├── 04-react-router/            # React Router DOM
 │   ├── 05-lab1-components/         # Functional Components & Props
+│   ├── 06-formik-yup/              # Formik & Yup Schema Validation
 │   └── README.md                   # Mục lục ghi chú & Bí kíp ôn thi
 │
 ├── .gitignore                      # Tự động bỏ qua node_modules, dist, zip, .env...
@@ -71,7 +72,7 @@ FER202/
 | 1 | **Node & JS Basics** | Variables, ES6, Arrow Functions, Modules | [`CODE/in-class/node-intro`](./CODE/in-class/node-intro) | ✅ Hoàn thành |
 | 2 | **Lab 1 & 2: Components, Hooks & Modal** | Props, Grid, `useState`, Modal Popup, Dark Mode & `useTheme` Custom Hook | [`CODE/in-class/se2041-demo-01`](./CODE/in-class/se2041-demo-01) | ✅ Hoàn thành |
 | 3 | **Week 3: React Router** | `<BrowserRouter>`, `<Routes>`, `<Route>`, `<Link>` | [`CODE/in-class/week-03-router`](./CODE/in-class/week-03-router) | ✅ Hoàn thành |
-| 4 | **Week 4: Context API** | `createContext`, `useContext`, Global State | [`CODE/in-class/week-04-context`](./CODE/in-class/week-04-context) | 🔄 Đang học |
+| 4 | **Week 4: Context, Redux & Formik/Yup** | `useContext`, Redux Toolkit (`createSlice`), Formik (`useFormik`), Yup Validation | [`CODE/in-class/week-04-context`](./CODE/in-class/week-04-context) | 🔄 Đang học |
 
 ### 📝 2. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
 | STT | Chủ đề | Tóm tắt kiến thức | Thư mục ghi chú |
@@ -81,6 +82,7 @@ FER202/
 | 3 | **React Hooks** | `useState`, `useEffect` và vòng đời re-render | [`NOTES/03-react-hooks`](./NOTES/03-react-hooks) |
 | 4 | **React Router** | SPA, Navigation, URL Params, 404 Page | [`NOTES/04-react-router`](./NOTES/04-react-router) |
 | 5 | **React Components** | Functional Component, JSX, Props Destructuring | [`NOTES/05-lab1-components`](./NOTES/05-lab1-components) |
+| 6 | **Formik & Yup Validation** | `useFormik`, Schema Validation (`Yup.object`), Error Text, React-Bootstrap Form | [`NOTES/06-formik-yup`](./NOTES/06-formik-yup) |
 
 ---
 

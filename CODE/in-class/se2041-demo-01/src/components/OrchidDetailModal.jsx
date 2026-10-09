@@ -6,23 +6,19 @@ export default function OrchidDetailModal({ show, orchid, onHide }) {
 
   return (
     <Modal show={show} onHide={onHide}>
-      {/* 1. Header có nút đóng */}
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>
           {orchid.name}
           {orchid.isSpecial && <Badge bg="primary" className="ms-2">Special ⭐</Badge>}
         </Modal.Title>
       </Modal.Header>
-
-      {/* 2. Body chia 2 cột đơn giản */}
+      
       <Modal.Body>
         <Row>
-          {/* Cột 1: Ảnh */}
           <Col md={6}>
             <img src={orchid.image} alt={orchid.name} style={{ width: '100%' }} />
           </Col>
 
-          {/* Cột 2: Thông tin */}
           <Col md={6}>
             <p><strong>Xuất xứ:</strong> {orchid.origin}</p>
             <p><strong>Màu sắc:</strong> {orchid.color}</p>
@@ -33,7 +29,6 @@ export default function OrchidDetailModal({ show, orchid, onHide }) {
         </Row>
       </Modal.Body>
 
-      {/* 3. Footer có nút Đóng */}
       <Modal.Footer>
         <Button variant="secondary" onClick={onHide}>
           Đóng

@@ -1,4 +1,4 @@
-# 📦 Week 4: State Management (Context API & Redux Toolkit)
+# 📦 Week 4: State Management (Context API & Redux Toolkit) + Formik & Yup Validation
 
 > **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170  
 > **Môn học:** FER202 - Front-End Web Development with React
@@ -7,7 +7,7 @@
 
 ## 🎯 Mục Tiêu Bài Học
 
-Dự án thực hành **Tuần 4** tập trung vào các giải pháp quản lý State toàn cục (Global State Management) và xử lý bất đồng bộ (Call API) trong React:
+Dự án thực hành **Tuần 4** tập trung vào các giải pháp quản lý State toàn cục (Global State Management), xử lý bất đồng bộ (Call API) và xử lý biểu mẫu xác thực dữ liệu (Form Handling & Validation) trong React:
 
 1. **Context API (`createContext`, `useContext`)**:
    - Tránh hiện tượng **Props Drilling** (truyền props qua nhiều tầng component).
@@ -22,7 +22,13 @@ Dự án thực hành **Tuần 4** tập trung vào các giải pháp quản lý
      - `useSelector`: Lấy dữ liệu state từ store (vd: `state.counter.count`).
      - `useDispatch`: Gửi (dispatch) các action làm thay đổi state.
 
-3. **Call API & Asynchronous Handling**:
+3. **Form Management & Validation (`Formik` + `Yup`)**:
+   - Quản lý vòng đời dữ liệu Form gọn gàng thông qua Hook `useFormik`.
+   - Xây dựng schema kiểm tra tính hợp lệ dữ liệu với `Yup.object()`, `.required()`, `.email()`, `.min()`.
+   - Tích hợp trực tiếp với các thẻ giao diện của `React-Bootstrap` (`Form.Group`, `Form.Control`, `Form.Text`, `Form.Check`).
+   - Quy tắc "4 điểm chạm": `name`, `value`, `onChange`, `onSubmit`.
+
+4. **Call API & Asynchronous Handling**:
    - So sánh `fetch()` và `axios`.
    - Sử dụng `useEffect()` kết hợp `async/await` để load dữ liệu.
    - Tích hợp mock API (`drama.json` / `json-server` / `mockapi.io`).
@@ -49,7 +55,7 @@ week-04-context/
 │   │   └── CounterSlice.jsx   # Slice quản lý state Counter & reducers
 │   ├── store/                 # Cấu hình Redux Store
 │   │   └── store.jsx          # configureStore kết hợp các slices
-│   ├── App.jsx                # Root Component bọc Provider
+│   ├── App.jsx                # Root Component demo Redux / Formik & Yup
 │   └── main.jsx               # Entry point ứng dụng
 ├── package.json
 └── vite.config.js
@@ -60,6 +66,8 @@ week-04-context/
 ## 🛠️ Công Nghệ Sử Dụng
 
 - **React 19** + **Vite**
+- **Bootstrap 5** & **React-Bootstrap** (v2.x)
+- **Formik** (v2.x) & **Yup** (v1.x)
 - **@reduxjs/toolkit** (v2.x) & **react-redux** (v9.x)
 - **React Router DOM** (v7.x)
 - **Axios** (v1.x)
@@ -74,7 +82,8 @@ week-04-context/
 npm install
 ```
 
-*(Nếu cài thêm Redux Toolkit vào project mới: `npm install @reduxjs/toolkit react-redux axios`)*
+*(Nếu cài thêm Formik + Yup vào project mới: `npm install formik yup`)*  
+*(Nếu cài thêm Redux Toolkit: `npm install @reduxjs/toolkit react-redux axios`)*
 
 ### 2. Chạy ứng dụng ở chế độ Development:
 ```bash
@@ -91,7 +100,32 @@ npx json-server --watch drama.json --port 3000
 
 ## 📝 Ghi Chú Kiến Thức Cốt Lõi (Cheat Sheet)
 
-### 🔹 Redux Toolkit Flow:
+### 🔹 1. Formik & Yup Pattern:
+```jsx
+const formik = useFormik({
+  initialValues: { email: '', password: '', check: false },
+  validationSchema: Yup.object({
+    email: Yup.string().required('Bắt buộc nhập email').email('Email không hợp lệ'),
+    password: Yup.string().required('Bắt buộc nhập mật khẩu').min(6, 'Tối thiểu 6 ký tự')
+  }),
+  onSubmit: (values) => {
+    alert(JSON.stringify(values));
+  }
+});
+
+// JSX:
+<Form onSubmit={formik.handleSubmit}>
+  <Form.Control 
+    name="email" 
+    value={formik.values.email} 
+    onChange={formik.handleChange} 
+  />
+  <Form.Text className="text-danger">{formik.errors.email}</Form.Text>
+  <Button type="submit">Submit</Button>
+</Form>
+```
+
+### 🔹 2. Redux Toolkit Flow:
 ```
 UI Component (Button)
   └─► dispatch(incrementByAmount(10))

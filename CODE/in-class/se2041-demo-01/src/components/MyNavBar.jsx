@@ -8,7 +8,6 @@ function MyNavBar({theme, toggleTheme}) {
         <Navbar.Brand href="#home" className="fw-bold fs-4">
           🌸 Orchid Garden
         </Navbar.Brand>
-        {/* Nút bấm đổi theme */}
         <Button 
           variant={theme === 'light' ? 'outline-dark' : 'outline-light'} 
           onClick={toggleTheme}
