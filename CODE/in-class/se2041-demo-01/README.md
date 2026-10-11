@@ -59,3 +59,8 @@ npm install
 npm run dev
 ```
 Trình duyệt mở tại: `http://localhost:5173`
+
+---
+
+## 📖 Tài Liệu Tham Khảo & Kiến Thức Cần Lưu Ý
+- 🎓 [Sổ tay các kiến thức cần lưu ý (Lab 1 & Lab 2)](./docs/cac-kien-thuc-can-luu-y-lab1-lab2.md)

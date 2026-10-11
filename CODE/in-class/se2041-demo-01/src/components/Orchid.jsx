@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 //import 16 bong hoa tu mang -> map() de lap 
 //lưới grid để duyện map 16 bông lun
-import { ListOfOrchids } from '../ListOfOrchids';
+import { ListOfOrchids } from '../ListOfOrchids'; //named import nên phai co {...}
 import { Col, Container, Row } from 'react-bootstrap';
 import OrchidCard from './OrchidCard';
 import OrchidDetailModal from './OrchidDetailModal';
