@@ -513,21 +513,30 @@
 
 ---
 
-### ❓ Câu 14: Trong bài Hoa Lan, Modal nằm ở `Orchid.jsx`, nhưng nút bấm 'Detail' lại nằm ở `OrchidCard.jsx`. Làm sao Con gửi thông tin hoa được chọn ngược lên Cha?
-* **Giải pháp chuẩn:** Áp dụng kỹ thuật **Lifting State Up (Nâng State lên Cha)** kết hợp **Callback Function qua Props**:
-  1. Component Cha (`Orchid.jsx`) nắm giữ State lưu hoa được chọn:
-     ```jsx
-     const [selectedOrchid, setSelectedOrchid] = useState(null);
-     ```
-  2. Cha truyền hàm đổi state xuống cho Con qua Props:
-     ```jsx
-     <OrchidCard orchid={item} onSelect={setSelectedOrchid} />
-     ```
-  3. Ở Con (`OrchidCard.jsx`), khi người dùng bấm nút, Con gọi hàm callback của Cha và truyền object hoa vào:
-     ```jsx
-     <Button onClick={() => onSelect(orchid)}>Explore more</Button>
-     ```
-  4. State ở Cha cập nhật $\rightarrow$ Cha re-render và hiển thị `<OrchidDetailModal show={true} orchid={selectedOrchid} />`.
+### ❓ Câu 14: Tại sao State `selectedOrchid` bắt buộc đặt ở `Orchid.jsx` mà không đặt ở `OrchidCard.jsx` hay `App.jsx`? Nguyên lý "Cha chung gần nhất" (Closest Common Parent) và kỹ thuật Lifting State Up?
+* **1. Kỹ thuật Lifting State Up (Nâng State lên Cha) kết hợp Callback Props:**
+  * Component Cha (`Orchid.jsx`) nắm giữ State lưu hoa được chọn:
+    ```jsx
+    const [selectedOrchid, setSelectedOrchid] = useState(null);
+    ```
+  * Cha truyền hàm đổi state xuống cho Con qua Props:
+    ```jsx
+    <OrchidCard orchid={item} onSelect={setSelectedOrchid} />
+    ```
+  * Ở Con (`OrchidCard.jsx`), khi người dùng bấm nút, Con gọi hàm callback của Cha và truyền object hoa vào:
+    ```jsx
+    <Button onClick={() => onSelect(orchid)}>Explore more</Button>
+    ```
+  * State ở Cha cập nhật $\rightarrow$ Cha re-render và hiển thị `<OrchidDetailModal show={true} orchid={selectedOrchid} />`.
+* **2. 🏆 Hai lý do kiến trúc cốt tử: "Tại sao State đặt ở `Orchid.jsx` mà không phải chỗ khác?":**
+  * **❌ Lý do 1 - Tại sao KHÔNG đặt ở từng Con (`OrchidCard.jsx`)?**
+    * *Tránh lãng phí tài nguyên:* Nếu mỗi thẻ card tự quản lý Modal của riêng mình, trong cây DOM sẽ **âm thầm sinh ra 16 cái Popup Modal chực chờ** trong bộ nhớ.
+    * Trong thực tế, tại 1 thời điểm người dùng **chỉ xem DUY NHẤT 1 bông hoa**!
+    * Đặt ở Cha `Orchid.jsx` giúp cả ứng dụng **chỉ dùng chung 1 Modal duy nhất** (tương tự như cả lớp 16 học sinh chỉ dùng chung 1 máy chiếu đặt giữa phòng, ai thuyết trình thì cắm dây máy chiếu cho bạn đó $\rightarrow$ cực kỳ nhẹ RAM và sạch cây DOM).
+  * **❌ Lý do 2 - Tại sao KHÔNG CẦN đưa lên tận `App.jsx`? (Nguyên lý "Cha chung gần nhất" - Closest Common Parent):**
+    * Quy tắc vàng của React: **"State chỉ nên đặt ở Cha chung gần nhất của các component cần dùng nó"**.
+    * Bông hoa được chọn chỉ liên quan trực tiếp đến 2 thứ: (1) Lưới 16 thẻ hoa và (2) Cái Modal hiển thị chi tiết. Cả 2 đều nằm gọn trong `Orchid.jsx`.
+    * Thanh Menu `MyNavBar.jsx` hoàn toàn không quan tâm hoa nào đang chọn. Nếu đưa state lên `App.jsx`, mỗi lần chọn hoa thì cả `App` và `MyNavBar` sẽ bị bắt **re-render lại một cách vô ích**, làm phình to code của `App.jsx`.
 
 ---
 

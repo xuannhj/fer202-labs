@@ -9,24 +9,23 @@ import OrchidDetailModal from './OrchidDetailModal';
 
 function Orchid() {
   //useState xem hoa nào đang dc chọn -> để truyền xuống modal -> default là null
-  const [selectedOrchid, setSelectedOrchid] = useState (null);
+  const [selectedOrchid, setSelectedOrchid] = useState(null);
   return (
     <Container>
       <Row xs={1} sm={2} md={4} className="g-4">
         {ListOfOrchids.map((orchidFull) => (
           <Col key={orchidFull.id}>
-            <OrchidCard orchid={orchidFull} onSelect = {setSelectedOrchid} />
+            <OrchidCard orchid={orchidFull} onSelect={setSelectedOrchid} />
           </Col>
         ))}
       </Row>
 
-
       {
-        selectedOrchid &&(
+        selectedOrchid && (
           <OrchidDetailModal
-          show={true}
-          orchid={selectedOrchid}
-          onHide={() => setSelectedOrchid(null)} />
+            show={true}
+            orchid={selectedOrchid}
+            onHide={() => setSelectedOrchid(null)} />
         )
       }
     </Container>
