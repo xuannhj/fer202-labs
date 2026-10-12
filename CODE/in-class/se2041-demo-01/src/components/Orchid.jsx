@@ -19,11 +19,12 @@ function Orchid() {
           </Col>
         ))}
       </Row>
+      
 
       {
         selectedOrchid && (
           <OrchidDetailModal
-            show={true}
+            show={true} //modal mo bung ra giua screen va lop nen toi mo o phia sau - con false: modal bi o di, display:none
             orchid={selectedOrchid}
             onHide={() => setSelectedOrchid(null)} />
         )

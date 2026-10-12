@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Orchid from './components/Orchid';
 import MyNavBar from './components/MyNavBar';
 import useTheme from './hooks/useTheme';
-
+//object destructuring - boc tach truc tip cac value ma hook tra ve
 export default function App() {
   const { theme, toggleTheme } = useTheme();
 

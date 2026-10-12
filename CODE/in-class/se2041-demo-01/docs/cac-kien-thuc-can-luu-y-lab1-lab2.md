@@ -537,6 +537,16 @@
     * Quy tắc vàng của React: **"State chỉ nên đặt ở Cha chung gần nhất của các component cần dùng nó"**.
     * Bông hoa được chọn chỉ liên quan trực tiếp đến 2 thứ: (1) Lưới 16 thẻ hoa và (2) Cái Modal hiển thị chi tiết. Cả 2 đều nằm gọn trong `Orchid.jsx`.
     * Thanh Menu `MyNavBar.jsx` hoàn toàn không quan tâm hoa nào đang chọn. Nếu đưa state lên `App.jsx`, mỗi lần chọn hoa thì cả `App` và `MyNavBar` sẽ bị bắt **re-render lại một cách vô ích**, làm phình to code của `App.jsx`.
+* **3. 💡 Giải nghĩa 3 thuật ngữ cốt lõi: Callback Function, Controlled Component và ý nghĩa `show={true}`:**
+  * **Callback Function (Hàm phản hồi / gọi lại) là gì?**
+    * *Định nghĩa:* Là một hàm được truyền từ component Cha xuống component Con dưới dạng một Prop (`onSelect`, `onHide`), với mục đích là để Con **gọi ngược lại (call back)** khi có một sự kiện xảy ra (như người dùng click chuột).
+    * *Ẩn dụ:* Cha để lại số điện thoại cho Con. Khi có việc (khách bấm nút xem hoặc đóng), Con bấm số gọi lại cho Cha để báo tin!
+  * **Controlled Component (Component bị kiểm soát) là gì?**
+    * *Định nghĩa:* Là một component mà toàn bộ trạng thái hiển thị (mở/đóng) và dữ liệu của nó **bị điều khiển 100% bởi Props do Cha truyền xuống**, bản thân nó không tự lưu State đóng/mở riêng.
+    * *Ví dụ trong bài:* `OrchidDetailModal` là Controlled Component vì nó không tự quyết định lúc nào mở lúc nào đóng, mà hoàn toàn do State `selectedOrchid` ở Cha giật dây điều khiển.
+  * **Ý nghĩa của `show={true}` trong bài:**
+    * Thuộc tính `show` của component `<Modal>` (React-Bootstrap) nhận giá trị boolean: `true` là hiện popup ra giữa màn hình, `false` là ẩn đi.
+    * Ta truyền thẳng `show={true}` vì ở bên ngoài ta đã có điều kiện bọc: `{selectedOrchid && <OrchidDetailModal ... />}`. Một khi `selectedOrchid` có dữ liệu (khác `null`) thì component mới được render, và lúc này chắc chắn người dùng đang muốn xem hoa nên ta gán thẳng `show={true}` để Modal bung ra ngay lập tức!
 
 ---
 
