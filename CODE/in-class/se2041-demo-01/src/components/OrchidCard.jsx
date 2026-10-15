@@ -13,7 +13,16 @@ function OrchidCard({ orchid, onSelect }) {
     >
     Special 🪼
   </Badge>
-)}
+      )}
+      {orchid.isNatural && (
+  <Badge
+     bg="light" className="badge position-absolute top-0 m-2 px-2 py-1 shadow-sm" 
+    style={{color: '#060505ff', fontWeight: '600' }}
+    >
+    Natural 🎍
+  </Badge>
+      )}
+
 
 <Card.Img variant='top' src={orchid.image} />
   <Card.Body className="d-flex flex-column">

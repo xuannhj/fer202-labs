@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "title": "Midnight Drive",
+    "artist": "Nova Lane",
+    "genre": "Pop",
+    "coverImg": "https://picsum.photos/seed/song1/300/300",
+    "durationSec": 214,
+    "isTrending": false
+  },
+  {
+    "id": "2",
+    "title": "Rainy Café",
+    "artist": "Harbor",
+    "genre": "Instrumental",
+    "coverImg": "https://picsum.photos/seed/song2/300/300",
+    "durationSec": 180,
+    "isTrending": true
+  },
+  {
+    "id": "3",
+    "title": "Sunset Boulevard",
+    "artist": "The City Lights",
+    "genre": "Rock",
+    "coverImg": "https://picsum.photos/seed/song3/300/300",
+    "durationSec": 242,
+    "isTrending": false
+  },
+  {
+    "id": "4",
+    "title": "Blue Jazz Night",
+    "artist": "Miles & Co.",
+    "genre": "Jazz",
+    "coverImg": "https://picsum.photos/seed/song4/300/300",
+    "durationSec": 305,
+    "isTrending": true
+  },
+  {
+    "id": "5",
+    "title": "Focus Mode",
+    "artist": "Code Beats",
+    "genre": "Instrumental",
+    "coverImg": "https://picsum.photos/seed/song5/300/300",
+    "durationSec": 198,
+    "isTrending": false
+  },
+  {
+    "id": "6",
+    "title": "Acoustic Morning",
+    "artist": "Sora Green",
+    "genre": "Acoustic",
+    "coverImg": "https://picsum.photos/seed/song6/300/300",
+    "durationSec": 226,
+    "isTrending": true
+  },
+  {
+    "id": "7",
+    "title": "Ocean Breeze",
+    "artist": "Wave Theory",
+    "genre": "Pop",
+    "coverImg": "https://picsum.photos/seed/song7/300/300",
+    "durationSec": 260,
+    "isTrending": false
+  },
+  {
+    "id": "8",
+    "title": "Neon Runner",
+    "artist": "Synth Arcade",
+    "genre": "Acoustic",
+    "coverImg": "https://picsum.photos/seed/song8/300/300",
+    "durationSec": 231,
+    "isTrending": false
+  },
+  {
+    "id": "9",
+    "title": "Vietnamese Tea House",
+    "artist": "Saigon Strings",
+    "genre": "Instrumental",
+    "coverImg": "https://picsum.photos/seed/song9/300/300",
+    "durationSec": 275,
+    "isTrending": false
+  },
+  {
+    "id": "10",
+    "title": "Late Night Study",
+    "artist": "Quiet Campus",
+    "genre": "Rock",
+    "coverImg": "https://picsum.photos/seed/song10/300/300",
+    "durationSec": 192,
+    "isTrending": true
+  }
+]
