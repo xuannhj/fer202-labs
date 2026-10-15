@@ -11,10 +11,11 @@ Khu vực tổng hợp toàn bộ ghi chú học tập, tài liệu lý thuyết
 
 | Thư mục | Chủ đề ghi chú | Nội dung chi tiết | Link Notion |
 | :--- | :--- | :--- | :---: |
+| 📋 [`00_checklist/`](./00_checklist_tu_code_router_va_useeffect.md) | **Checklist Tự Code Thực Chiến** | Lộ trình từng bước tự code `useEffect` & `React Router` + Link React.dev ([Đọc ngay](./00_checklist_tu_code_router_va_useeffect.md)) | 🌟 Bắt buộc |
 | 📁 [`01-js-review/`](./01-js-review) | **JavaScript Review** | Khai báo biến (`let`, `const`), Arrow Functions, xử lý mảng (`map`, `filter`, `find`) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`02-bootstrap-intro/`](./02-bootstrap-intro) | **Bootstrap 5 & UI Grid** | Hệ thống Grid (`Container`, `Row`, `Col`), Breakpoints responsive, Cards, Badges | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
-| 📁 [`03-react-hooks/`](./03-react-hooks) | **React Hooks Core & Lab 2** | Cơ chế `useState`, Theme Sáng/Tối & Modal Popup ([Đọc ngay](./03-react-hooks/01_tong_hop_useState_theme_va_modal.md)) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
-| 📁 [`04-react-router/`](./04-react-router) | **React Router DOM v6** | Single Page Application, cấu hình Routes, Route, Link, useParams & Dynamic URL | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+| 📁 [`03-react-hooks/`](./03-react-hooks) | **React Hooks Core & Lab 2** | `useState`, Theme Sáng/Tối ([Đọc](./03-react-hooks/01_tong_hop_useState_theme_va_modal.md)) & `useEffect` Gọi API Toàn Tập ([Đọc](./03-react-hooks/02_useEffect_va_side_effects_toan_tap.md)) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+| 📁 [`04-react-router/`](./04-react-router) | **React Router DOM v6/v7** | Single Page App, cấu hình Routes, Route, Link, useParams & Dynamic URL ([Đọc ngay](./04-react-router/01_react_router_dom_toan_tap.md)) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`05-lab1-components/`](./05-lab1-components) | **React Components & Props** | Cú pháp JSX, Functional Components, Props Destructuring & Grid hoa lan | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`06-formik-yup/`](./06-formik-yup) | **Formik & Yup Validation** | Quản lý Form (`useFormik`), Xác thực Schema (`Yup.object`), Error Text & React-Bootstrap ([Đọc ngay](./06-formik-yup/01_formik_va_yup_validation.md)) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 

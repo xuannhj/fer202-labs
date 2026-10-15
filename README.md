@@ -50,10 +50,11 @@ FER202/
 │   └── README.md                   # Chiến thuật & checklist ôn thi PE
 │
 ├── NOTES/                          # 📝 Sổ tay ghi chú lý thuyết & link Notion
+│   ├── 00_checklist_tu_code_router_va_useeffect.md # 📋 Checklist tự code thực chiến useEffect & Router
 │   ├── 01-js-review/               # JS ES6+, Variables, Array Methods
 │   ├── 02-bootstrap-intro/         # Bootstrap Grid & Breakpoints
-│   ├── 03-react-hooks/             # useState, useEffect
-│   ├── 04-react-router/            # React Router DOM
+│   ├── 03-react-hooks/             # useState, useEffect & Side Effects toàn tập
+│   ├── 04-react-router/            # React Router DOM v6/v7 từ cơ bản đến PE
 │   ├── 05-lab1-components/         # Functional Components & Props
 │   ├── 06-formik-yup/              # Formik & Yup Schema Validation
 │   └── README.md                   # Mục lục ghi chú & Bí kíp ôn thi
@@ -77,10 +78,11 @@ FER202/
 ### 📝 2. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
 | STT | Chủ đề | Tóm tắt kiến thức | Thư mục ghi chú |
 | :-: | :--- | :--- | :--- |
+| 🌟 | **Checklist Tự Code Thực Chiến** | Lộ trình từng bước tự code `useEffect` & `React Router` + Link React.dev | [`NOTES/00_checklist`](./NOTES/00_checklist_tu_code_router_va_useeffect.md) |
 | 1 | **JavaScript Review** | ES6, Arrow Function, `map`, `filter`, `find` | [`NOTES/01-js-review`](./NOTES/01-js-review) |
 | 2 | **Bootstrap 5 UI** | Hệ thống Grid, Row, Col, Card, Badge | [`NOTES/02-bootstrap-intro`](./NOTES/02-bootstrap-intro) |
-| 3 | **React Hooks** | `useState`, `useEffect` và vòng đời re-render | [`NOTES/03-react-hooks`](./NOTES/03-react-hooks) |
-| 4 | **React Router** | SPA, Navigation, URL Params, 404 Page | [`NOTES/04-react-router`](./NOTES/04-react-router) |
+| 3 | **React Hooks** | `useState`, `useEffect` & Side Effects toàn tập | [`NOTES/03-react-hooks`](./NOTES/03-react-hooks) |
+| 4 | **React Router** | SPA, Navigation, URL Params, 404 Page từ cơ bản đến PE | [`NOTES/04-react-router`](./NOTES/04-react-router) |
 | 5 | **React Components** | Functional Component, JSX, Props Destructuring | [`NOTES/05-lab1-components`](./NOTES/05-lab1-components) |
 | 6 | **Formik & Yup Validation** | `useFormik`, Schema Validation (`Yup.object`), Error Text, React-Bootstrap Form | [`NOTES/06-formik-yup`](./NOTES/06-formik-yup) |
 
