@@ -12,6 +12,7 @@ Khu vực tổng hợp toàn bộ ghi chú học tập, tài liệu lý thuyết
 | Thư mục | Chủ đề ghi chú | Nội dung chi tiết | Link Notion |
 | :--- | :--- | :--- | :---: |
 | 📋 [`00_checklist/`](./00_checklist_tu_code_router_va_useeffect.md) | **Checklist Tự Code Thực Chiến** | Lộ trình từng bước tự code `useEffect` & `React Router` + Link React.dev ([Đọc ngay](./00_checklist_tu_code_router_va_useeffect.md)) | 🌟 Bắt buộc |
+| 💡 [`00_faq/`](./00_faq_giai_dap_thac_mac_react_js_ts.md) | **Hỏi Đáp Thực Chiến (FAQ)** | Functional vs Class, TypeScript `React.FC`, `onClick` Arrow Function & Dấu Backtick ([Đọc ngay](./00_faq_giai_dap_thac_mac_react_js_ts.md)) | 💡 Thực chiến |
 | 📁 [`01-js-review/`](./01-js-review) | **JavaScript Review** | Khai báo biến (`let`, `const`), Arrow Functions, xử lý mảng (`map`, `filter`, `find`) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`02-bootstrap-intro/`](./02-bootstrap-intro) | **Bootstrap 5 & UI Grid** | Hệ thống Grid (`Container`, `Row`, `Col`), Breakpoints responsive, Cards, Badges | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`03-react-hooks/`](./03-react-hooks) | **React Hooks Core & Lab 2** | `useState`, Theme Sáng/Tối ([Đọc](./03-react-hooks/01_tong_hop_useState_theme_va_modal.md)) & `useEffect` Gọi API Toàn Tập ([Đọc](./03-react-hooks/02_useEffect_va_side_effects_toan_tap.md)) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
