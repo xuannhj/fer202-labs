@@ -22,6 +22,7 @@
 - **Môn học:** FER202 - Front-End Web Development with React
 - **Repository:** [https://github.com/xuannhj/fer202-labs](https://github.com/xuannhj/fer202-labs)
 - **Sổ tay Notion:** [nhom nhom - FER202 & JS Notebook](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
+- **Điểm bàn giao tiến độ:** [📌 HANDOVER_CONTEXT_CHECKPOINT.md](./HANDOVER_CONTEXT_CHECKPOINT.md)
 
 ---
 
