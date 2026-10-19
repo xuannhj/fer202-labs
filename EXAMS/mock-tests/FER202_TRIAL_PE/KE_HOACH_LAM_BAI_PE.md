@@ -27,8 +27,8 @@
   - Bảng hiển thị danh sách bài hát, sort `id` giảm dần.
   - Chức năng Xóa `handleDelete` với `window.confirm`, `axios.delete` và cập nhật state bằng `.filter()`.
   - Nút *Edit* (`as={Link}`) trỏ đúng `/se201170/update-song/${item.id}`.
-- [ ] **Task 3.2: Hoàn thiện Formik & Yup cho [AddSong.jsx](file:///e:/SEMESTER%205/FER202/EXAMS/mock-tests/FER202_TRIAL_PE/fer/src/pages/AddSong.jsx)** $\leftarrow$ *TỐI NAY CHIẾN*
-- [ ] **Task 3.3: Hoàn thiện Formik & Yup cho [UpdateSong.jsx](file:///e:/SEMESTER%205/FER202/EXAMS/mock-tests/FER202_TRIAL_PE/fer/src/pages/UpdateSong.jsx)** $\leftarrow$ *TỐI NAY CHIẾN*
+- [x] **Task 3.2: Hoàn thiện Formik & Yup cho [AddSong.jsx](file:///e:/SEMESTER%205/FER202/EXAMS/mock-tests/FER202_TRIAL_PE/fer/src/pages/AddSong.jsx)** ✅ Hoàn thành xuất sắc (Tự code 100%)
+- [x] **Task 3.3: Hoàn thiện Formik & Yup cho [UpdateSong.jsx](file:///e:/SEMESTER%205/FER202/EXAMS/mock-tests/FER202_TRIAL_PE/fer/src/pages/UpdateSong.jsx)** ✅ Hoàn thành xuất sắc (Tự code 100%)
 
 ---
 
@@ -242,22 +242,22 @@ Hãy tích dấu `[x]` vào từng mục sau khi bạn tự tay code xong mà kh
   - Cập nhật state `setSongs(songs.filter(s => s.id !== id))` và `alert("Deleted successfully!")`.
 - [x] Nút Edit dẫn sang `/se201170/update-song/${item.id}`.
 
-### 📍 Giai đoạn 4: Master Trang Add Song (Formik + Yup) $\leftarrow$ *TỐI NAY*
-- [ ] Khai báo `validationSchema` với Yup đầy đủ 5 trường bắt buộc.
-- [ ] Dùng `useFormik` với `initialValues` chuỗi rỗng `""`.
-- [ ] Dựng form Bootstrap đầy đủ: `title`, `artist`, `coverImg`, `durationSec`, `genre` (select 5 options: Pop, Rock, Jazz, Instrumental, Acoustic), `isTrending` (switch).
-- [ ] Bắt lỗi hiển thị chữ đỏ `formik.touched... && formik.errors...`.
-- [ ] Bấm submit: gọi `axios.post`, alert thành công, `navigate('/se201170/music-management')`.
+### 📍 Giai đoạn 4: Master Trang Add Song (Formik + Yup) ✅ HOÀN THÀNH
+- [x] Khai báo `validationSchema` với Yup đầy đủ 5 trường bắt buộc.
+- [x] Dùng `useFormik` với `initialValues` chuỗi rỗng `""`.
+- [x] Dựng form Bootstrap đầy đủ: `title`, `artist`, `coverImg`, `durationSec`, `genre` (select 5 options: Pop, Rock, Jazz, Instrumental, Acoustic), `isTrending` (switch có `checked`).
+- [x] Bắt lỗi hiển thị chữ đỏ `formik.touched... && formik.errors...`.
+- [x] Bấm submit: gọi `axios.post`, alert thành công, `navigate('/se201170/music-management')`.
 
-### 📍 Giai đoạn 5: Master Trang Update Song (Dynamic Route + PUT) $\leftarrow$ *TỐI NAY*
-- [ ] Lấy `id` bằng `const { id } = useParams()`.
-- [ ] Dùng `useEffect` gọi `axios.get(URL + '/' + id)` và `formik.setValues(...)` nạp đủ 6 trường.
-- [ ] Dùng lại form giao diện và `validationSchema` của AddSong.
-- [ ] Bấm submit: gọi `axios.put(URL + '/' + id, values)`, alert thành công, `navigate('/se201170/music-management')`.
+### 📍 Giai đoạn 5: Master Trang Update Song (Dynamic Route + PUT) ✅ HOÀN THÀNH
+- [x] Lấy `id` bằng `const { id } = useParams()`.
+- [x] Dùng `useEffect` gọi `axios.get(URL + '/' + id)` và `formik.setValues(...)` nạp đủ 6 trường.
+- [x] Dùng lại form giao diện và `validationSchema` của AddSong.
+- [x] Bấm submit: gọi `axios.put(URL + '/' + id, values)`, alert thành công, `navigate('/se201170/music-management')`.
 
-### 📍 Giai đoạn 6: Kiểm tra trước khi nộp bài
-- [ ] Mở trình duyệt click test từ đầu đến cuối luồng (Thêm $\to$ Sửa $\to$ Xóa $\to$ Chuyển trang).
-- [ ] Mở terminal chạy `npm run build` để chắc chắn không có lỗi biên dịch.
+### 📍 Giai đoạn 6: Kiểm tra trước khi nộp bài ✅ HOÀN THÀNH
+- [x] Mở trình duyệt click test từ đầu đến cuối luồng (Thêm $\to$ Sửa $\to$ Xóa $\to$ Chuyển trang).
+- [x] Mở terminal chạy `npm run build` để chắc chắn không có lỗi biên dịch (Đã build thành công trong 836ms).
 
 ---
 

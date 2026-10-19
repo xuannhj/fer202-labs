@@ -79,7 +79,7 @@ FER202/
 ### 🎯 2. Luyện Đề Thi PE (Practical Exam) (`EXAMS/`)
 | STT | Đề thi | Nội dung & Kỹ năng trọng tâm | Thư mục & Tài liệu | Trạng thái |
 | :-: | :--- | :--- | :--- | :-: |
-| 1 | **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [`EXAMS/mock-tests/FER202_TRIAL_PE`](./EXAMS/mock-tests/FER202_TRIAL_PE) • [📋 Kế hoạch & Sổ tay](./EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md) | 🔄 Đang thực chiến (85%) |
+| 1 | **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [`EXAMS/mock-tests/FER202_TRIAL_PE`](./EXAMS/mock-tests/FER202_TRIAL_PE) • [📋 Kế hoạch & Sổ tay](./EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md) | ✅ Hoàn thành 100% (10/10) |
 
 ### 📝 3. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
 | STT | Chủ đề | Tóm tắt kiến thức | Thư mục ghi chú |

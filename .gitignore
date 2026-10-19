@@ -37,6 +37,7 @@ yarn-error.log*
 .idea/
 .DS_Store
 Thumbs.db
+~$*
 
 # Local peer reference code (do not push to GitHub)
 EXAMS/past-exams/code-cua-Hieu/
