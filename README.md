@@ -47,6 +47,7 @@ FER202/
 ├── EXAMS/                          # 🎯 Khu vực đề thi PE (Practical Exam) & ôn tập
 │   ├── past-exams/                 # Đề thi thực tế các kỳ trước (SP, SU, FA)
 │   ├── mock-tests/                 # Đề thi thử bấm giờ 90 phút
+│   │   └── FER202_TRIAL_PE/        # 🔥 Đề PE Trial: Music Library & Management (SE201170)
 │   └── README.md                   # Chiến thuật & checklist ôn thi PE
 │
 ├── NOTES/                          # 📝 Sổ tay ghi chú lý thuyết & link Notion
@@ -75,7 +76,12 @@ FER202/
 | 3 | **Week 3: React Router** | `<BrowserRouter>`, `<Routes>`, `<Route>`, `<Link>` | [`CODE/in-class/week-03-router`](./CODE/in-class/week-03-router) | ✅ Hoàn thành |
 | 4 | **Week 4: Context, Redux & Formik/Yup** | `useContext`, Redux Toolkit (`createSlice`), Formik (`useFormik`), Yup Validation | [`CODE/in-class/week-04-context`](./CODE/in-class/week-04-context) | 🔄 Đang học |
 
-### 📝 2. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
+### 🎯 2. Luyện Đề Thi PE (Practical Exam) (`EXAMS/`)
+| STT | Đề thi | Nội dung & Kỹ năng trọng tâm | Thư mục & Tài liệu | Trạng thái |
+| :-: | :--- | :--- | :--- | :-: |
+| 1 | **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [`EXAMS/mock-tests/FER202_TRIAL_PE`](./EXAMS/mock-tests/FER202_TRIAL_PE) • [📋 Kế hoạch & Sổ tay](./EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md) | 🔄 Đang thực chiến (85%) |
+
+### 📝 3. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
 | STT | Chủ đề | Tóm tắt kiến thức | Thư mục ghi chú |
 | :-: | :--- | :--- | :--- |
 | 🌟 | **Checklist Tự Code Thực Chiến** | Lộ trình từng bước tự code `useEffect` & `React Router` + Link React.dev | [`NOTES/00_checklist`](./NOTES/00_checklist_tu_code_router_va_useeffect.md) |

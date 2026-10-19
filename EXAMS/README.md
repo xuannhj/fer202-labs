@@ -1,4 +1,4 @@
-﻿# 🎓 Khu Vực Đề Thi & Luyện Thi PE (Practical Exam) - FER202
+# 🎓 Khu Vực Đề Thi & Luyện Thi PE (Practical Exam) - FER202
 
 > **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170
 
@@ -11,12 +11,20 @@ Tài liệu hướng dẫn, lưu trữ đề thi thực tế và các bài luy�
 ```text
 EXAMS/
 ├── past-exams/        # Đề thi thực tế các kỳ trước (Fall, Spring, Summer)
-│   ├── SP24_PE_FER202/
-│   └── FA24_PE_FER202/
+│   └── code-cua-Hieu/ # Tham khảo bài thi các kỳ trước
 └── mock-tests/        # Bài luyện tập trước khi thi theo giới hạn thời gian
-    ├── Mock_Test_01/
-    └── Mock_Test_02/
+    └── FER202_TRIAL_PE/ # 🔥 Đề PE Trial: Music Library & Management (SE201170)
+        ├── KE_HOACH_LAM_BAI_PE.md # 📋 Sổ tay ôn tập & Checklist thực chiến 10/10
+        └── fer/                   # Mã nguồn dự án React Vite
 ```
+
+---
+
+## 🎯 Danh Sách Đề Mock Test
+
+| Đề thi | Mô tả yêu cầu | Sổ tay & Checklist | Trạng thái |
+| :--- | :--- | :--- | :-: |
+| **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [📋 KE_HOACH_LAM_BAI_PE.md](./mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md) | 🔄 Đang thực chiến (85%) |
 
 ---
 
