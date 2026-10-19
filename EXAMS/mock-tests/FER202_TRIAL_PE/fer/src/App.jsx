@@ -89,6 +89,8 @@ import MusicLibrary from './pages/MusicLibrary'
 import MusicManagement from './pages/MusicManagement'
 import MyNavBar from './components/MyNavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AddSong from './pages/AddSong'
+import UpdateSong from './pages/UpdateSong'
 
 //1. xoa noi dung file app.css va index.css
 //2. xoa noi dung file app.jsx va viet lai bang rfc
@@ -108,9 +110,13 @@ export default function App() {
     <>
     <MyNavBar/>
     <Routes>
-      <Route path='se201170/music-library' element = {<MusicLibrary/>}/>
-      <Route path='se201170/music-management' element={<MusicManagement/>}/>
+      <Route path='/se201170/music-library' element = {<MusicLibrary/>}/>
+      <Route path='/se201170/music-management' element={<MusicManagement/>}/>
+      <Route path='/se201170/add-song' element = {<AddSong></AddSong>}></Route>
+      <Route path='/se201170/update-song/:id' element ={<UpdateSong/>}/>
     </Routes>
     </>
   )
 }
+
+//ve nha xem :id - dynamic segment la j 
