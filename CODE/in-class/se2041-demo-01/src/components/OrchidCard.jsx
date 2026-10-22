@@ -1,6 +1,7 @@
 import React from 'react'
 //nhận props để vẽ thẻ card cho từng bông hoa -> hiển thị thẻ card
 import { Button, Card, Badge } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 //destructoring props
 function OrchidCard({ orchid, onSelect }) {
@@ -41,9 +42,28 @@ function OrchidCard({ orchid, onSelect }) {
     <span>❤️ {orchid.numberOfLike} yêu thích</span>
   </div>
 
-  <Button variant="success" className="mt-auto w-100" onClick = { () => {onSelect(orchid)}}>
-    Explore more
-  </Button>
+  <div className="mt-auto d-flex gap-2">
+    <Button 
+      variant="outline-success" 
+      size="sm" 
+      className="flex-fill" 
+      onClick={() => onSelect(orchid)}
+    >
+      👁️ Quick View
+    </Button>
+
+
+    
+    <Button 
+      as={Link} 
+      to={`/detail/${orchid.id}`} 
+      variant="success" 
+      size="sm" 
+      className="flex-fill"
+    >
+      🔍 Detail
+    </Button>
+  </div>
 </Card.Body>
 
     </Card>

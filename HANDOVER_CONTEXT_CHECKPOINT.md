@@ -36,8 +36,21 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 * **Update Song (`/se201170/update-song/:id`):** `useParams()` lấy ID, `useEffect([id])` nạp đầy đủ 100% cả 6 trường dữ liệu cũ vào form để khi PUT không làm mất dữ liệu cũ.
 * **Build Verification:** Đã chạy `npm run build` thành công trong **836ms**, 0 lỗi cú pháp hay linting.
 
-### 2. Các tài liệu ghi chú cốt lõi đã tạo:
-* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Sổ tay 11 câu hỏi thực chiến giải thích sâu về `useEffect`, `touched`, `checked`, `initialValues`, `controlId`, v.v.
+### 2. Lab 3: React Router trong `se2041-demo-01` — ✅ HOÀN THÀNH 100% (10/10)
+Đã tích hợp hoàn chỉnh React Router vào ứng dụng hoa lan (kế thừa Lab 1 & 2):
+* **Library & Setup:** Cài đặt `react-router` (v8.5.0), bọc `<BrowserRouter>` ở `main.jsx`.
+* **Layout Route (`MainLayout.jsx`):** Sử dụng `<Outlet />` để giữ `MyNavBar` và Theme Sáng/Tối cố định, không reload trang.
+* **Pages (`src/pages/`):**
+  * `Home.jsx`: Grid 16 hoa lan + Modal Quick View (Lab 2).
+  * `Detail.jsx`: Dynamic routing `/detail/:id` sử dụng `useParams()`, hàm `.find()` và `useNavigate(-1)`.
+  * `Contact.jsx`: Form liên hệ + Thông tin vườn hoa Orchid Garden bằng React-Bootstrap.
+  * `NotFound.jsx`: Splat route `*` bắt 404 cho đường dẫn không hợp lệ.
+* **Navigation:** `MyNavBar.jsx` dùng `<NavLink to="/" end>` và `<NavLink to="/contact">`, `OrchidCard.jsx` dùng `<Button as={Link} to={`/detail/${orchid.id}`}>`.
+* **Build Verification:** `npm run build` thành công trong **405ms** (và 7.00s lần 2), 0 lỗi cú pháp.
+
+### 3. Các tài liệu ghi chú cốt lõi đã tạo:
+* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung Câu 12 (`<Outlet />` & Layout Route) và Câu 13 (`useParams()` & cạm bẫy).
+* [`CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-22-lab3-react-router.md`](./CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-22-lab3-react-router.md): Checklist 11 bước chi tiết hoàn thành 100%.
 * [`EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md`](./EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md): Kế hoạch và checklist chi tiết 6 giai đoạn làm bài PE.
 * [`NOTES/00_checklist_tu_code_router_va_useeffect.md`](./NOTES/00_checklist_tu_code_router_va_useeffect.md): Checklist tự code Router và useEffect.
 

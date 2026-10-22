@@ -358,6 +358,18 @@ useEffect(() => {
   * Kết quả trên MockAPI: Ảnh bìa, thời lượng và thể loại cũ của bài hát sẽ **bị xóa sạch vĩnh viễn**!
 * Vì vậy trang Sửa luôn phải nạp **đầy đủ 100% các trường** từ API về.
 
+## 12. Formik và Redux Là Gì? Khác Nhau Thế Nào?
+
+### 📝 Formik — "Trợ lý chuyên trị Biểu mẫu (Form)"
+* **Bản chất:** Quản lý toàn bộ vòng đời của Form (state các ô input, kiểm tra lỗi validation với Yup, bắt sự kiện submit).
+* **Bài toán giải quyết:** Xóa bỏ "cơn ác mộng" phải tạo hàng chục `useState` và `onChange` thủ công cho từng input trong React thuần.
+* **Độ quan trọng khi thi PE:** ⭐⭐⭐⭐⭐ (Bắt buộc dùng ở chức năng Add & Update để ăn trọn 2.5 - 3 điểm).
+
+### 🏪 Redux — "Kho dữ liệu trung tâm toàn ứng dụng (Global State)"
+* **Bản chất:** Tạo ra một kho lưu trữ độc lập (Store) bên ngoài cây component. Bất kỳ component nào (Header, Footer, Cart, Profile...) đều có thể lấy hoặc cập nhật dữ liệu trực tiếp mà không cần chuyền `props` qua nhiều tầng lằng nhằng (Prop Drilling).
+* **Bài toán giải quyết:** Giải quyết bài toán chia sẻ dữ liệu giữa các component cách xa nhau trong dự án lớn (như đồ án SWP).
+* **Độ quan trọng khi thi PE:** ⭐⭐ (Rất ít khi ra trong PE FER202 vì PE chuộng gọi API trực tiếp theo từng trang; chủ yếu dùng trên lớp và đồ án).
+
 ---
 
 ## 💬 Tóm Tắt Nhanh 10 Bí Kíp Vào Phòng Thi PE:
@@ -371,4 +383,57 @@ useEffect(() => {
 8. **Hiển thị lỗi:** Luôn bọc `{formik.touched.fieldName && <Form.Text ...>}`.
 9. **Xóa (Delete):** Luôn có `window.confirm`, gọi `axios.delete`, và lọc lại state bằng `songs.filter(s => s.id !== id)`.
 10. **Sửa (Update):** Nạp đủ 100% các trường vào `formik.setValues` để không bị mất dữ liệu cũ khi PUT.
+
+---
+
+## ❓ CÂU HỎI 12: Component `<Outlet />` và Layout Route trong React Router dùng để làm gì?
+
+### 💬 Bản chất vấn đề:
+* Trong các ứng dụng SPA (Single Page Application), chúng ta thường muốn thanh menu điều hướng (`MyNavBar`) hoặc Sidebar luôn luôn hiển thị cố định ở đầu trang, bất kể người dùng đang đứng ở trang Home, Detail hay Contact.
+* Nếu trang nào cũng `import MyNavBar` rồi tự render thì:
+  1. Bị trùng lặp code.
+  2. Mỗi lần chuyển trang, Navbar sẽ bị unmount rồi mount lại, gây hiện tượng chớp giật và gián đoạn state của Navbar.
+
+### 💡 Giải pháp với Layout Route & `<Outlet />`:
+* Tạo một component layout (ví dụ: `MainLayout.jsx`):
+  ```jsx
+  export default function MainLayout({ theme, toggleTheme }) {
+    return (
+      <>
+        <MyNavBar theme={theme} toggleTheme={toggleTheme} />
+        <main className="container pb-5">
+          <Outlet /> {/* <-- ĐÂY LÀ Ổ CẮM */}
+        </main>
+      </>
+    );
+  }
+  ```
+* Trong `App.jsx`, khai báo một `<Route>` không có `path`, chỉ có `element={<MainLayout />}` và bọc tất cả các Route con lại:
+  ```jsx
+  <Routes>
+    <Route element={<MainLayout theme={theme} toggleTheme={toggleTheme} />}>
+      <Route path="/" element={<Home />} />
+      <Route path="/detail/:id" element={<Detail />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  </Routes>
+  ```
+* **Ý nghĩa:** Khi người dùng vào `/`, React Router sẽ lấy `<Home />` cắm vào vị trí `<Outlet />`. Khi người dùng vào `/contact`, nó sẽ lấy `<Contact />` cắm vào vị trí `<Outlet />`. Thanh Navbar nằm bên ngoài nên không hề bị load lại!
+
+---
+
+## ❓ CÂU HỎI 13: Hook `useParams()` bóc tách dữ liệu URL thế nào? Có cạm bẫy gì cần tránh?
+
+### 💬 Bản chất vấn đề:
+* Khi khai báo Route có đoạn động (Dynamic Segment): `<Route path="/detail/:id" element={<Detail />} />`.
+* Ký tự `:id` quy định rằng bất kỳ giá trị nào xuất hiện sau `/detail/` đều sẽ được gán vào một biến tên là `id`.
+* Trong trang con `Detail.jsx`, gọi `const { id } = useParams();` để lấy giá trị này ra.
+
+### ⚠️ Cạm bẫy sống còn khi đi thi PE & làm Lab:
+1. **Kiểu dữ liệu luôn là String:** Giá trị `id` lấy từ `useParams()` **luôn là chuỗi (string)**, kể cả khi trên URL là số (ví dụ `/detail/1` thì `id = "1"`). Nếu mảng dữ liệu có id kiểu số (`id: 1`) mà so sánh bằng toán tử tuyệt đối `item.id === id` sẽ bị sai (`1 === "1"` ra `false`).
+   * 👉 **Cách khắc phục an toàn nhất:** Ép cả 2 về String: `String(item.id) === String(id)`.
+2. **Xử lý khi người dùng gõ ID không tồn tại:** Nếu gõ `/detail/9999`, hàm `.find()` sẽ trả về `undefined`. Luôn phải có đoạn kiểm tra `if (!orchid)` hiển thị thông báo lỗi thân thiện, nếu không sẽ bị crash giao diện màn hình trắng khi cố truy cập `orchid.name`!
+
+
 
