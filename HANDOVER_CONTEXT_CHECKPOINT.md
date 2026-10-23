@@ -48,8 +48,21 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 * **Navigation:** `MyNavBar.jsx` dùng `<NavLink to="/" end>` và `<NavLink to="/contact">`, `OrchidCard.jsx` dùng `<Button as={Link} to={`/detail/${orchid.id}`}>`.
 * **Build Verification:** `npm run build` thành công trong **405ms** (và 7.00s lần 2), 0 lỗi cú pháp.
 
-### 3. Các tài liệu ghi chú cốt lõi đã tạo:
-* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung Câu 12 (`<Outlet />` & Layout Route) và Câu 13 (`useParams()` & cạm bẫy).
+### 3. Lab 4: Formik & Yup Validation trong `se2041-demo-01` — ✅ HOÀN THÀNH 100% (10/10)
+Đã hoàn thành toàn bộ yêu cầu của Lab 4:
+* **Library & Setup:** Cài đặt `formik` (^2.4.9) và `yup` (^1.7.1).
+* **Contact Form (`src/pages/Contact.jsx`):**
+  * Khởi tạo `useFormik` với đủ 6 trường dữ liệu: `name`, `email`, `phone`, `program`, `message`, `agree`.
+  * Cấu hình `validationSchema` với `Yup.object`: bắt buộc nhập (`required`), giới hạn ký tự (`min`), định dạng email (`email`), kiểm tra số nguyên (`integer`, `typeError`), chọn dropdown (`min(1)`), xác nhận switch (`oneOf([true])`).
+  * Áp dụng cú pháp Pro `{...formik.getFieldProps()}` và `checked={formik.values.agree}` cho Switch.
+  * Hiển thị thông báo lỗi chữ đỏ qua `formik.touched.xxx && formik.errors.xxx`.
+  * Kích hoạt `alert(JSON.stringify(values, null, 2))` khi form submit hợp lệ.
+* **Build Verification:** Đã chạy `npm run build` thành công trong **1.08s**, 0 lỗi cú pháp hay linting.
+
+### 4. Các tài liệu ghi chú cốt lõi đã tạo:
+* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung Câu 13 (`<Outlet />` & Layout Route ở nhiều nơi), Câu 14 (`useParams()` & cạm bẫy), Câu 15 (`Link` vs `NavLink` vs `useNavigate()`).
+* [`NOTES/07-context-redux/01_context_api_va_redux_toolkit.md`](./NOTES/07-context-redux/01_context_api_va_redux_toolkit.md): Sổ tay lý thuyết & thực hành Tuần 4 (Context API, Redux Toolkit).
+* [`LAB/README.md`](./LAB/README.md): Danh mục chỉ dẫn 4 bài Lab chính thức (Lab 1 đến Lab 4 đầy đủ cả bản `.md` và `.docx`).
 * [`CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-22-lab3-react-router.md`](./CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-22-lab3-react-router.md): Checklist 11 bước chi tiết hoàn thành 100%.
 * [`EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md`](./EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md): Kế hoạch và checklist chi tiết 6 giai đoạn làm bài PE.
 * [`NOTES/00_checklist_tu_code_router_va_useeffect.md`](./NOTES/00_checklist_tu_code_router_va_useeffect.md): Checklist tự code Router và useEffect.

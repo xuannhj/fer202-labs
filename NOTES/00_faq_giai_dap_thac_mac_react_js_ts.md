@@ -17,6 +17,13 @@
 9. [`controlId` trong `Form.Group` có quan trọng không?](#9-controlid-trong-formgroup-có-quan-trọng-không)
 10. [`formik.touched` là gì? Tại sao phải bọc `{formik.touched.xxx && <Form.Text ...>}`?](#10-formiktouched-là-gì-tại-sao-phải-bọc-chữ-đỏ-báo-lỗi)
 11. [Tại sao trong `UpdateSong`, hàm `formik.setValues` PHẢI nạp đủ cả 6 trường?](#11-tại-sao-updatesong-phải-nạp-đủ-cả-6-trường-vào-setvalues)
+12. [Formik và Redux Là Gì? Khác Nhau Thế Nào?](#12-formik-và-redux-là-gì-khác-nhau-thế-nào)
+13. [Component `<Outlet />` và Layout Route dùng để làm gì? Có phải chỉ có ở `MainLayout`?](#13-component-outlet--và-layout-route-dùng-để-làm-gì-có-phải-chỉ-có-ở-mainlayout)
+14. [Hook `useParams()` bóc tách dữ liệu URL thế nào? Có cạm bẫy gì cần tránh?](#14-hook-useparams-bóc-tách-dữ-liệu-url-thế-nào-có-cạm-bẫy-gì-cần-tránh)
+15. [Phân biệt `<Link>`, `<NavLink>` và `useNavigate()`, khi nào bắt buộc dùng `useNavigate()`?](#15-phân-biệt-link-navlink-và-usenavigate-khi-nào-bắt-buộc-dùng-usenavigate)
+16. [Tại sao nên dùng Formik & Yup thay vì `useState` thuần khi xử lý Form?](#16-tại-sao-nên-dùng-formik--yup-thay-vì-usestate-thuần-khi-xử-lý-form)
+17. [Sự kiện `onBlur` là gì? Tại sao Formik bắt buộc phải có `onBlur` đi kèm với `touched`?](#17-sự-kiện-onblur-là-gì-tại-sao-formik-bắt-buộc-phải-có-onblur-đi-kèm-với-touched)
+18. [Cú pháp `{...formik.getFieldProps()}` là gì? Tại sao riêng Checkbox/Switch lại cần thêm `checked`?](#18-cú-pháp-formikgetfieldprops-là-gì-tại-sao-riêng-checkboxswitch-lại-cần-thêm-checked)
 
 ---
 
@@ -386,7 +393,7 @@ useEffect(() => {
 
 ---
 
-## ❓ CÂU HỎI 12: Component `<Outlet />` và Layout Route trong React Router dùng để làm gì?
+## ❓ CÂU HỎI 13: Component `<Outlet />` và Layout Route dùng để làm gì? Có phải chỉ có ở `MainLayout`?
 
 ### 💬 Bản chất vấn đề:
 * Trong các ứng dụng SPA (Single Page Application), chúng ta thường muốn thanh menu điều hướng (`MyNavBar`) hoặc Sidebar luôn luôn hiển thị cố định ở đầu trang, bất kể người dùng đang đứng ở trang Home, Detail hay Contact.
@@ -421,9 +428,15 @@ useEffect(() => {
   ```
 * **Ý nghĩa:** Khi người dùng vào `/`, React Router sẽ lấy `<Home />` cắm vào vị trí `<Outlet />`. Khi người dùng vào `/contact`, nó sẽ lấy `<Contact />` cắm vào vị trí `<Outlet />`. Thanh Navbar nằm bên ngoài nên không hề bị load lại!
 
+### ❓ `<Outlet />` có phải chỉ có ở `MainLayout` không?
+* **KHÔNG!** `<Outlet />` có thể nằm ở **bất kỳ component nào đóng vai trò là Bộ khung (Layout)**:
+  * `CustomerLayout.jsx`: Navbar + `<Outlet />` + Footer cho khách mua hàng.
+  * `AdminLayout.jsx`: Sidebar quản lý + `<Outlet />` cho trang quản trị.
+  * `AccountLayout.jsx`: Menu tài khoản bên trái + `<Outlet />` bên phải cho từng tab cài đặt.
+
 ---
 
-## ❓ CÂU HỎI 13: Hook `useParams()` bóc tách dữ liệu URL thế nào? Có cạm bẫy gì cần tránh?
+## ❓ CÂU HỎI 14: Hook `useParams()` bóc tách dữ liệu URL thế nào? Có cạm bẫy gì cần tránh?
 
 ### 💬 Bản chất vấn đề:
 * Khi khai báo Route có đoạn động (Dynamic Segment): `<Route path="/detail/:id" element={<Detail />} />`.
@@ -434,6 +447,74 @@ useEffect(() => {
 1. **Kiểu dữ liệu luôn là String:** Giá trị `id` lấy từ `useParams()` **luôn là chuỗi (string)**, kể cả khi trên URL là số (ví dụ `/detail/1` thì `id = "1"`). Nếu mảng dữ liệu có id kiểu số (`id: 1`) mà so sánh bằng toán tử tuyệt đối `item.id === id` sẽ bị sai (`1 === "1"` ra `false`).
    * 👉 **Cách khắc phục an toàn nhất:** Ép cả 2 về String: `String(item.id) === String(id)`.
 2. **Xử lý khi người dùng gõ ID không tồn tại:** Nếu gõ `/detail/9999`, hàm `.find()` sẽ trả về `undefined`. Luôn phải có đoạn kiểm tra `if (!orchid)` hiển thị thông báo lỗi thân thiện, nếu không sẽ bị crash giao diện màn hình trắng khi cố truy cập `orchid.name`!
+
+---
+
+## ❓ CÂU HỎI 15: Phân biệt `<Link>`, `<NavLink>` và `useNavigate()`, khi nào bắt buộc dùng `useNavigate()`?
+
+### 💬 Bản chất và Sự khác biệt:
+
+| Tiêu chí | `<Link>` | `<NavLink>` | Hook `useNavigate()` |
+| :--- | :--- | :--- | :--- |
+| **Kích hoạt** | Người dùng bấm chuột | Người dùng bấm chuột | Code JavaScript kích hoạt |
+| **Active State** | Không biết trang nào đang mở | Tự động phát hiện URL và gắn class `active` | Không dùng để hiển thị giao diện |
+| **Sử dụng khi** | Nút bấm, liên kết trang thông thường | Menu điều hướng Navbar | Xử lý logic, submit form, history back |
+
+### ⚠️ Tại sao nút Back ở `Detail.jsx` dùng `navigate(-1)` thay vì `<Link to="/">`?
+* Người dùng có thể đến trang Chi tiết từ **nhiều nơi khác nhau** (Trang chủ, Trang Tìm kiếm có bộ lọc, Danh sách yêu thích...).
+* Nếu dùng cứng `<Link to="/">`, người dùng sẽ luôn bị đá về Trang chủ (mất kết quả tìm kiếm trước đó).
+* Dùng `navigate(-1)` giúp quay lại **đúng trang người dùng vừa đứng trước đó** (`window.history.back()`).
+
+### ⚠️ 3 Trường hợp BẮT BUỘC dùng `useNavigate()` khi đi thi PE:
+1. **Sau khi submit Form & gọi API thành công:** `await axios.post(...); navigate('/music-management');` (không dùng `<Link>` vì nếu dùng `<Link>`, vừa click là chuyển trang ngay, API chưa kịp lưu!).
+2. **Chuyển hướng theo điều kiện (Guards):** Chưa đăng nhập thì đá về login: `if (!isAuth) navigate('/login');`.
+3. **Nút quay lại lịch sử duyệt web:** `navigate(-1)`.
+
+---
+
+## ❓ CÂU HỎI 16: Tại sao nên dùng Formik & Yup thay vì `useState` thuần khi xử lý Form?
+
+### 💬 Trả lời theo Thuật ngữ Chuyên ngành:
+1. **Quản lý toàn diện Vòng đời Biểu mẫu (*Form Lifecycle Management*):** Formik tự động quản lý tập trung cả 4 trạng thái: `values`, `errors`, `touched` (đã chạm vào ô) và `isSubmitting` (đang gửi dữ liệu).
+2. **Chuyển từ Xác thực Mệnh lệnh sang Khai báo (*Declarative Schema Validation*):** Thay vì viết chuỗi câu lệnh `if/else` và Regex thủ công rườm rà (Imperative), Yup cung cấp một Lược đồ đối tượng (*Schema*) khai báo trực quan (`Yup.string().required().email().min()`).
+3. **Giảm thiểu Mã nguồn Dư thừa (*Boilerplate Code Reduction*):** Loại bỏ nhu cầu tự viết hàng loạt hàm `onChange`, `onBlur`, `onSubmit` riêng lẻ cho từng input.
+4. **Nguyên lý Tách biệt Mối quan tâm (*Separation of Concerns - SoC*):** Tách bạch Tầng Giao diện (*UI View - React-Bootstrap*), Tầng Quản lý Trạng thái (*Formik*) và Tầng Nghiệp vụ Xác thực (*Yup Schema*).
+
+---
+
+## ❓ CÂU HỎI 17: Sự kiện `onBlur` là gì? Tại sao Formik bắt buộc phải có `onBlur` đi kèm với `touched`?
+
+### 💬 Bản chất vấn đề:
+* **`onFocus`:** Xảy ra khi người dùng click chuột hoặc Tab **VÀO** ô nhập (bắt đầu gõ).
+* **`onBlur`:** Xảy ra khi người dùng click chuột **RA KHỎI** ô nhập (mất tiêu điểm - *Loss of Focus*).
+
+### 💡 Tại sao Formik cần `onBlur`? (Bài toán trải nghiệm người dùng - UX):
+* Nếu không có `onBlur`, ngay khi người dùng vừa mở trang web lên (chưa kịp gõ gì), toàn bộ form sẽ lập tức đỏ lòm các dòng chữ *"Required"* gây ức chế cho người dùng.
+* Khi có `onBlur`, Formik đánh dấu `formik.touched.fieldName = true` (người dùng ĐÃ BẤM VÀO rồi BỎ ĐI mà không nhập hợp lệ).
+* Kết hợp điều kiện: `{formik.touched.name && formik.errors.name && <Form.Text ...>}` giúp lỗi chỉ xuất hiện đúng lúc, đúng thời điểm!
+
+---
+
+## ❓ CÂU HỎI 18: Cú pháp `{...formik.getFieldProps()}` là gì? Tại sao riêng Checkbox/Switch lại cần thêm `checked`?
+
+### 💬 Bản chất cú pháp:
+* `formik.getFieldProps("fieldName")` trả về một object đóng gói đủ 4 thuộc tính: `name`, `value`, `onChange`, `onBlur`.
+* Khi dùng Spread Operator `{...formik.getFieldProps("fieldName")}`, nó tự động "bung" cả 4 thuộc tính vào ô input chỉ với 1 dòng code duy nhất.
+
+### ⚠️ Tại sao Checkbox, Switch và Radio lại cần thêm `checked`?
+* Các ô gõ chữ (`text`, `number`, `email`, `select`, `textarea`) dùng thuộc tính **`value`** để hiển thị nội dung.
+* Các phần tử dạng Bật/Tắt (Checkbox, Switch, Radio) lưu dữ liệu Boolean (`true`/`false`), trình duyệt bắt buộc phải dùng thuộc tính **`checked={true/false}`** để bật đèn xanh/tắt đèn xám.
+* Do đó, riêng với Switch/Checkbox, luôn phải viết:
+  ```jsx
+  <Form.Check
+    type="switch"
+    label="..."
+    {...formik.getFieldProps("agree")}
+    checked={formik.values.agree}
+  />
+  ```
+
+
 
 
 

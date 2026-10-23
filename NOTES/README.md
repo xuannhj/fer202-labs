@@ -19,6 +19,7 @@ Khu vực tổng hợp toàn bộ ghi chú học tập, tài liệu lý thuyết
 | 📁 [`04-react-router/`](./04-react-router) | **React Router DOM v6/v7** | Single Page App, cấu hình Routes, Route, Link, useParams & Dynamic URL ([Đọc ngay](./04-react-router/01_react_router_dom_toan_tap.md)) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`05-lab1-components/`](./05-lab1-components) | **React Components & Props** | Cú pháp JSX, Functional Components, Props Destructuring & Grid hoa lan | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
 | 📁 [`06-formik-yup/`](./06-formik-yup) | **Formik & Yup Validation** | Quản lý Form (`useFormik`), Xác thực Schema (`Yup.object`), Error Text & React-Bootstrap ([Đọc ngay](./06-formik-yup/01_formik_va_yup_validation.md)) | 📖 [nhom nhom](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1) |
+| 📁 [`07-context-redux/`](./07-context-redux) | **Context API & Redux Toolkit** | Props Drilling, Provider, `useContext`, `configureStore`, `createSlice` ([Đọc ngay](./07-context-redux/01_context_api_va_redux_toolkit.md)) | 🌟 Tuần 4 |
 
 ---
 

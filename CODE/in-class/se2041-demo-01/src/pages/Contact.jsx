@@ -1,28 +1,36 @@
-import React, { useState } from 'react';
-import { Card, Form, Button, Row, Col, Alert } from 'react-bootstrap';
+import React from 'react';
+import { Card, Form, Button, Row, Col } from 'react-bootstrap';
+import * as Yup from 'yup'
+import { useFormik } from 'formik';
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      phone: '',
+      program: 0,
+      message: '',
+      agree: false,
+    },
+
+    validationSchema: Yup.object({
+      name: Yup.string().required('Required').min(2, 'must be 2 characters or more'),
+      email: Yup.string().required('Required').email('Invalid email'),
+      phone: Yup.number().integer().typeError('please enter a valid number').required('Required'),
+      program: Yup.number()
+        .min(1, 'Please select a program.'),
+      message: Yup.string()
+        .required('Required.')
+        .min(10, 'Must be 10 characters or more'),
+      agree: Yup.boolean()
+        .oneOf([true], 'The terms and conditions must be accepted.'),
+    }),
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+
   });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      setSubmitted(true);
-    }
-  };
 
   return (
     <div className="my-4">
@@ -72,68 +80,97 @@ export default function Contact() {
             <Card.Body>
               <h4 className="fw-bold mb-3">✉️ Gửi Tin Nhắn Cho Chúng Tôi</h4>
 
-              {submitted && (
-                <Alert variant="success" onClose={() => setSubmitted(false)} dismissible>
-                  🎉 Cảm ơn <strong>{formData.name}</strong>! Tin nhắn của bạn đã được gửi thành công. Chúng tôi sẽ phản hồi qua email <strong>{formData.email}</strong> sớm nhất có thể.
-                </Alert>
-              )}
-
-              <Form onSubmit={handleSubmit}>
+              <Form onSubmit={formik.handleSubmit}>
                 <Row className="mb-3">
                   <Col md={6}>
                     <Form.Group controlId="contactName">
                       <Form.Label>Họ và tên <span className="text-danger">*</span></Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="name"
-                        placeholder="Nguyễn Văn A"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
+                      <Form.Control 
+                        type="text" 
+                        placeholder="nhi nhi nhi" 
+                        {...formik.getFieldProps("name")}
                       />
+                      {formik.touched.name && (<Form.Text className='text-danger'>{formik.errors.name}</Form.Text>)}
                     </Form.Group>
                   </Col>
+
                   <Col md={6}>
                     <Form.Group controlId="contactPhone">
-                      <Form.Label>Số điện thoại</Form.Label>
-                      <Form.Control
-                        type="tel"
-                        name="phone"
-                        placeholder="0901234567"
-                        value={formData.phone}
-                        onChange={handleChange}
+                      <Form.Label>Số điện thoại <span className="text-danger">*</span></Form.Label>
+                      <Form.Control 
+                        type="text" 
+                        placeholder="0901234567" 
+                        {...formik.getFieldProps("phone")}
                       />
+                      {formik.touched.phone && (<Form.Text className='text-danger'> {formik.errors.phone}
+                        </Form.Text>)}
                     </Form.Group>
                   </Col>
                 </Row>
 
+       
                 <Form.Group className="mb-3" controlId="contactEmail">
                   <Form.Label>Địa chỉ Email <span className="text-danger">*</span></Form.Label>
-                  <Form.Control
-                    type="email"
-                    name="email"
-                    placeholder="example@gmail.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
+                  <Form.Control 
+                    type="email" 
+                    placeholder="example@gmail.com" 
+                     {...formik.getFieldProps("email")}
                   />
+                  {formik.touched.email && (
+                        <Form.Text className="text-danger">
+                          {formik.errors.email}</Form.Text>
+                    )}
+
+
                 </Form.Group>
 
+                {/* 4. Dropdown chọn Chương trình (Program) */}
+                <Form.Group className="mb-3" controlId="contactProgram">
+                  <Form.Label>Program of Study <span className="text-danger">*</span></Form.Label>
+                  <Form.Select {...formik.getFieldProps("program")}>
+                    <option value={0}>Please select</option>
+                    <option value={1}>Software Engineering</option>
+                    <option value={2}>Information System</option>
+                    <option value={3}>Information Assurance</option>
+                    <option value={4}>Internet of Things</option>
+                    <option value={5}>Artificial Intelligence</option>
+                    <option value={6}>Digital Art & Design</option>
+                  </Form.Select>
+                   {formik.touched.program && (
+                        <Form.Text className="text-danger">{formik.errors.program}</Form.Text>
+                      )}
+                </Form.Group>
+
+                {/* 5. Lời nhắn (Message) */}
                 <Form.Group className="mb-3" controlId="contactMessage">
                   <Form.Label>Nội dung cần tư vấn <span className="text-danger">*</span></Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={4}
-                    name="message"
-                    placeholder="Bạn cần tư vấn về loài hoa lan nào..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
+                    placeholder="Nhập lời nhắn của bạn (tối thiểu 10 ký tự)..."
+                  {...formik.getFieldProps("message")}
                   />
+                  {formik.touched.message && (
+                        <Form.Text className="text-danger">{formik.errors.message}</Form.Text>
+                      )}
                 </Form.Group>
 
+                {/* 6. Switch Đồng ý điều khoản (Agree) */}
+                <Form.Group className="mb-3" controlId="contactAgree">
+                  <Form.Check
+                    type="switch"
+                    label="Agree to terms and conditions."
+                    {...formik.getFieldProps("agree")}
+                      checked={formik.values.agree}
+                  />
+                  {formik.touched.agree && (
+                        <Form.Text className="text-danger d-block">{formik.errors.agree}</Form.Text>
+                      )}
+                </Form.Group>
+
+                {/* Nút gửi (Send) */}
                 <Button variant="success" type="submit" className="w-100 py-2 fw-bold">
-                  🚀 Gửi Lời Nhắn
+                  Send
                 </Button>
               </Form>
             </Card.Body>

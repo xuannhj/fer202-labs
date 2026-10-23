@@ -24,7 +24,7 @@ EXAMS/
 
 | Đề thi | Mô tả yêu cầu | Sổ tay & Checklist | Trạng thái |
 | :--- | :--- | :--- | :-: |
-| **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [📋 KE_HOACH_LAM_BAI_PE.md](./mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md) | 🔄 Đang thực chiến (85%) |
+| **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [📋 KE_HOACH_LAM_BAI_PE.md](./mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md) | ✅ **HOÀN THÀNH 100% (10/10)** · [Mã nguồn](./mock-tests/FER202_TRIAL_PE/fer/) |
 
 ---
 
