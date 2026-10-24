@@ -63,6 +63,7 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 * [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung Câu 13 (`<Outlet />` & Layout Route ở nhiều nơi), Câu 14 (`useParams()` & cạm bẫy), Câu 15 (`Link` vs `NavLink` vs `useNavigate()`).
 * [`NOTES/07-context-redux/01_context_api_va_redux_toolkit.md`](./NOTES/07-context-redux/01_context_api_va_redux_toolkit.md): Sổ tay lý thuyết & thực hành Tuần 4 (Context API, Redux Toolkit).
 * [`LAB/README.md`](./LAB/README.md): Danh mục chỉ dẫn 4 bài Lab chính thức (Lab 1 đến Lab 4 đầy đủ cả bản `.md` và `.docx`).
+* [`CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-23-lab5-lab6-fetch-api-crud-google-login.md`](./CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-23-lab5-lab6-fetch-api-crud-google-login.md): Kế hoạch & Sổ tay thực chiến Lab 5 & 6 (Fetch API, CRUD & Google Login).
 * [`CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-22-lab3-react-router.md`](./CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-22-lab3-react-router.md): Checklist 11 bước chi tiết hoàn thành 100%.
 * [`EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md`](./EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md): Kế hoạch và checklist chi tiết 6 giai đoạn làm bài PE.
 * [`NOTES/00_checklist_tu_code_router_va_useeffect.md`](./NOTES/00_checklist_tu_code_router_va_useeffect.md): Checklist tự code Router và useEffect.
