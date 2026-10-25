@@ -582,3 +582,56 @@ useEffect(() => {
      https://.../api/v1/orchids/3
      ```
    * ✅ **Theo chuẩn RESTful API:** Dấu gạch chéo `/` là dấu phân cấp. Server hiểu: *"Vào kho `orchids`, tìm đúng phần tử có mã số `3` để trả về"*.
+
+---
+
+## ❓ CÂU HỎI 22: Phân biệt Truthy và Falsy giữa `null` và `{}` (Object rỗng) trong React?
+
+### 💬 Bản chất vấn đề:
+1. **`null` là Falsy value:**
+   * Trong JavaScript, `Boolean(null) === false`.
+   * Vì vậy `if (!orchid)` khi `orchid = null` sẽ trở thành `if (!false)` tức là `true` (lọt vào khối báo lỗi).
+2. **`{}` (Object rỗng) là Truthy value:**
+   * Trong JavaScript, **bất kỳ Object nào (kể cả object rỗng `{}`) khi ép kiểu boolean đều là `true`** (`Boolean({}) === true`).
+   * Nếu khai báo `const [orchid, setOrchid] = useState({})`, thì `if (!orchid)` sẽ là `if (!true)` tức là `false` $\rightarrow$ React không bao giờ chạy vào khối báo lỗi, và khi cố truy cập `orchid.name` ở render đầu tiên sẽ bị `undefined`!
+👉 **Quy tắc:** Khi State đại diện cho 1 Object chưa có dữ liệu từ API, luôn khởi tạo bằng `null`.
+
+---
+
+## ❓ CÂU HỎI 23: Tại sao khi sửa dữ liệu (PUT) bắt buộc phải truyền cả `id` và `values`?
+
+### 💬 Bản chất vấn đề:
+* Gọi: `axios.put(`${API_URL}/${id}`, values)`
+1. **`id` trên URL:** Để Server biết **sửa đối tượng nào** (ví dụ: bông hoa có ID số 3).
+2. **`values` trong Body:** Là gói dữ liệu mới để Server **ghi đè lên các trường dữ liệu cũ**.
+* ⚠️ **Cạm bẫy:** Phương thức `PUT` theo chuẩn RESTful sẽ thay thế toàn bộ bản ghi. Nếu thiếu trường nào trong `values`, trường đó ở trên server có thể bị xóa mất hoặc gán về rỗng! Do đó trước khi sửa phải dùng `formik.setValues(oldData)` để nạp đủ 100% các trường cũ.
+
+---
+
+## ❓ CÂU HỎI 24: JWT (JSON Web Token) cấu tạo gồm những gì? Signature được tạo ra thế nào?
+
+### 💬 Cấu trúc 3 phần ngăn cách bởi dấu chấm (`.`):
+$$\text{JWT} = \text{Header} \ . \ \text{Payload} \ . \ \text{Signature}$$
+
+1. **Header (Base64Url):** Khai báo siêu dữ liệu (metadata) của token gồm thuật toán ký (`"alg": "HS256"`) và loại token (`"typ": "JWT"`).
+2. **Payload (Base64Url):** Chứa các thông tin trao đổi (Claims) như `name`, `email`, `picture`, `exp` (thời hạn).
+   * ⚠️ **Lưu ý sống còn:** Payload chỉ được mã hóa Base64Url (dạng có thể dịch ngược 100% ai cũng đọc được), **tuyệt đối không lưu mật khẩu hoặc thông tin nhạy cảm** vào Payload!
+3. **Signature (Chữ ký số):**
+   * Được tạo ra bằng cách lấy chuỗi `Base64(Header) + "." + Base64(Payload)` kết hợp với **Secret Key** bí mật của Server, rồi đưa qua hàm băm mã hóa một chiều:
+   $$\text{Signature} = \text{HMAC-SHA256}(\text{Base64(Header)} + "." + \text{Base64(Payload)}, \ \text{SecretKey})$$
+   * **Mục đích:** Đảm bảo tính toàn vẹn (Integrity). Bất kỳ ai chỉnh sửa 1 ký tự trong Payload thì Signature được tính lại sẽ lệch với Signature cũ, Server sẽ từ chối token ngay lập tức!
+
+---
+
+## ❓ CÂU HỎI 25: Google Client ID là gì trong OAuth 2.0 và phân biệt với Client Secret?
+
+### 💬 Bản chất vấn đề:
+* **Google Client ID** là mã định danh ứng dụng do Google Authorization Server cấp phát khi đăng ký project trên Google Cloud Console.
+* **3 Vai trò chính:**
+  1. **Định danh ứng dụng:** Cho người dùng biết họ đang cấp quyền cho ứng dụng nào (ví dụ: "Orchid Garden Web App").
+  2. **Bảo mật nguồn gốc (Authorized JavaScript Origins):** Khai báo các domain được phép gọi login (ví dụ: `http://localhost:5173`). Nếu kẻ xấu copy Client ID sang trang web giả mạo khác, Google sẽ chặn ngay lập tức (`origin_mismatch`).
+  3. **Giới hạn phạm vi (OAuth Scopes):** Chỉ cho phép ứng dụng đọc các thông tin cơ bản: `profile`, `email`, `openid`.
+* **Phân biệt Client ID vs Client Secret:**
+  * `Client ID` (Công khai - Public): Được để trực tiếp ở Frontend React, an toàn vì đã có Authorized Origins bảo vệ.
+  * `Client Secret` (Bí mật - Private): Tuyệt đối chỉ lưu ở Backend/Server, không bao giờ được lộ ra mã nguồn React.
+

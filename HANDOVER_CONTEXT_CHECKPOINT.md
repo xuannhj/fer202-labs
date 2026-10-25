@@ -74,24 +74,20 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 * **Build Verification:** Đã chạy `npm run build` thành công trong **469ms**, 0 lỗi cú pháp hay linting.
 
 ### 5. Các tài liệu ghi chú cốt lõi đã tạo:
-* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung Câu 19 (Tại sao chỉ nạp useEffect ở Home & Detail), Câu 20 (Tại sao Detail cần loading còn Home thì không), Câu 21 (Tại sao phải có dấu gạch chéo `+'/' + id`), Câu 22 (Truthy/Falsy null vs {}), Câu 23 (Tại sao PUT cần cả id và values).
-* [`LAB/README.md`](./LAB/README.md): Danh mục chỉ dẫn 5 bài Lab chính thức (Lab 1 đến Lab 5 hoàn thành 10/10).
+* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung đầy đủ từ Câu 19 đến Câu 25 (bao gồm cơ chế JWT Header/Payload/Signature, Google Client ID, Authorized Origins, Truthy/Falsy null vs {}, PUT param id+values...).
+* [`LAB/README.md`](./LAB/README.md): Danh mục chỉ dẫn các bài Lab chính thức (Lab 1 đến Lab 5 hoàn thành 10/10).
 
 ---
 
-## 🎯 CÁC HƯỚNG ĐI TIẾP THEO (NEXT STEPS) KHI NHI MỞ PHIÊN MỚI
+## 🎯 CÁC HƯỚNG ĐI TIẾP THEO (NEXT STEPS)
 
-Khi Nhi vào phiên làm việc tiếp theo, trợ lý hãy chào Nhi và gợi ý 3 lựa chọn sau:
-
-1. **Lựa chọn 1 — Hoàn thiện nốt Lab 6: Google Login (Google OAuth 2.0):**
-   * Cài đặt `@react-oauth/google` và `jwt-decode`.
-   * Gắn nút Google Login lên `MyNavBar.jsx`.
-   * Phân quyền bảo vệ: Đăng nhập thành công mới mở khóa menu "Quản lý hoa lan"!
-2. **Lựa chọn 2 — Thực chiến đề PE mới:**
-   * Luyện giải các đề thi thực tế các kỳ trước trong thư mục [`EXAMS/past-exams/`](./EXAMS/past-exams/).
-   * Bấm giờ làm bài 85 phút để tăng tốc độ gõ code và phản xạ.
-3. **Lựa chọn 3 — Ôn tập tuần 4 trên lớp (`CODE/in-class/week-04-context`):**
-   * Học và thực hành Context API (`createContext`, `useContext`) và Redux Toolkit.
+1. **Lab 6 — Google Login (Tạm dừng chờ Nhi hỏi thầy trên lớp):**
+   * Đã cài đặt xong `@react-oauth/google` và `jwt-decode`, build kiểm tra 0 lỗi.
+   * Nhi đã hiểu trọn vẹn bản chất JWT và Google Client ID.
+   * Đợi Nhi lấy Google Client ID / hướng dẫn cụ thể từ thầy để tiếp tục ráp vào `main.jsx` và `MyNavBar.jsx`.
+2. **Lựa chọn thay thế hiện tại:**
+   * Nghỉ ngơi giữ sức khỏe, hoặc
+   * Luyện giải các đề thi thực tế các kỳ trước trong thư mục [`EXAMS/past-exams/`](./EXAMS/past-exams/) để tăng phản xạ phòng thi PE!
 
 
 ---
