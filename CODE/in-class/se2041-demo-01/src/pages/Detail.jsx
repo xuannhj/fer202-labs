@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router';
 import { Card, Row, Col, Badge, Button, ListGroup } from 'react-bootstrap';
-import { ListOfOrchids } from '../ListOfOrchids';
+import axios from 'axios';
 
 export default function Detail() {
   // 1. Bóc tách param "id" từ URL (ví dụ: /detail/1 -> id = "1")
@@ -9,9 +9,37 @@ export default function Detail() {
   const navigate = useNavigate();
 
   // 2. Tìm bông hoa có id trùng khớp
-  const orchid = ListOfOrchids.find((item) => String(item.id) === String(id));
+  // const orchid = ListOfOrchids.find((item) => String(item.id) === String(id));
 
+  const [orchid, setOrchid] = useState(null);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchOrchidDetail = async () => {
+      try {
+        const response = await axios.get(import.meta.env.VITE_API_URL + '/' + id);
+        setOrchid(response.data);
+
+      } catch (error){
+        console.log(error);
+        setOrchid(null);
+
+      } finally{
+        setLoading(false);
+      }
+    }      
+    fetchOrchidDetail();
+
+  }, [id])
   // 3. Nếu không tìm thấy (người dùng gõ ID bậy trên URL)
+  // Nếu đang gọi API thì hiện chữ "Đang tải..."
+if (loading) {
+  return (
+    <div className="text-center py-5">
+      <h4>⏳ Đang tải thông tin hoa lan...</h4>
+    </div>
+  );
+}
+
   if (!orchid) {
     return (
       <div className="text-center py-5">

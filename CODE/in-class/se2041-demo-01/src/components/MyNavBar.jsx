@@ -23,6 +23,9 @@ function MyNavBar({ theme, toggleTheme }) {
             <Nav.Link as={NavLink} to="/contact" className="fw-semibold">
               📬 Contact
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/management" className="fw-semibold">
+              📋 Management
+            </Nav.Link>
           </Nav>
 
           {/* Nút gạt Dark / Light Mode */}

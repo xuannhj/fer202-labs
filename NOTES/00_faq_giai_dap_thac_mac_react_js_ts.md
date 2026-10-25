@@ -513,8 +513,72 @@ useEffect(() => {
     checked={formik.values.agree}
   />
   ```
+---
 
+## ❓ CÂU HỎI 19: Tại sao ở Giai đoạn 2 chỉ cần nạp `useEffect` ở 2 file là `Home.jsx` và `Detail.jsx`?
 
+### 💬 Bản chất kiến trúc React:
+1. **Mục tiêu của Giai đoạn 2 là "GET API (Đọc dữ liệu)":**
+   * Trong luồng duyệt web của khách hàng, chỉ có **2 màn hình cần hiển thị dữ liệu hoa lan**:
+     * `Home.jsx`: Cần hiển thị danh sách toàn bộ hoa lan $\rightarrow$ Cần gọi `GET /orchids`.
+     * `Detail.jsx`: Cần hiển thị chi tiết 1 bông hoa cụ thể theo ID trên URL $\rightarrow$ Cần gọi `GET /orchids/:id`.
 
+2. **Tại sao các component khác KHÔNG cần `useEffect`?**
+   * **`OrchidCard.jsx` & `OrchidDetailModal.jsx`:** Đây là các *Dumb Components / Presentational Components* (component thuần hiển thị). Chúng nhận dữ liệu hoa thông qua **Props** do `Home.jsx` (Smart Component cha) truyền xuống (`<OrchidCard orchid={orchid} />`). Dữ liệu đã có sẵn từ cha thì con không được tự ý gọi API nữa (tránh trùng lặp request vô nghĩa).
+   * **`MainLayout.jsx`, `MyNavBar.jsx`, `App.jsx`:** Là khung sườn điều hướng (Header, Footer, Dark/Light Mode), không có nhu cầu hiển thị danh sách hoa.
+   * **`Contact.jsx`:** Là trang gửi thông tin liên hệ, không đọc dữ liệu hoa từ MockAPI.
 
+3. **Sau Giai đoạn 2, những file nào sẽ cần thêm `useEffect`?**
+   * **Giai đoạn 3 — `OrchidsManagement.jsx`:** Cần `useEffect` để Admin lấy danh sách hoa nạp vào Table quản lý và xóa.
+   * **Giai đoạn 4 — `UpdateOrchid.jsx`:** Cần `useEffect([id])` để kéo dữ liệu cũ của hoa nạp đầy đủ 100% vào form Formik trước khi bấm Update (PUT).
 
+👉 **Quy tắc vàng:** Chỉ đặt `useEffect` gọi API tại **Component cấp trang (Page Component)** trực tiếp chịu trách nhiệm sở hữu và hiển thị dữ liệu đó!
+
+---
+
+## ❓ CÂU HỎI 20: Tại sao ở `Home.jsx` không bắt buộc có `loading`, nhưng ở `Detail.jsx` lại BẮT BUỘC phải có `loading`?
+
+### 💬 Bản chất vấn đề (Hiện tượng Chớp Lỗi Giả - Flash of False Error):
+
+1. **Ở `Home.jsx` (Dùng mảng `[]`):**
+   * Ban đầu `orchids` là mảng rỗng `[]`.
+   * Khi render: `orchids.map(...)` duyệt mảng rỗng sẽ chạy 0 lần $\rightarrow$ Không có thẻ nào được vẽ ra.
+   * Kết quả: Màn hình chỉ trống phần danh sách trong 0.3s chờ API, **không hề có câu lệnh báo lỗi nào nhảy ra**, giao diện không bị lỗi cú pháp hay văng lỗi người dùng.
+
+2. **Ở `Detail.jsx` (Dùng Object `null` và có điều kiện `if (!orchid)`):**
+   * Ban đầu `orchid` là `null`.
+   * Nếu **KHÔNG có `loading`**:
+     * Ngay ở Render lần 1 khi API chưa kịp về, code chạy thẳng vào dòng `if (!orchid)`.
+     * Vì `!null === true`, React sẽ lập tức vẽ ra màn hình: **"❌ Không tìm thấy thông tin hoa lan! Mã số #id không tồn tại"**!
+     * 0.3 giây sau, API kéo dữ liệu về thành công, `setOrchid` kích hoạt render lại $\rightarrow$ Thẻ hoa mới hiện ra.
+     * ⚠️ **Hậu quả UX:** Người dùng sẽ thấy **màn hình báo lỗi đỏ chớp giật lên một cái** rồi mới hiện ra hoa thật! Trông rất giật lag và thiếu chuyên nghiệp.
+   * Khi **CÓ `loading = true`**:
+     * React sẽ chặn trước bằng `if (loading) return <h4>⏳ Đang tải...</h4>;`.
+     * Chỉ khi API đã xong xuôi (`loading = false`) mà `orchid` vẫn là `null` (do người dùng gõ bậy ID 9999 không có trên server), lúc đó câu thông báo *"❌ Không tìm thấy hoa"* mới được phép xuất hiện!
+
+---
+
+## ❓ CÂU HỎI 21: Tại sao khi gọi API theo ID bắt buộc phải có dấu gạch chéo `+ '/' + id`?
+
+### 💬 Bản chất vấn đề (Ghép chuỗi URL trong RESTful API):
+
+1. **Chuỗi trong file `.env` ban đầu:**
+   ```env
+   VITE_API_URL = "https://6adb24ee7512f497b3007df5.mockapi.io/api/v1/orchids"
+   ```
+   * Chú ý: Ở cuối chữ `orchids` **không có dấu gạch chéo `/`**.
+
+2. **Nếu KHÔNG có dấu `'/'` (Viết nhầm `VITE_API_URL + id`):**
+   * Giả sử `id = "3"`.
+   * Phép cộng chuỗi JavaScript sẽ dán liền số 3 vào đuôi chữ orchids:
+     ```text
+     https://.../api/v1/orchids3
+     ```
+   * ❌ **Hậu quả:** MockAPI hiểu rằng bạn đang tìm một bảng dữ liệu tên là **`orchids3`** (chứ không phải bông hoa số 3 của bảng `orchids`). Server sẽ trả về lỗi **404 Not Found** ngay lập tức!
+
+3. **Khi CÓ dấu `'/'` (Viết đúng `VITE_API_URL + '/' + id`):**
+   * Kết quả ghép chuỗi:
+     ```text
+     https://.../api/v1/orchids/3
+     ```
+   * ✅ **Theo chuẩn RESTful API:** Dấu gạch chéo `/` là dấu phân cấp. Server hiểu: *"Vào kho `orchids`, tìm đúng phần tử có mã số `3` để trả về"*.

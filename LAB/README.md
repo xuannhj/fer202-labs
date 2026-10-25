@@ -14,11 +14,12 @@
 | **Lab 2** | **React Hooks & State** | [Lab 2 Markdown](./Lab%202%20-%20React%20Hook.md) · [Word (.docx)](./Lab%202%20-%20React%20Hook.docx) | ✅ **10/10** — [`se2041-demo-01`](../CODE/in-class/se2041-demo-01/) (Theme Sáng/Tối + Modal Quick View) |
 | **Lab 3** | **React Router SPA** | [Lab 3 Markdown](./Lab%203%20-%20React%20Router.md) · [Word (.docx)](./Lab%203%20-%20React%20Router.docx) | ✅ **10/10** — [`se2041-demo-01`](../CODE/in-class/se2041-demo-01/) (`useParams`, `useNavigate(-1)`, `<Outlet />`, `NavLink`) |
 | **Lab 4** | **Formik, Yup & UI Library** | [Lab 4 Markdown](./Lab%204%20-%20React%20UI%20Library,%20Formik,%20Yup.md) | ✅ **10/10** — [`Contact.jsx`](../CODE/in-class/se2041-demo-01/src/pages/Contact.jsx) (Formik 6 trường, Yup Schema, `getFieldProps`, Alert JSON) |
-| **Lab 5 & 6** | **Fetch API & MockAPI CRUD** | [Lab 5+6 Markdown](./Lab%205%2B6%20-%20Fetch.md) | 🎯 **[Xem Kế Hoạch & Sổ Tay Chi Tiết](../CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-23-lab5-lab6-fetch-api-crud-google-login.md)** |
+| **Lab 5** | **Fetch API & Full-Stack CRUD** | [Lab 5+6 Markdown](./Lab%205%2B6%20-%20Fetch.md) | ✅ **10/10** — [`se2041-demo-01`](../CODE/in-class/se2041-demo-01/) (GET Home & Detail, DELETE Table, POST Add, PUT Update) |
+| **Lab 6** | **Google Login (OAuth 2.0)** | [Lab 5+6 Markdown](./Lab%205%2B6%20-%20Fetch.md) | ⏳ Sắp thực hiện (Google OAuth, JWT Decode, Phân quyền Admin) |
 
 ---
 
-## 🛠️ Hướng Dẫn Mở & Chạy Dự Án Hoa Lan (Lab 1 + 2 + 3 + 4)
+## 🛠️ Hướng Dẫn Mở & Chạy Dự Án Hoa Lan (Lab 1 -> Lab 5)
 
 ```bash
 cd "CODE/in-class/se2041-demo-01"

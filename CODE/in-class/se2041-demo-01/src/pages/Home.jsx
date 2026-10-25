@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { ListOfOrchids } from '../ListOfOrchids';
 import OrchidCard from '../components/OrchidCard';
 import OrchidDetailModal from '../components/OrchidDetailModal';
+import axios from 'axios';
 
 export default function Home() {
   // State lưu bông hoa đang được chọn để mở Modal xem nhanh
   const [selectedOrchid, setSelectedOrchid] = useState(null);
+  const [orchids, setOrchids] = useState([]);
+  useEffect(() => {
+    const fetchOrchids = async () =>{
+      try{
+        const response = await axios.get(import.meta.env.VITE_API_URL);
+        setOrchids(response.data);
+
+      } catch (error){
+        console.log(error);
+      }
+    }
+    fetchOrchids();
+  },[])
 
   return (
     <div>
@@ -15,7 +28,7 @@ export default function Home() {
       </div>
 
       <Row xs={1} sm={2} md={4} className="g-4">
-        {ListOfOrchids.map((orchid) => (
+        {orchids.map((orchid) => (
           <Col key={orchid.id}>
             <OrchidCard orchid={orchid} onSelect={setSelectedOrchid} />
           </Col>

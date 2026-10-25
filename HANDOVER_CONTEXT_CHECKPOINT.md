@@ -59,14 +59,23 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
   * Kích hoạt `alert(JSON.stringify(values, null, 2))` khi form submit hợp lệ.
 * **Build Verification:** Đã chạy `npm run build` thành công trong **1.08s**, 0 lỗi cú pháp hay linting.
 
-### 4. Các tài liệu ghi chú cốt lõi đã tạo:
-* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung Câu 13 (`<Outlet />` & Layout Route ở nhiều nơi), Câu 14 (`useParams()` & cạm bẫy), Câu 15 (`Link` vs `NavLink` vs `useNavigate()`).
-* [`NOTES/07-context-redux/01_context_api_va_redux_toolkit.md`](./NOTES/07-context-redux/01_context_api_va_redux_toolkit.md): Sổ tay lý thuyết & thực hành Tuần 4 (Context API, Redux Toolkit).
-* [`LAB/README.md`](./LAB/README.md): Danh mục chỉ dẫn 4 bài Lab chính thức (Lab 1 đến Lab 4 đầy đủ cả bản `.md` và `.docx`).
-* [`CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-23-lab5-lab6-fetch-api-crud-google-login.md`](./CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-23-lab5-lab6-fetch-api-crud-google-login.md): Kế hoạch & Sổ tay thực chiến Lab 5 & 6 (Fetch API, CRUD & Google Login).
-* [`CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-22-lab3-react-router.md`](./CODE/in-class/se2041-demo-01/docs/superpowers/plans/2026-10-22-lab3-react-router.md): Checklist 11 bước chi tiết hoàn thành 100%.
-* [`EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md`](./EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md): Kế hoạch và checklist chi tiết 6 giai đoạn làm bài PE.
-* [`NOTES/00_checklist_tu_code_router_va_useeffect.md`](./NOTES/00_checklist_tu_code_router_va_useeffect.md): Checklist tự code Router và useEffect.
+### 4. Lab 5: Fetch API, MockAPI & Full-Stack CRUD trong `se2041-demo-01` — ✅ HOÀN THÀNH 100% (10/10)
+Đã hoàn thành toàn bộ 4 thao tác CRUD chuẩn RESTful API:
+* **MockAPI & .env:** Cấu hình `VITE_API_URL` nạp đủ 16 hoa lan mẫu từ `orchids.json`.
+* **GET API (Trang chủ & Chi tiết):**
+  * `src/pages/Home.jsx`: `useState([])` + `useEffect` gọi `axios.get` load danh sách hoa động.
+  * `src/pages/Detail.jsx`: `useParams()` bóc tách `id`, `axios.get(VITE_API_URL + '/' + id)`, có màn hình `loading` chống chớp giật lỗi đỏ (Flash of False Error).
+* **DELETE API (Bảng Quản Lý):**
+  * `src/pages/OrchidsManagement.jsx`: Table React-Bootstrap có ảnh thumbnail, ID, tên hoa, xuất xứ, rating, nút Sửa/Xóa.
+  * Hàm `handleDelete`: Hộp thoại xác nhận `window.confirm()`, gọi `axios.delete`, cập nhật state tức thì bằng `.filter()`.
+* **POST & PUT API (Thêm mới & Cập nhật):**
+  * `src/pages/AddOrchid.jsx`: Formik + Yup bắt lỗi, 2 switch `isSpecial` & `isNatural` đồng bộ `checked`, gửi `axios.post` tạo hoa mới và `navigate('/management')`.
+  * `src/pages/UpdateOrchid.jsx`: `useParams()` lấy `id`, `useEffect([id])` nạp đầy đủ 100% dữ liệu cũ qua `formik.setValues()`, gửi `axios.put(URL + '/' + id, values)` để ghi đè dữ liệu.
+* **Build Verification:** Đã chạy `npm run build` thành công trong **469ms**, 0 lỗi cú pháp hay linting.
+
+### 5. Các tài liệu ghi chú cốt lõi đã tạo:
+* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung Câu 19 (Tại sao chỉ nạp useEffect ở Home & Detail), Câu 20 (Tại sao Detail cần loading còn Home thì không), Câu 21 (Tại sao phải có dấu gạch chéo `+'/' + id`), Câu 22 (Truthy/Falsy null vs {}), Câu 23 (Tại sao PUT cần cả id và values).
+* [`LAB/README.md`](./LAB/README.md): Danh mục chỉ dẫn 5 bài Lab chính thức (Lab 1 đến Lab 5 hoàn thành 10/10).
 
 ---
 
@@ -74,14 +83,16 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 
 Khi Nhi vào phiên làm việc tiếp theo, trợ lý hãy chào Nhi và gợi ý 3 lựa chọn sau:
 
-1. **Lựa chọn 1 — Ôn tập tuần 4 trên lớp (`CODE/in-class/week-04-context`):**
-   * Học và thực hành Context API (`createContext`, `useContext`).
-   * Tìm hiểu Redux Toolkit (`configureStore`, `createSlice`).
+1. **Lựa chọn 1 — Hoàn thiện nốt Lab 6: Google Login (Google OAuth 2.0):**
+   * Cài đặt `@react-oauth/google` và `jwt-decode`.
+   * Gắn nút Google Login lên `MyNavBar.jsx`.
+   * Phân quyền bảo vệ: Đăng nhập thành công mới mở khóa menu "Quản lý hoa lan"!
 2. **Lựa chọn 2 — Thực chiến đề PE mới:**
    * Luyện giải các đề thi thực tế các kỳ trước trong thư mục [`EXAMS/past-exams/`](./EXAMS/past-exams/).
    * Bấm giờ làm bài 85 phút để tăng tốc độ gõ code và phản xạ.
-3. **Lựa chọn 3 — Hoàn thiện các bài Lab chính thức:**
-   * Rà soát đề bài trong thư mục [`LAB/`](./LAB/) (`Lab 1`, `Lab 2`, `Lab 3`).
+3. **Lựa chọn 3 — Ôn tập tuần 4 trên lớp (`CODE/in-class/week-04-context`):**
+   * Học và thực hành Context API (`createContext`, `useContext`) và Redux Toolkit.
+
 
 ---
 

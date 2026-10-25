@@ -73,9 +73,10 @@ FER202/
 | STT | Bài học / Tuần | Nội dung chính | Thư mục mã nguồn | Trạng thái |
 | :-: | :--- | :--- | :--- | :-: |
 | 1 | **Node & JS Basics** | Variables, ES6, Arrow Functions, Modules | [`CODE/in-class/node-intro`](./CODE/in-class/node-intro) | ✅ Hoàn thành |
-| 2 | **Lab 1 & 2: Components, Hooks & Modal** | Props, Grid, `useState`, Modal Popup, Dark Mode & `useTheme` Custom Hook | [`CODE/in-class/se2041-demo-01`](./CODE/in-class/se2041-demo-01) | ✅ Hoàn thành |
-| 3 | **Week 3: React Router** | `<BrowserRouter>`, `<Routes>`, `<Route>`, `<Link>` | [`CODE/in-class/week-03-router`](./CODE/in-class/week-03-router) | ✅ Hoàn thành |
-| 4 | **Week 4: Context, Redux & Formik/Yup** | `useContext`, Redux Toolkit (`createSlice`), Formik (`useFormik`), Yup Validation | [`CODE/in-class/week-04-context`](./CODE/in-class/week-04-context) | 🔄 Đang học |
+| 2 | **Lab 1 & 2: Components & Hooks** | Props, Grid, `useState`, Modal Popup, Dark Mode & `useTheme` | [`CODE/in-class/se2041-demo-01`](./CODE/in-class/se2041-demo-01) | ✅ Hoàn thành (10/10) |
+| 3 | **Lab 3: React Router SPA** | `<BrowserRouter>`, Layout `<Outlet />`, Dynamic `/detail/:id`, `NotFound` | [`CODE/in-class/se2041-demo-01`](./CODE/in-class/se2041-demo-01) | ✅ Hoàn thành (10/10) |
+| 4 | **Lab 4: Formik & Yup Validation** | Formik 6 trường, Yup Schema, Pro syntax `{...getFieldProps}`, Error text | [`CODE/in-class/se2041-demo-01`](./CODE/in-class/se2041-demo-01) | ✅ Hoàn thành (10/10) |
+| 5 | **Lab 5: Fetch API & CRUD MockAPI** | Full-Stack RESTful API: GET, POST, PUT, DELETE, `Table`, `formik.setValues` | [`CODE/in-class/se2041-demo-01`](./CODE/in-class/se2041-demo-01) | ✅ Hoàn thành (10/10) |
 
 ### 🎯 2. Luyện Đề Thi PE (Practical Exam) (`EXAMS/`)
 | STT | Đề thi | Nội dung & Kỹ năng trọng tâm | Thư mục & Tài liệu | Trạng thái |
