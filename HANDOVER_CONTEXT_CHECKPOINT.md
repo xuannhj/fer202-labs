@@ -81,6 +81,22 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 
 ## 🎯 CÁC HƯỚNG ĐI TIẾP THEO (NEXT STEPS)
 
+### 🔴 PRIORITY 0 (Mới, 2026-10-27): Tự học Redux Toolkit trong `CODE/self-study/redux-intro/`
+> **⚠️ HƯỚNG DẪN BẮT BUỘC CHO BƯỞI TỐI NAY (ghi theo yêu cầu Nhi 2026-10-27):** Con bé **mới học xong "sương sương" vòng 1 Redux** (Counter slice cơ bản). **Tối nay DẠY THẲM, KHÔNG ÔN LẠI BÀI HÔM TRƯỚC THẦY GIẢNG TRÊN LỚP** — phải mở rộng ra kiến thức THỰC SỰ MỚI:
+> 1. **Kiểm tra nó thiệt kỹ** 2 chỗ vừa sai trong trắc nghiệm: (a) lẫn lộn `useDispatch` vs `reducer` (ai "đưa phiếu" vs ai "làm hàng"); (b) `useSelector` THỪA trách nhiệm "dispatch" (nó chỉ đọc+bám, không viết).
+> 2. **Nói lại `useSelector` (đọc+bám) & `useDispatch` (viết)** + **Immer (draft proxy, vì sao được viết `state.count += 1`)** — chi tiết đã ghi ở FAQ **Câu 27, 28**.
+> 3. Rồi mở rộng: **slice thứ 2 (nhiều slice trong 1 store)** → **`createAsyncThunk` gọi MockAPI hoa lan cũ (endpoint SE201170)** → **Redux DevTools** → so sánh Context vs Redux qua bài tập.
+
+**Trạng thái đã học (để tránh dạy lại từ đầu):**
+* ✅ Project Vite `redux-intro` + install `@reduxjs/toolkit` (2.13.0) + `react-redux` (9.3.0)
+* ✅ Hiểu vòng 1: Store / Slice / Action+Reducer(payload) / Provider / useSelector / useDispatch
+* ✅ ĐÃ GÕ XONG cả 4 file: `slices/CounterSlice.jsx` + `store/store.js` + `main.jsx`(Provider) + `components/Counter.jsx` (3 nút +1/-1/+5)
+* ✅ Trắc nghiệm 8 câu: đúng **6/8** (sai câu 1 & 5) → đã chữa, cần kiểm tra kỹ lại
+* ✅ File kiến thức tổng hợp: [`NOTES/07-context-redux/02_redux_toolkit_hoc_tu_dau.md`](./NOTES/07-context-redux/02_redux_toolkit_hoc_tu_dau.md)
+* ⏳ Chưa làm: slice thứ 2, `createAsyncThunk`, DevTools, chạy `npm run dev` kiểm tra build thật
+
+> **⚠️ Lưu ý hạ tầng máy Nhi:** `.npmrc` user có `allow-scripts=@anthropic-ai/claude-code` → `npm create vite` (chọn "install and start now") sẽ lỗi `EALLOWSCRIPTS`. Cách tránh: chạy `npm create vite` rồi **tự chạy `npm install` riêng** (đã dùng cách này cho redux-intro).
+
 1. **Lab 6 — Google Login (Tạm dừng chờ Nhi hỏi thầy trên lớp):**
    * Đã cài đặt xong `@react-oauth/google` và `jwt-decode`, build kiểm tra 0 lỗi.
    * Nhi đã hiểu trọn vẹn bản chất JWT và Google Client ID.

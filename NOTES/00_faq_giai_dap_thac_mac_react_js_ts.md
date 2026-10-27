@@ -24,6 +24,14 @@
 16. [Tại sao nên dùng Formik & Yup thay vì `useState` thuần khi xử lý Form?](#16-tại-sao-nên-dùng-formik--yup-thay-vì-usestate-thuần-khi-xử-lý-form)
 17. [Sự kiện `onBlur` là gì? Tại sao Formik bắt buộc phải có `onBlur` đi kèm với `touched`?](#17-sự-kiện-onblur-là-gì-tại-sao-formik-bắt-buộc-phải-có-onblur-đi-kèm-với-touched)
 18. [Cú pháp `{...formik.getFieldProps()}` là gì? Tại sao riêng Checkbox/Switch lại cần thêm `checked`?](#18-cú-pháp-formikgetfieldprops-là-gì-tại-sao-riêng-checkboxswitch-lại-cần-thêm-checked)
+19. [Tại sao ở Giai đoạn 2 chỉ cần nạp `useEffect` ở `Home.jsx` và `Detail.jsx`?](#-câu-hỏi-19-tại-sao-ở-giai-đoạn-2-chỉ-cần-nạp-useeffect-ở-2-file-là-homejsx-và-detailjsx)
+20. [Tại sao ở `Home.jsx` không bắt buộc có `loading`, nhưng ở `Detail.jsx` lại BẮT BUỘC?](#-câu-hỏi-20-tại-sao-ở-homejsx-không-bắt-buộc-có-loading-nhưng-ở-detailjsx-lại-bắt-buộc-phải-có-loading)
+21. [Tại sao khi gọi API theo ID bắt buộc phải có dấu gạch chéo `+ '/' + id`?](#-câu-hỏi-21-tại-sao-khi-gọi-api-theo-id-bắt-buộc-phải-có-dấu-gạch-chéo---id)
+22. [Phân biệt Truthy và Falsy giữa `null` và `{}` (Object rỗng) trong React?](#-câu-hỏi-22-phân-biệt-truthy-và-falsy-giữa-null-và--object-rỗng-trong-react)
+23. [Tại sao khi sửa dữ liệu (PUT) bắt buộc phải truyền cả `id` và `values`?](#-câu-hỏi-23-tại-sao-khi-sửa-dữ-liệu-put-bắt-buộc-phải-truyền-cả-id-và-values)
+24. [JWT (JSON Web Token) cấu tạo gồm những gì? Signature được tạo ra thế nào?](#-câu-hỏi-24-jwt-json-web-token-cấu-tạo-gồm-những-gì-signature-được-tạo-ra-thế-nào)
+25. [Google Client ID là gì trong OAuth 2.0 và phân biệt với Client Secret?](#-câu-hỏi-25-google-client-id-là-gì-trong-oauth-20-và-phân-biệt-với-client-secret)
+26. [Redux Toolkit (RTK) Thực Sự Là Gì? Ẩn Dụ Cái Tủ Lạnh Chung & Khi Nào Bắt Buộc Dùng?](#-câu-hỏi-26-redux-toolkit-rtk-thực-sự-là-gì-ẩn-dụ-cái-tủ-lạnh-chung--khi-nào-bắt-buộc-dùng)
 
 ---
 
@@ -634,4 +642,83 @@ $$\text{JWT} = \text{Header} \ . \ \text{Payload} \ . \ \text{Signature}$$
 * **Phân biệt Client ID vs Client Secret:**
   * `Client ID` (Công khai - Public): Được để trực tiếp ở Frontend React, an toàn vì đã có Authorized Origins bảo vệ.
   * `Client Secret` (Bí mật - Private): Tuyệt đối chỉ lưu ở Backend/Server, không bao giờ được lộ ra mã nguồn React.
+
+---
+
+## ❓ CÂU HỎI 26: Redux Toolkit (RTK) Thực Sự Là Gì? Ẩn Dụ Cái Tủ Lạnh Chung & Khi Nào Bắt Buộc Dùng?
+
+### 💬 Bản chất vấn đề (Vấn nạn phòng kín `useState`):
+* Trong một ứng dụng React gồm nhiều trang (ví dụ bài thi PE Music của Nhi gồm `MusicLibrary`, `MusicManagement`, `AddSong`):
+  * **Khi CHƯA có Redux:** Mỗi trang là một **phòng kín cách âm riêng biệt**. Trang nào cũng phải tự khai báo `const [songs, setSongs] = useState([])` riêng, tự gọi API riêng. Khi trang `AddSong` thêm bài mới, trang `MusicLibrary` hoàn toàn không biết nếu không tải lại mạng từ đầu!
+  * **Khi CÓ Redux Toolkit:** Cả căn nhà chung nhau **MỘT CÁI TỦ LẠNH ĐỂ Ở PHÒNG KHÁCH (Single Store)**. Biến `songs` nằm sẵn trong tủ lạnh:
+    * `MusicLibrary` mở cửa phòng ra, nhìn vào tủ lạnh lấy dữ liệu vẽ Card (`useSelector`).
+    * `AddSong` thêm bài mới thì mang ra nhét vào tủ lạnh (`useDispatch(addSong(newSong))`).
+    * Ngay tức khắc, `MusicManagement` và `MusicLibrary` đều nhìn thấy dữ liệu mới trong tủ mà không cần reload trang hay spam API!
+
+### 🔍 Tại sao lại có chữ "TOOLKIT"?
+* **Redux (Cũ):** Ý tưởng cái tủ chung rất tốt nhưng cách dựng quá thủ công (phải viết 4-5 file: action types, action creators, reducers, store với switch-case dài dòng).
+* **Redux Toolkit (RTK - Mới):** Là "hộp đồ nghề thông minh" chính thức của Redux. Dùng hàm `createSlice()` gom tất cả vào 1 file ngắn gọn, tích hợp sẵn Immer.js cho phép gán trực tiếp (`state.push(...)`) mà vẫn đảm bảo tính bất biến (Immutability).
+
+### ⚖️ Khi nào cần dùng Redux vs Khi nào KHÔNG cần?
+1. **Đi thi PE 90 phút:** **KHÔNG CẦN DÙNG!** Vì đề PE chỉ thao tác trên 1 bảng đơn giản trong 90 phút, dùng `useState` + `axios` là phương án nhanh nhất và an toàn nhất để lấy trọn 10/10.
+2. **Thi vấn đáp / Đồ án lớn (SWP391) / Đi làm thực tế:** **BẮT BUỘC DÙNG!** Vì các dự án lớn có hàng chục phân hệ cần dùng chung dữ liệu (Auth User đăng nhập, Giỏ hàng, Thông báo toàn trang).
+
+---
+
+## ❓ CÂU HỎI 27: Immer Là Gì? Tại Sao Trong Reducer RTK Được Viết `state.count += 1` Mà Không Vi phạm Luật "Không Sửa State"?
+
+### 💬 Bản chất vấn đề (Nghịch lý Immutability):
+* **Luật gốc của Redux:** State phải **bất biến (immutable)** — muốn đổi, phải tạo **1 object/array mới hoàn toàn**, không được sửa vật thể cũ. Nếu không, React không biết state đã đổi (vì cùng 1 reference trong bộ nhớ) → không render lại → **bug khó tìm nhất** trong ứng dụng Redux.
+* **Nếu viết Redux "cũ" bằng tay**, muốn tăng count phải viết dài dòng:
+  ```js
+  // Redux cũ — giữ nguyên tắc immutability thủ công:
+  case 'INCREMENT':
+    return { ...state, count: state.count + 1 };  // tự spread, tự tạo object mới
+  ```
+  State phức (object lồng, array lồng trong object) → phải spread từng tầng, code cực dễ sai (thiếu 1 tầng là vô tình sửa state cũ → bug).
+* **Immer** là thư viện RTK **tích hợp sẵn bên trong** `createSlice()`:
+  ```js
+  // Với Immer (RTK) — viết "trông như" đang sửa, an toàn như bất biến:
+  increment: (state) => {
+    state.count += 1;  // trông như mutate (sửa trực tiếp)
+  }
+  ```
+  **Cơ chế:** Immer đưa state hiện tại vào 1 **bản nháp "magic proxy"** (trông hệt object thật, có thể sửa thoải mái). Khi em thoát khỏi reducer, Immer **so sánh bản nháp với gốc**, rồi **tự tạo ra 1 object MỚI thực sự** (chỉ các nhánh em đã sửa) và trả về nó. Sửa state cũ → **không bao giờ xảy ra**, vì cái em sửa là "phiên bản luyện tập", không phải kho thật.
+
+### 🔍 Cách nhớ:
+* `state.count += 1` trong reducer RTK = **viết đơn giản như `useState`**, nhưng an toàn như Redux cũ.
+* **Dù cho, KHÔNG trả về `return state` (trừ khi state là number/string primitive thuần).** RTK tự lo (Immer), em chỉ việc sửa rồi **kết thúc hàm, không return gì** (đặc quyền riêng của Immer/RTK, Redux "cũ" thì bắt buộc phải return).
+* **Đi thi PE:** Không gặp Immer (không làm Redux). Nhưng nếu hỏi vấn đáp *"tại sao viết được gán trực tiếp?"* → trả lời: **Immer sinh draft proxy, tự tạo object mới khi kết thúc**.
+
+---
+
+## ❓ CÂU HỎI 28: Tại Sao Reducer `incrementByAmount` Có Thêm Tham Số `action` Trong Khi `increment` Không?
+
+### 💬 Bản chất vấn đề (Reducer không biết "phiếu" đang mang gì):
+* **Mọi reducer trong `createSlice()` đều nhận 2 tham số:** `(state, action)`.
+  * `state` = kho hàng hiện tại (bản nháp Immer, sửa thoải mái)
+  * `action` = **phiếu** đang đến, gồm ít nhất 2 trường:
+    ```js
+    action = { type: 'counter/incrementByAmount', payload: 10 }
+    ```
+* **`increment` không DÙNG tới `action`** (vì +1 là cố định, không cần ai gửi số) nên viết tắt chỉ nhận `(state)`. Nó **vẫn nhận** `action` ở tầng sâu, chỉ là em không khai báo tham số thừa (JS cho phép bỏ tham số không dùng).
+* **`incrementByAmount` PHẢI dùng `action.payload`** (vì con số 10 gửi đi nằm ở đó) → bắt buộc khai báo thêm `action`:
+  ```js
+  incrementByAmount: (state, action) => {
+    state.count += action.payload;  // 10 đọc ra từ payload
+  }
+  ```
+* **Khi nào cần `action.payload` = khi nào action "gửi hàng kèm theo"** (payload không null/undefined). Quy tắc nhớ:
+  * Nút cố định (+1, -1, toggle) → không payload → chỉ `state`
+  * Nút nhận dữ liệu (gõ số, thêm item vào cart, điền tên user) → có payload → `state, action`
+
+### 🔍 Minh họa luồng 1 chiều (cặp bài "gửi hàng" đi kèm):
+```js
+// ① Component (quầy): gõ 10 vào input, bấm "Cộng"
+dispatch(incrementByAmount(10));
+//   → RTK tự tạo action: { type: 'counter/incrementByAmount', payload: 10 }
+// ② Kho (store) giao phiếu cho reducer "đúng tên" (counter/incrementByAmount)
+// ③ Reducer: state.count += action.payload  (count 0 → 10)
+// ④ Các useSelector đang bám count → tự render lại
+```
 
