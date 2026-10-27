@@ -93,7 +93,16 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 * ✅ ĐÃ GÕ XONG cả 4 file: `slices/CounterSlice.jsx` + `store/store.js` + `main.jsx`(Provider) + `components/Counter.jsx` (3 nút +1/-1/+5)
 * ✅ Trắc nghiệm 8 câu: đúng **6/8** (sai câu 1 & 5) → đã chữa, cần kiểm tra kỹ lại
 * ✅ File kiến thức tổng hợp: [`NOTES/07-context-redux/02_redux_toolkit_hoc_tu_dau.md`](./NOTES/07-context-redux/02_redux_toolkit_hoc_tu_dau.md)
+* ✅ (2026-10-27 buổi tối) Kiểm tra lại: **Câu A ✅ Nhi tự trả lời đúng** (useDispatch = đưa phiếu, reducer = làm hàng); Câu B & C (Immer) đã giải lại bằng hình "nhìn/bấm" + "nháp photocopy". **Câu test Immer cuối ("em đang sửa draft hay kho thật?") CHƯA được trả lời → hỏi lại 1 phút khi mở đầu buổi mai.**
 * ⏳ Chưa làm: slice thứ 2, `createAsyncThunk`, DevTools, chạy `npm run dev` kiểm tra build thật
+
+**📍 ĐIỂM NỐI TIẾP BUỔI MAI (tạm dừng 2026-10-27 ~23:30 khi Nhi buồn ngủ, CHƯA gõ code phần này):**
+1. **Mở đầu:** hỏi lại câu test Immer (1 phút) → qua luôn phần mới
+2. **Giao đề `createAsyncThunk` (đã soạn sẵn, không bắt làm ở nhà, làm trong buổi):**
+   * Tạo `.env` ở **gốc** `redux-intro/`: `VITE_API_URL=https://6adb24ee7512f497b3007df5.mockapi.io/api/v1/orchids` (endpoint đã verify HTTP 200 ngày 2026-10-27; dev server phải **restart** khi thêm `.env` mới)
+   * `src/slices/OrchidsSlice.js`: thunk `fetchOrchids` (tên `'orchids/fetchAll'`, thân: `axios.get(import.meta.env.VITE_API_URL)` → `return res.data`); `initialState` 3 ô `{ orchids: [], status: 'idle', error: null }`; `extraReducers` 3 trạm (`.pending` → status `'loading'` / `.fulfilled` → `state.orchids = action.payload`, status `'succeeded'` / `.rejected` → status `'failed'`, `state.error = action.error.message`); `export default orchidsSlice`
+   * `store.js` thêm đúng 1 dòng `orchids: orchidsSlice.reducer`
+3. **Sau đó:** component hiển thị danh sách hoa (gọi `dispatch(fetchOrchids())` khi mount + render theo `status` 3 trường hợp) → **Redux DevTools** → so sánh Context vs Redux qua bài tập
 
 > **⚠️ Lưu ý hạ tầng máy Nhi:** `.npmrc` user có `allow-scripts=@anthropic-ai/claude-code` → `npm create vite` (chọn "install and start now") sẽ lỗi `EALLOWSCRIPTS`. Cách tránh: chạy `npm create vite` rồi **tự chạy `npm install` riêng** (đã dùng cách này cho redux-intro).
 
