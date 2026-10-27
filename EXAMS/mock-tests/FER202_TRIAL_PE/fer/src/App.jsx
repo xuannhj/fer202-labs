@@ -104,12 +104,15 @@ import UpdateSong from './pages/UpdateSong'
 //goi component trong file App => nho boc bang fragment
 //7. nho import bootstrap // import 'bootstrap/dist/css/bootstrap.min.css';
 //8. chinrh sua lai component mynavbar tuong ung voi de thi
-//
+//dinh nghia them /home, /se201170 -> music library
 export default function App() {
   return (
     <>
     <MyNavBar/>
     <Routes>
+
+      <Route path='/' element ={<MusicLibrary/>}/>
+      <Route path='/se201170' element ={<MusicLibrary/>}/>
       <Route path='/se201170/music-library' element = {<MusicLibrary/>}/>
       <Route path='/se201170/music-management' element={<MusicManagement/>}/>
       <Route path='/se201170/add-song' element = {<AddSong></AddSong>}></Route>

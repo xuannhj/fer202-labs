@@ -5,7 +5,6 @@ import OrchidDetailModal from '../components/OrchidDetailModal';
 import axios from 'axios';
 
 export default function Home() {
-  // State lưu bông hoa đang được chọn để mở Modal xem nhanh
   const [selectedOrchid, setSelectedOrchid] = useState(null);
   const [orchids, setOrchids] = useState([]);
   useEffect(() => {

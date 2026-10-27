@@ -9,6 +9,7 @@ export default function Contact() {
       name: '',
       email: '',
       phone: '',
+      birthDate: '',
       program: 0,
       message: '',
       agree: false,
@@ -18,6 +19,10 @@ export default function Contact() {
       name: Yup.string().required('Required').min(2, 'must be 2 characters or more'),
       email: Yup.string().required('Required').email('Invalid email'),
       phone: Yup.number().integer().typeError('please enter a valid number').required('Required'),
+      birthDate: Yup.date()
+        .required('Ngày sinh không được để trống')
+        .typeError('Vui lòng chọn đúng định dạng ngày tháng')
+        .max(new Date(), 'Ngày sinh không được lớn hơn ngày hiện tại'),
       program: Yup.number()
         .min(1, 'Please select a program.'),
       message: Yup.string()
@@ -40,7 +45,6 @@ export default function Contact() {
       </div>
 
       <Row className="g-4">
-        {/* Cột trái: Thông tin liên hệ vườn lan */}
         <Col md={5}>
           <Card className="h-100 shadow-sm border-0 p-3">
             <Card.Body>
@@ -74,7 +78,6 @@ export default function Contact() {
           </Card>
         </Col>
 
-        {/* Cột phải: Form gửi tin nhắn */}
         <Col md={7}>
           <Card className="h-100 shadow-sm border-0 p-3">
             <Card.Body>
@@ -120,11 +123,21 @@ export default function Contact() {
                         <Form.Text className="text-danger">
                           {formik.errors.email}</Form.Text>
                     )}
-
-
                 </Form.Group>
 
-                {/* 4. Dropdown chọn Chương trình (Program) */}
+                {/* Ô chọn ngày sinh DatePicker */}
+                <Form.Group className="mb-3" controlId="contactBirthDate">
+                  <Form.Label>Ngày sinh (Date of Birth) <span className="text-danger">*</span></Form.Label>
+                  <Form.Control 
+                    type="date" 
+                    {...formik.getFieldProps("birthDate")}
+                  />
+                  {formik.touched.birthDate && formik.errors.birthDate && (
+                    <Form.Text className="text-danger">{formik.errors.birthDate}</Form.Text>
+                  )}
+                </Form.Group>
+
+
                 <Form.Group className="mb-3" controlId="contactProgram">
                   <Form.Label>Program of Study <span className="text-danger">*</span></Form.Label>
                   <Form.Select {...formik.getFieldProps("program")}>
@@ -141,7 +154,6 @@ export default function Contact() {
                       )}
                 </Form.Group>
 
-                {/* 5. Lời nhắn (Message) */}
                 <Form.Group className="mb-3" controlId="contactMessage">
                   <Form.Label>Nội dung cần tư vấn <span className="text-danger">*</span></Form.Label>
                   <Form.Control
@@ -155,7 +167,6 @@ export default function Contact() {
                       )}
                 </Form.Group>
 
-                {/* 6. Switch Đồng ý điều khoản (Agree) */}
                 <Form.Group className="mb-3" controlId="contactAgree">
                   <Form.Check
                     type="switch"
@@ -168,7 +179,7 @@ export default function Contact() {
                       )}
                 </Form.Group>
 
-                {/* Nút gửi (Send) */}
+
                 <Button variant="success" type="submit" className="w-100 py-2 fw-bold">
                   Send
                 </Button>

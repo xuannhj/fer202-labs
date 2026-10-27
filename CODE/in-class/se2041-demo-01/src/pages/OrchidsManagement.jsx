@@ -6,7 +6,6 @@ import axios from 'axios';
 export default function OrchidsManagement() {
   const [orchids, setOrchids] = useState([]);
 
-  // 1. Tải toàn bộ danh sách hoa về Bảng
   useEffect(() => {
     const fetchOrchids = async () => {
       try {
@@ -20,14 +19,11 @@ export default function OrchidsManagement() {
     fetchOrchids();
   }, []);
 
-  // 2. Hàm xử lý xóa theo id
   const handleDelete = async (id, name) => {
     if (window.confirm(`Bạn có chắc chắn muốn xóa hoa lan "${name}" không?`)) {
       try {
-        // Gọi DELETE API lên MockAPI
         await axios.delete(import.meta.env.VITE_API_URL + '/' + id);
 
-        // Lọc bỏ hoa vừa xóa khỏi giao diện tức thì
         setOrchids(orchids.filter((item) => item.id !== id));
 
         alert("Đã xóa thành công!");
@@ -38,7 +34,6 @@ export default function OrchidsManagement() {
     }
   };
 
-  // 3. Render giao diện Bảng
   return (
     <Container className="my-4">
       <div className="d-flex justify-content-between align-items-center mb-4">

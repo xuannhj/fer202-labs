@@ -10,7 +10,6 @@ export default function AddOrchid() {
 
   // 1. Khởi tạo useFormik với 3 trụ cột: initialValues, validationSchema, onSubmit
   const formik = useFormik({
-    // Trụ cột 1: Giá trị ban đầu
     initialValues: {
       name: '',
       image: '',
@@ -23,7 +22,6 @@ export default function AddOrchid() {
       isNatural: false,
     },
 
-    // Trụ cột 2: Luật kiểm tra Yup
     validationSchema: Yup.object({
       name: Yup.string()
         .required('Tên hoa không được để trống')
@@ -39,13 +37,11 @@ export default function AddOrchid() {
         .required('Bắt buộc nhập'),
     }),
 
-    // Trụ cột 3: Xử lý khi Submit form
     onSubmit: async (values) => {
       try {
         // Gửi POST API tạo mới hoa lan
         await axios.post(import.meta.env.VITE_API_URL, values);
         alert('🎉 Thêm hoa lan mới thành công!');
-        // Tự động chuyển hướng về trang Quản lý
         navigate('/management');
       } catch (error) {
         console.error('Lỗi khi thêm hoa lan:', error);
@@ -65,7 +61,6 @@ export default function AddOrchid() {
           <h3 className="fw-bold mb-4 text-center">➕ Thêm Hoa Lan Mới</h3>
 
           <Form onSubmit={formik.handleSubmit}>
-            {/* Tên hoa & Link ảnh */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group controlId="name">
@@ -99,7 +94,6 @@ export default function AddOrchid() {
               </Col>
             </Row>
 
-            {/* Xuất xứ & Phân loại */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group controlId="origin">
@@ -133,7 +127,6 @@ export default function AddOrchid() {
               </Col>
             </Row>
 
-            {/* Màu sắc & Rating */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group controlId="color">
@@ -169,7 +162,6 @@ export default function AddOrchid() {
               </Col>
             </Row>
 
-            {/* Switch Đặc biệt & Tự nhiên */}
             <div className="d-flex gap-4 mb-4">
               <Form.Check
                 type="switch"
@@ -187,7 +179,6 @@ export default function AddOrchid() {
               />
             </div>
 
-            {/* Nút Submit */}
             <Button variant="success" type="submit" className="w-100 py-2 fw-bold">
               💾 Lưu Hoa Lan Mới
             </Button>

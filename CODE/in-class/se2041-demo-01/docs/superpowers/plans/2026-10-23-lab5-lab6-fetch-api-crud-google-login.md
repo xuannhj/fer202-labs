@@ -43,8 +43,8 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
    Cấm tuyệt đối hardcode đường link API dài ngoằng trong code. Dùng `import.meta.env.VITE_API_URL` để khi nộp bài hoặc đổi endpoint chỉ cần sửa đúng 1 dòng trong file `.env`.
 
 ### 📝 Các bước thực hiện:
-- [ ] **Bước 1.1:** Mở trang [mockapi.io](https://mockapi.io), tạo project mới (hoặc dùng endpoint hiện có). Tạo resource tên là `orchids`.
-- [ ] **Bước 1.2:** Cấu hình Schema cho `orchids` gồm các trường:
+- [x] **Bước 1.1:** Mở trang [mockapi.io](https://mockapi.io), tạo project mới (hoặc dùng endpoint hiện có). Tạo resource tên là `orchids`.
+- [x] **Bước 1.2:** Cấu hình Schema cho `orchids` gồm các trường:
   * `id`: string/number
   * `name`: string
   * `rating`: number
@@ -55,12 +55,12 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
   * `numberOfLike`: number
   * `origin`: string
   * `category`: string
-- [ ] **Bước 1.3:** Nạp sẵn 16 bông hoa lan mẫu từ `ListOfOrchids.js` vào MockAPI.
-- [ ] **Bước 1.4:** Cài đặt thư viện `axios` vào `se2041-demo-01`:
+- [x] **Bước 1.3:** Nạp sẵn 16 bông hoa lan mẫu từ `ListOfOrchids.js` vào MockAPI.
+- [x] **Bước 1.4:** Cài đặt thư viện `axios` vào `se2041-demo-01`:
   ```bash
   npm install axios
   ```
-- [ ] **Bước 1.5:** Tạo file `.env` tại thư mục gốc của `se2041-demo-01`:
+- [x] **Bước 1.5:** Tạo file `.env` tại thư mục gốc của `se2041-demo-01`:
   ```env
   VITE_API_URL=https://<your-mockapi-id>.mockapi.io/api/v1/orchids
   ```
@@ -74,7 +74,7 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
 * ⚠️ **Cạm bẫy:** Luôn nhớ mảng dependency `[]` rỗng ở cuối, nếu quên sẽ gây **vòng lặp vô tận (Infinite Loop)** làm sập ứng dụng và vượt hạn mức MockAPI!
 
 ### 📝 Các bước thực hiện:
-- [ ] **Bước 2.1 — Cập nhật `Home.jsx`:**
+- [x] **Bước 2.1 — Cập nhật `Home.jsx`:**
   * Khai báo state: `const [orchids, setOrchids] = useState([]);`
   * Gọi API trong `useEffect`:
     ```jsx
@@ -87,9 +87,9 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
     }, []);
     ```
   * Render danh sách hoa lan từ state `orchids` thay cho file tĩnh cũ.
-- [ ] **Bước 2.2 — Cập nhật `Detail.jsx`:**
+- [x] **Bước 2.2 — Cập nhật `Detail.jsx`:**
   * Lấy `id` từ URL qua `useParams()`.
-  * Gọi API lấy riêng chi tiết hoa đó: `axios.get(`${import.meta.env.VITE_API_URL}/${id}`)`.
+  * Gọi API lấy riêng chi tiết hoa đó: `axios.get(import.meta.env.VITE_API_URL + '/' + id)`.
   * Hiển thị chi tiết hoa lan lấy trực tiếp từ server.
 
 ---
@@ -101,10 +101,10 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
 * **Cập nhật State tức thì (Optimistic UI):** Sau khi gọi `axios.delete`, dùng `.filter(item => item.id !== id)` để loại bỏ dòng đó khỏi giao diện ngay lập tức mà không cần load lại trang.
 
 ### 📝 Các bước thực hiện:
-- [ ] **Bước 3.1:** Tạo file trang mới `src/pages/OrchidsManagement.jsx`.
-- [ ] **Bước 3.2:** Dùng component `<Table striped bordered hover>` của React-Bootstrap hiển thị danh sách:
+- [x] **Bước 3.1:** Tạo file trang mới `src/pages/OrchidsManagement.jsx`.
+- [x] **Bước 3.2:** Dùng component `<Table striped bordered hover>` của React-Bootstrap hiển thị danh sách:
   * ID, Ảnh thu nhỏ (Thumbnail), Tên hoa, Xuất xứ, Rating, Phân loại, Cột Thao tác (Actions).
-- [ ] **Bước 3.3:** Viết hàm xử lý xóa hoa:
+- [x] **Bước 3.3:** Viết hàm xử lý xóa hoa:
   ```jsx
   const handleDelete = async (id, name) => {
     if (window.confirm(`Bạn có chắc muốn xóa hoa lan "${name}" không?`)) {
@@ -126,10 +126,10 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
    * ⚠️ **Cạm bẫy sống còn:** Phải nạp đủ 100% tất cả các trường để khi PUT không làm trắng các trường cũ!
 
 ### 📝 Các bước thực hiện:
-- [ ] **Bước 4.1 — Trang Thêm mới `AddOrchid.jsx`:**
+- [x] **Bước 4.1 — Trang Thêm mới `AddOrchid.jsx`:**
   * Dựng Formik + Yup cho các trường hoa lan.
   * Trong `onSubmit`: Gọi `await axios.post(API_URL, values)` $\rightarrow$ `navigate('/management')`.
-- [ ] **Bước 4.2 — Trang Cập nhật `UpdateOrchid.jsx`:**
+- [x] **Bước 4.2 — Trang Cập nhật `UpdateOrchid.jsx`:**
   * `const { id } = useParams();`
   * `useEffect` nạp dữ liệu cũ:
     ```jsx
@@ -172,8 +172,11 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
 
 | Chức năng | Tiêu chí kỹ thuật bắt buộc | Trạng thái |
 | :--- | :--- | :-: |
-| **MockAPI & .env** | Đầy đủ 16 hoa lan, dùng `import.meta.env.VITE_API_URL` | ⏳ Sắp làm |
-| **GET API** | `useEffect` load danh sách Trang chủ & Chi tiết | ⏳ Sắp làm |
-| **DELETE API** | `window.confirm`, `axios.delete`, cập nhật state tức thì | ⏳ Sắp làm |
-| **POST & PUT** | Formik + Yup nạp đủ 100% trường, điều hướng `navigate` | ⏳ Sắp làm |
+| **MockAPI & .env** | Đầy đủ 16 hoa lan, dùng `import.meta.env.VITE_API_URL` | ✅ Hoàn thành (10/10) |
+| **GET API** | `useEffect` load danh sách Trang chủ & Chi tiết | ✅ Hoàn thành (10/10) |
+| **DELETE API** | `window.confirm`, `axios.delete`, cập nhật state tức thì | ✅ Hoàn thành (10/10) |
+| **POST & PUT** | Formik + Yup nạp đủ 100% trường, điều hướng `navigate` | ✅ Hoàn thành (10/10) |
 | **Google Login** | Đăng nhập Google thành công, giải mã JWT, phân quyền Admin | ⏳ Sắp làm |
+
+
+

@@ -10,7 +10,6 @@ export default function UpdateOrchid() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // 2. Khởi tạo useFormik
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -39,7 +38,6 @@ export default function UpdateOrchid() {
     }),
     onSubmit: async (values) => {
       try {
-        // Điểm khác biệt 1: Dùng PUT và nối chuỗi '/' + id để ghi đè đúng bông hoa đó!
         await axios.put(import.meta.env.VITE_API_URL + '/' + id, values);
         alert('🎉 Cập nhật hoa lan thành công!');
         navigate('/management');
@@ -50,12 +48,10 @@ export default function UpdateOrchid() {
     },
   });
 
-  // 3. Điểm khác biệt 2: useEffect kéo dữ liệu cũ đắp vào form bằng formik.setValues()
   useEffect(() => {
     const fetchOldOrchid = async () => {
       try {
         const response = await axios.get(import.meta.env.VITE_API_URL + '/' + id);
-        // Đắp toàn bộ 100% dữ liệu cũ vào các ô nhập của Formik:
         formik.setValues(response.data);
       } catch (error) {
         console.error('Lỗi khi tải dữ liệu hoa cũ:', error);
@@ -76,7 +72,6 @@ export default function UpdateOrchid() {
           <h3 className="fw-bold mb-4 text-center">✏️ Cập Nhật Thông Tin Hoa Lan #{id}</h3>
 
           <Form onSubmit={formik.handleSubmit}>
-            {/* Tên hoa & Link ảnh */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group controlId="name">
@@ -110,7 +105,6 @@ export default function UpdateOrchid() {
               </Col>
             </Row>
 
-            {/* Xuất xứ & Phân loại */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group controlId="origin">
@@ -144,7 +138,6 @@ export default function UpdateOrchid() {
               </Col>
             </Row>
 
-            {/* Màu sắc & Rating */}
             <Row className="mb-3">
               <Col md={6}>
                 <Form.Group controlId="color">
@@ -180,7 +173,6 @@ export default function UpdateOrchid() {
               </Col>
             </Row>
 
-            {/* Switch Đặc biệt & Tự nhiên */}
             <div className="d-flex gap-4 mb-4">
               <Form.Check
                 type="switch"
@@ -198,7 +190,6 @@ export default function UpdateOrchid() {
               />
             </div>
 
-            {/* Nút Submit cập nhật */}
             <Button variant="primary" type="submit" className="w-100 py-2 fw-bold">
               💾 Cập Nhật Thay Đổi
             </Button>

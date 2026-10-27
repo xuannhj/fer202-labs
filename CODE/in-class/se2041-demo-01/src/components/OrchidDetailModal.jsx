@@ -24,7 +24,22 @@ export default function OrchidDetailModal({ show, orchid, onHide }) {
             <p><strong>Màu sắc:</strong> {orchid.color}</p>
             <p><strong>Loài:</strong> {orchid.category}</p>
             <p><strong>Phân loại:</strong> {orchid.isNatural ? 'Tự nhiên' : 'Lai tạo'}</p>
-            <p>⭐ {orchid.rating} / 5 | ❤️ {orchid.numberOfLike} yêu thích</p>
+<div className="mb-2 d-flex align-items-center">
+  {/* Duyệt mảng từ 1 đến 5 để vẽ 5 ngôi sao */}
+  {[1, 2, 3, 4, 5].map((star) => (
+    <span
+      key={star}
+      style={{
+        color: star <= Number(orchid.rating) ? '#ffc107' : '#dee2e6',
+        fontSize: '1.25rem',
+        marginRight: '2px'
+      }}
+    >
+      ★
+    </span>
+  ))}
+  <span className="ms-2">| ❤️ {orchid.numberOfLike} yêu thích</span>
+</div>
           </Col>
         </Row>
       </Modal.Body>

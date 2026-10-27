@@ -30,8 +30,7 @@ export default function Detail() {
     fetchOrchidDetail();
 
   }, [id])
-  // 3. Nếu không tìm thấy (người dùng gõ ID bậy trên URL)
-  // Nếu đang gọi API thì hiện chữ "Đang tải..."
+
 if (loading) {
   return (
     <div className="text-center py-5">
@@ -52,7 +51,6 @@ if (loading) {
     );
   }
 
-  // 4. Nếu tìm thấy: hiển thị chi tiết hoa lan đẹp mắt
   return (
     <div className="my-4">
       <Button variant="outline-secondary" size="sm" className="mb-3" onClick={() => navigate(-1)}>
@@ -61,7 +59,6 @@ if (loading) {
 
       <Card className="shadow-lg border-0 overflow-hidden">
         <Row className="g-0">
-          {/* Cột trái: Ảnh lớn */}
           <Col md={5}>
             <Card.Img
               src={orchid.image}
@@ -71,7 +68,6 @@ if (loading) {
             />
           </Col>
 
-          {/* Cột phải: Thông số chi tiết */}
           <Col md={7}>
             <Card.Body className="p-4 d-flex flex-column h-100">
               <div className="d-flex justify-content-between align-items-start mb-2">
@@ -93,7 +89,6 @@ if (loading) {
                 <span>❤️ <strong>{orchid.numberOfLike}</strong> lượt yêu thích</span>
               </div>
 
-              {/* Bảng thuộc tính chi tiết */}
               <ListGroup variant="flush" className="my-3">
                 <ListGroup.Item className="px-0 bg-transparent">
                   <strong>Xuất xứ (Origin):</strong> {orchid.origin}
@@ -106,7 +101,6 @@ if (loading) {
                 </ListGroup.Item>
               </ListGroup>
 
-              {/* Nút điều hướng hành động */}
               <div className="mt-auto pt-3 d-flex gap-2">
                 <Button variant="success" as={Link} to="/contact">
                   💬 Liên hệ tư vấn về giống lan này
