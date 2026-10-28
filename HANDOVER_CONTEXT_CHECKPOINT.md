@@ -97,6 +97,7 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 * ⏳ Chưa làm: slice thứ 2, `createAsyncThunk`, DevTools, chạy `npm run dev` kiểm tra build thật
 
 **📍 ĐIỂM NỐI TIẾP BUỔI MAI (tạm dừng 2026-10-27 ~23:30 khi Nhi buồn ngủ, CHƯA gõ code phần này):**
+* *(Cập nhật 2026-10-28: lúc giải thích "thunk là gì" Nhi hơi khó hiểu → chủ động xin tạm cất Redux, chuyển sang Lab 6 trước. Nhắc lại "phiếu đặc biệt biết chờ / máy sinh 3 trạm" 1 phút trước khi quay lại đề bên dưới.)*
 1. **Mở đầu:** hỏi lại câu test Immer (1 phút) → qua luôn phần mới
 2. **Giao đề `createAsyncThunk` (đã soạn sẵn, không bắt làm ở nhà, làm trong buổi):**
    * Tạo `.env` ở **gốc** `redux-intro/`: `VITE_API_URL=https://6adb24ee7512f497b3007df5.mockapi.io/api/v1/orchids` (endpoint đã verify HTTP 200 ngày 2026-10-27; dev server phải **restart** khi thêm `.env` mới)
@@ -106,10 +107,11 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
 
 > **⚠️ Lưu ý hạ tầng máy Nhi:** `.npmrc` user có `allow-scripts=@anthropic-ai/claude-code` → `npm create vite` (chọn "install and start now") sẽ lỗi `EALLOWSCRIPTS`. Cách tránh: chạy `npm create vite` rồi **tự chạy `npm install` riêng** (đã dùng cách này cho redux-intro).
 
-1. **Lab 6 — Google Login (Tạm dừng chờ Nhi hỏi thầy trên lớp):**
-   * Đã cài đặt xong `@react-oauth/google` và `jwt-decode`, build kiểm tra 0 lỗi.
-   * Nhi đã hiểu trọn vẹn bản chất JWT và Google Client ID.
-   * Đợi Nhi lấy Google Client ID / hướng dẫn cụ thể từ thầy để tiếp tục ráp vào `main.jsx` và `MyNavBar.jsx`.
+1. **Lab 6 — Google Login trong `se2041-demo-01` — ✅ HOÀN THÀNH 100% (10/10) (2026-10-28):**
+   * ✅ Đã tạo xong: Google Cloud Project `fer202-oauth` (org `fer202`, Free tier không gắn thẻ) + OAuth consent screen External + **OAuth Client ID (Web application)** với `javascript_origins: http://localhost:5173`
+   * ✅ Client ID: `210366288111-5ui9lpejfvksea990as4rdlp0j2jkcsg.apps.googleusercontent.com` (đã thêm `client_secret_*.json` vào `.gitignore` để không bao giờ lộ secret lên repo)
+   * ✅ `main.jsx`: Bọc `<GoogleOAuthProvider clientId="...">` ngoài cùng.
+   * ✅ `MyNavBar.jsx`: Dùng `<GoogleLogin onSuccess={(credentialResponse) => jwtDecode(credentialResponse.credential)} />`, lưu `user` state, ẩn nút Login & mở khóa tab `📋 Management` + nút `Đăng xuất` (`googleLogout()`) sau khi đăng nhập thành công.
 2. **Lựa chọn thay thế hiện tại:**
    * Nghỉ ngơi giữ sức khỏe, hoặc
    * Luyện giải các đề thi thực tế các kỳ trước trong thư mục [`EXAMS/past-exams/`](./EXAMS/past-exams/) để tăng phản xạ phòng thi PE!

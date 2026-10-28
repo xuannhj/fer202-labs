@@ -152,17 +152,17 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
 * **`jwt-decode`:** Thư viện giúp giải mã chuỗi JWT để đọc tên người dùng, email và ảnh đại diện (avatar).
 
 ### 📝 Các bước thực hiện:
-- [ ] **Bước 5.1:** Cài đặt các thư viện hỗ trợ Google Login:
+- [x] **Bước 5.1:** Cài đặt các thư viện hỗ trợ Google Login:
   ```bash
   npm install @react-oauth/google jwt-decode
   ```
-- [ ] **Bước 5.2:** Lấy Google Client ID từ Google Cloud Console (hoặc dùng Client ID mẫu thực hành của trường).
-- [ ] **Bước 5.3:** Bọc toàn bộ ứng dụng bằng `<GoogleOAuthProvider clientId="...">` trong `main.jsx`.
-- [ ] **Bước 5.4 — Cập nhật `MyNavBar.jsx`:**
+- [x] **Bước 5.2:** Lấy Google Client ID từ Google Cloud Console (hoặc dùng Client ID mẫu thực hành của trường).
+- [x] **Bước 5.3:** Bọc toàn bộ ứng dụng bằng `<GoogleOAuthProvider clientId="...">` trong `main.jsx`.
+- [x] **Bước 5.4 — Cập nhật `MyNavBar.jsx`:**
   * Đặt nút `<GoogleLogin onSuccess={...} onError={...} />`.
   * Giải mã thông tin: `const user = jwtDecode(credentialResponse.credential);`
   * Lưu vào state `user` (hoặc `localStorage`).
-- [ ] **Bước 5.5 — Phân quyền hiển thị:**
+- [x] **Bước 5.5 — Phân quyền hiển thị:**
   * Nếu chưa đăng nhập: Navbar chỉ hiện nút Login, ẩn menu "Quản lý hoa lan".
   * Nếu đã đăng nhập: Hiện avatar + tên người dùng + nút Logout, đồng thời mở khóa menu "Quản lý hoa lan"!
 
@@ -176,7 +176,7 @@ Giai đoạn 5: Đăng Nhập Google & Phân Quyền
 | **GET API** | `useEffect` load danh sách Trang chủ & Chi tiết | ✅ Hoàn thành (10/10) |
 | **DELETE API** | `window.confirm`, `axios.delete`, cập nhật state tức thì | ✅ Hoàn thành (10/10) |
 | **POST & PUT** | Formik + Yup nạp đủ 100% trường, điều hướng `navigate` | ✅ Hoàn thành (10/10) |
-| **Google Login** | Đăng nhập Google thành công, giải mã JWT, phân quyền Admin | ⏳ Sắp làm |
+| **Google Login** | Đăng nhập Google thành công, giải mã JWT, phân quyền Admin | ✅ Hoàn thành (10/10) |
 
 
 
