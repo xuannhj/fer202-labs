@@ -1,16 +1,32 @@
-# React + Vite
+# 🟣 Redux Toolkit Từ Đầu — `redux-intro`
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Sinh viên:** Nguyễn Phạm Xuân Nhi — **MSSV:** SE201170  
+> **Môn học:** FER202 - Front-End Web Development with React  
+> **Tài liệu lý thuyết đi kèm:** [`NOTES/07-context-redux/02_redux_toolkit_hoc_tu_dau.md`](../../../NOTES/07-context-redux/02_redux_toolkit_hoc_tu_dau.md)
 
-Currently, two official plugins are available:
+Dự án tự học **Redux Toolkit (`@reduxjs/toolkit` + `react-redux`)** từ con số 0, giúp nắm vững luồng dữ liệu một chiều (One-Way Data Flow) trước khi áp dụng vào bài toán gọi API bất đồng bộ.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✅ Tiến Độ Thực Hành
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Vòng 1: Counter Slice Cơ Bản (Hoàn thành ✅)
+- **`src/slices/CounterSlice.jsx`:** Khởi tạo slice bằng `createSlice` với `initialState: { count: 0 }` và 3 reducers (`increment`, `decrement`, `incrementByAmount` dùng `action.payload` và cơ chế bản nháp **Immer**).
+- **`src/store/store.js`:** Khởi tạo kho trung tâm bằng `configureStore({ reducer: { counter: counterSlice.reducer } })`.
+- **`src/main.jsx`:** Bọc toàn bộ `<App />` trong `<Provider store={store}>`.
+- **`src/components/Counter.jsx`:**
+  - Dùng `useSelector((state) => state.counter.count)` để **đọc & bám** theo giá trị trong kho.
+  - Dùng `useDispatch()` để **gửi phiếu yêu cầu** (`dispatch(increment())`, `dispatch(decrement())`, `dispatch(incrementByAmount(5))`).
 
-## Expanding the ESLint configuration
+### Vòng 2: Gọi API Bất Đồng Bộ Với `createAsyncThunk` (Sắp làm ⏳)
+- Kết nối endpoint MockAPI hoa lan (`VITE_API_URL`) qua `createAsyncThunk` và `extraReducers` (3 trạng thái: `pending`, `fulfilled`, `rejected`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Hướng Dẫn Chạy Dự Án
+
+```bash
+cd "CODE/self-study/redux-intro"
+npm install
+npm run dev
+```

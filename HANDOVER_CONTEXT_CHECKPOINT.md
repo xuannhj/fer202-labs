@@ -4,8 +4,8 @@
 > **Môn học:** FER202 - Front-End Web Development with React (Semester 5)  
 > **Repository:** [https://github.com/xuannhj/fer202-labs.git](https://github.com/xuannhj/fer202-labs.git)  
 > **Sổ tay Notion:** [nhom nhom - FER202 & JS Notebook](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)  
-> **Thời điểm cập nhật:** 2026-10-20  
-> **Trạng thái Git:** Branch `main` sạch sẽ 100%, đã push đồng bộ lên GitHub (Commit `fd3b006`).
+> **Thời điểm cập nhật:** 2026-10-28  
+> **Trạng thái Git:** Branch `main` sạch sẽ 100%, đã push đồng bộ lên GitHub.
 
 ---
 
@@ -73,9 +73,15 @@ Nhi đã tự tay hoàn thiện toàn bộ luồng chức năng của bài thi P
   * `src/pages/UpdateOrchid.jsx`: `useParams()` lấy `id`, `useEffect([id])` nạp đầy đủ 100% dữ liệu cũ qua `formik.setValues()`, gửi `axios.put(URL + '/' + id, values)` để ghi đè dữ liệu.
 * **Build Verification:** Đã chạy `npm run build` thành công trong **469ms**, 0 lỗi cú pháp hay linting.
 
-### 5. Các tài liệu ghi chú cốt lõi đã tạo:
-* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung đầy đủ từ Câu 19 đến Câu 25 (bao gồm cơ chế JWT Header/Payload/Signature, Google Client ID, Authorized Origins, Truthy/Falsy null vs {}, PUT param id+values...).
-* [`LAB/README.md`](./LAB/README.md): Danh mục chỉ dẫn các bài Lab chính thức (Lab 1 đến Lab 5 hoàn thành 10/10).
+### 5. Lab 6: Google Login (OAuth 2.0 & JWT) trong `se2041-demo-01` — ✅ HOÀN THÀNH 100% (10/10)
+* **Google OAuth Provider (`src/main.jsx`):** Bọc toàn bộ ứng dụng bằng `<GoogleOAuthProvider clientId="...">`.
+* **Đăng nhập & Giải mã JWT (`src/components/MyNavBar.jsx`):** Dùng `<GoogleLogin />`, lấy `credentialResponse.credential` giải mã qua `jwtDecode()` để lấy `name`, `email`, `picture`.
+* **Phân quyền & Đăng xuất:** Ẩn nút Google Login sau khi đăng nhập, hiển thị tên người dùng kèm nút `Đăng xuất` (`googleLogout()`) và chỉ mở khóa menu `📋 Management` khi đã đăng nhập.
+* **Bảo mật:** Đã cấu hình `.gitignore` chặn `.env` và `client_secret_*.json`.
+
+### 6. Các tài liệu ghi chú cốt lõi đã tạo:
+* [`NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md`](./NOTES/00_faq_giai_dap_thac_mac_react_js_ts.md): Đã bổ sung đầy đủ từ Câu 1 đến Câu 28 (bao gồm cơ chế JWT Header/Payload/Signature, Google Client ID, Authorized Origins, Truthy/Falsy null vs {}, PUT param id+values, Redux useSelector/useDispatch/Immer...).
+* [`LAB/README.md`](./LAB/README.md): Danh mục chỉ dẫn 6 bài Lab chính thức (Lab 1 đến Lab 6 hoàn thành 10/10).
 
 ---
 

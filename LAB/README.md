@@ -6,7 +6,7 @@
 
 ---
 
-## 📋 Danh Sách 4 Bài Lab Chính Thức
+## 📋 Danh Sách 6 Bài Lab Chính Thức (Lab 1 – Lab 6)
 
 | Bài Lab | Chủ Đề Cốt Lõi | File Đề Bài (Markdown / Word) | Trạng Thái / Mã Nguồn Thực Hiện |
 | :--- | :--- | :--- | :--- |
@@ -15,11 +15,11 @@
 | **Lab 3** | **React Router SPA** | [Lab 3 Markdown](./Lab%203%20-%20React%20Router.md) · [Word (.docx)](./Lab%203%20-%20React%20Router.docx) | ✅ **10/10** — [`se2041-demo-01`](../CODE/in-class/se2041-demo-01/) (`useParams`, `useNavigate(-1)`, `<Outlet />`, `NavLink`) |
 | **Lab 4** | **Formik, Yup & UI Library** | [Lab 4 Markdown](./Lab%204%20-%20React%20UI%20Library,%20Formik,%20Yup.md) | ✅ **10/10** — [`Contact.jsx`](../CODE/in-class/se2041-demo-01/src/pages/Contact.jsx) (Formik 6 trường, Yup Schema, `getFieldProps`, Alert JSON) |
 | **Lab 5** | **Fetch API & Full-Stack CRUD** | [Lab 5+6 Markdown](./Lab%205%2B6%20-%20Fetch.md) | ✅ **10/10** — [`se2041-demo-01`](../CODE/in-class/se2041-demo-01/) (GET Home & Detail, DELETE Table, POST Add, PUT Update) |
-| **Lab 6** | **Google Login (OAuth 2.0)** | [Lab 5+6 Markdown](./Lab%205%2B6%20-%20Fetch.md) | ⏳ Sắp thực hiện (Google OAuth, JWT Decode, Phân quyền Admin) |
+| **Lab 6** | **Google Login (OAuth 2.0)** | [Lab 5+6 Markdown](./Lab%205%2B6%20-%20Fetch.md) | ✅ **10/10** — [`MyNavBar.jsx`](../CODE/in-class/se2041-demo-01/src/components/MyNavBar.jsx) (`GoogleOAuthProvider`, `GoogleLogin`, `jwtDecode`, `googleLogout`, Phân quyền tab `Management`) |
 
 ---
 
-## 🛠️ Hướng Dẫn Mở & Chạy Dự Án Hoa Lan (Lab 1 -> Lab 5)
+## 🛠️ Hướng Dẫn Mở & Chạy Dự Án Hoa Lan (Lab 1 -> Lab 6)
 
 ```bash
 cd "CODE/in-class/se2041-demo-01"
@@ -28,7 +28,10 @@ npm run dev
 ```
 
 * Ứng dụng chạy tại: `http://localhost:5173/`
-* Xem Trang chủ: `/`
-* Xem Chi tiết hoa theo ID: `/detail/1`
-* Xem Trang Liên hệ: `/contact`
+* Xem Trang chủ (GET API): `/`
+* Xem Chi tiết hoa theo ID (GET API by ID): `/detail/1`
+* Xem Trang Liên hệ (Formik + Yup): `/contact`
+* Quản lý danh mục hoa lan (Mở khóa sau khi đăng nhập Google): `/management`
+* Thêm hoa lan mới (POST API): `/add`
+* Cập nhật hoa lan (PUT API): `/update/:id`
 * Bắt lỗi trang không tồn tại: `/bat-ky-duong-dan-sai` (Splat Route `*`)
