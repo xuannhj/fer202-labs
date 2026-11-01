@@ -13,18 +13,21 @@ EXAMS/
 ├── past-exams/        # Đề thi thực tế các kỳ trước (Fall, Spring, Summer)
 │   └── code-cua-Hieu/ # Tham khảo bài thi các kỳ trước
 └── mock-tests/        # Bài luyện tập trước khi thi theo giới hạn thời gian
-    └── FER202_TRIAL_PE/ # 🔥 Đề PE Trial: Music Library & Management (SE201170)
-        ├── KE_HOACH_LAM_BAI_PE.md # 📋 Sổ tay ôn tập & Checklist thực chiến 10/10
-        └── fer/                   # Mã nguồn dự án React Vite
+    ├── FER202_TRIAL_PE/     # 🔥 Đề PE Trial: Music Library & Management (SE201170)
+    │   └── fer/             # Mã nguồn dự án React Vite
+    └── FER202_SU26_SNEAKER/ # 👟 Đề PE SU26: Sneaker Collection & Management (Mã đề: FER202_PE_20060701)
+        ├── a6234c6d-5c46-53fa-852c-7bb3f9a8a5b1.pdf # Đề thi gốc
+        └── sneaker_collection.json # Mock Data 10 mẫu giày
 ```
 
 ---
 
 ## 🎯 Danh Sách Đề Mock Test
 
-| Đề thi | Mô tả yêu cầu | Sổ tay & Checklist | Trạng thái |
+| Đề thi | Mô tả yêu cầu | Mã nguồn & Tài liệu | Trạng thái |
 | :--- | :--- | :--- | :-: |
-| **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [📋 KE_HOACH_LAM_BAI_PE.md](./mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md) | ✅ **HOÀN THÀNH 100% (10/10)** · [Mã nguồn](./mock-tests/FER202_TRIAL_PE/fer/) |
+| **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [📁 Mã nguồn dự án](./mock-tests/FER202_TRIAL_PE/fer/) | ✅ **HOÀN THÀNH 100% (10/10)** |
+| **FER202 PE SU26 (Sneaker)** | MockAPI, Sneaker Collection (Grid Card, Sort Z-A, VND Format, Badge), Sneaker Management (Table Sort ID, Add/Edit Formik + Yup, Switch, Delete) | [📁 Thư mục đề & Dữ liệu](./mock-tests/FER202_SU26_SNEAKER/) | 🔄 **ĐANG THỰC CHIẾN** |
 
 ---
 

@@ -42,3 +42,8 @@ Thumbs.db
 # Local peer reference code (do not push to GitHub)
 EXAMS/past-exams/code-cua-Hieu/
 
+# Private study notes, checkpoints & plans (keep local only)
+HANDOVER_CONTEXT_CHECKPOINT.md
+*KE_HOACH*.md
+
+

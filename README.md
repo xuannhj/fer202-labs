@@ -22,7 +22,6 @@
 - **Môn học:** FER202 - Front-End Web Development with React
 - **Repository:** [https://github.com/xuannhj/fer202-labs](https://github.com/xuannhj/fer202-labs)
 - **Sổ tay Notion:** [nhom nhom - FER202 & JS Notebook](https://app.notion.com/p/nhom-nhom-3db95ae094f9807994f1fa500fdff6d1)
-- **Điểm bàn giao tiến độ:** [📌 HANDOVER_CONTEXT_CHECKPOINT.md](./HANDOVER_CONTEXT_CHECKPOINT.md)
 
 ---
 
@@ -51,7 +50,8 @@ FER202/
 ├── EXAMS/                          # 🎯 Khu vực đề thi PE (Practical Exam) & ôn tập
 │   ├── past-exams/                 # Đề thi thực tế các kỳ trước (SP, SU, FA)
 │   ├── mock-tests/                 # Đề thi thử bấm giờ 90 phút
-│   │   └── FER202_TRIAL_PE/        # 🔥 Đề PE Trial: Music Library & Management (SE201170)
+│   │   ├── FER202_TRIAL_PE/        # 🔥 Đề PE Trial: Music Library & Management (SE201170)
+│   │   └── FER202_SU26_SNEAKER/    # 👟 Đề PE SU26: Sneaker Collection & Management (Mã đề: FER202_PE_20060701)
 │   └── README.md                   # Chiến thuật & checklist ôn thi PE
 │
 ├── NOTES/                          # 📝 Sổ tay ghi chú lý thuyết & Hỏi đáp thực chiến
@@ -92,7 +92,8 @@ FER202/
 ### 🎯 3. Luyện Đề Thi PE (Practical Exam) (`EXAMS/`)
 | STT | Đề thi | Nội dung & Kỹ năng trọng tâm | Thư mục & Tài liệu | Trạng thái |
 | :-: | :--- | :--- | :--- | :-: |
-| 1 | **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [`EXAMS/mock-tests/FER202_TRIAL_PE`](./EXAMS/mock-tests/FER202_TRIAL_PE) • [📋 Kế hoạch & Sổ tay](./EXAMS/mock-tests/FER202_TRIAL_PE/KE_HOACH_LAM_BAI_PE.md) | ✅ Hoàn thành 100% (10/10) |
+| 1 | **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [`EXAMS/mock-tests/FER202_TRIAL_PE`](./EXAMS/mock-tests/FER202_TRIAL_PE) | ✅ Hoàn thành 100% (10/10) |
+| 2 | **FER202 PE SU26 (Sneaker)** | MockAPI, Sneaker Collection (Grid Card, Sort Z-A, Format VND, Badge), Sneaker Management (Table Sort ID, Add/Edit Formik + Yup, Switch, Delete) | [`EXAMS/mock-tests/FER202_SU26_SNEAKER`](./EXAMS/mock-tests/FER202_SU26_SNEAKER) | 🔄 Đang thực chiến |
 
 ### 📝 4. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
 | STT | Chủ đề | Tóm tắt kiến thức | Thư mục ghi chú |
