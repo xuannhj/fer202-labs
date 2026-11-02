@@ -27,7 +27,7 @@ EXAMS/
 | Đề thi | Mô tả yêu cầu | Mã nguồn & Tài liệu | Trạng thái |
 | :--- | :--- | :--- | :-: |
 | **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [📁 Mã nguồn dự án](./mock-tests/FER202_TRIAL_PE/fer/) | ✅ **HOÀN THÀNH 100% (10/10)** |
-| **FER202 PE SU26 (Sneaker)** | MockAPI, Sneaker Collection (Grid Card, Sort Z-A, VND Format, Badge), Sneaker Management (Table Sort ID, Add/Edit Formik + Yup, Switch, Delete) | [📁 Thư mục đề & Dữ liệu](./mock-tests/FER202_SU26_SNEAKER/) | 🔄 **ĐANG THỰC CHIẾN** |
+| **FER202 PE SU26 (Sneaker)** | MockAPI, Sneaker Collection (Grid Card, Sort Z-A, VND Format, Badge), Sneaker Management (Table Sort ID, Add/Edit Formik + Yup, Switch, Delete) | [📁 Mã nguồn dự án](./mock-tests/FER202_SU26_SNEAKER/se201170/) | ✅ **HOÀN THÀNH 100% (10/10)** |
 
 ---
 

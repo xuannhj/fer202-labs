@@ -28,9 +28,15 @@ const validationSchema = Yup.object({
     .required("Cover image is required"),
 
   // 4. Duration: Bắt buộc là số dương tối đa 3 chữ số (1 - 999)
+  // Lưu ý các biến thể đề PE có thể hỏi cho Duration:
+  // - Nếu bắt buộc là số nguyên: thêm .integer("Duration must be an integer")
+  // - Nếu giới hạn khoảng (VD từ 60 đến 600 giây): dùng .min(60, "Min 60s").max(600, "Max 600s")
+  // - Nếu đề bắt nhập chuỗi dạng MM:SS (VD "03:45"):
+  //   Yup.string().matches(/^\d{1,2}:[0-5]\d$/, "Must be in MM:SS format").required("Required")
   durationSec: Yup.number()
     .typeError("Duration must be a number")
     .positive("Duration must be positive")
+    .integer("Duration must be an integer")
     .max(999, "Duration must have maximum of 3 digits")
     .required("Duration is required"),
 

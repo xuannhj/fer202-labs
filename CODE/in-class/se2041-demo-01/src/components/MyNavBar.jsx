@@ -49,10 +49,17 @@ function MyNavBar({ theme, toggleTheme }) {
               {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
             </Button>
 
-            {/* Nếu đã đăng nhập thì hiện tên + nút Logout, ngược lại mới hiện nút GoogleLogin */}
             {user ? (
               <div className="d-flex align-items-center gap-2 ms-2">
-                <span className="fw-semibold">👤 {user.name}</span>
+                <img
+                  src={user.picture}
+                  alt={user.name}
+                  className="rounded-circle"
+                  width="32"
+                  height="32"
+                  referrerPolicy="no-referrer"
+                />
+                <span className="fw-semibold">{user.name}</span>
                 <Button variant="outline-danger" size="sm" onClick={handleLogout}>
                   Đăng xuất
                 </Button>

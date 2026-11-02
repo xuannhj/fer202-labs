@@ -93,7 +93,7 @@ FER202/
 | STT | Đề thi | Nội dung & Kỹ năng trọng tâm | Thư mục & Tài liệu | Trạng thái |
 | :-: | :--- | :--- | :--- | :-: |
 | 1 | **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [`EXAMS/mock-tests/FER202_TRIAL_PE`](./EXAMS/mock-tests/FER202_TRIAL_PE) | ✅ Hoàn thành 100% (10/10) |
-| 2 | **FER202 PE SU26 (Sneaker)** | MockAPI, Sneaker Collection (Grid Card, Sort Z-A, Format VND, Badge), Sneaker Management (Table Sort ID, Add/Edit Formik + Yup, Switch, Delete) | [`EXAMS/mock-tests/FER202_SU26_SNEAKER`](./EXAMS/mock-tests/FER202_SU26_SNEAKER) | 🔄 Đang thực chiến |
+| 2 | **FER202 PE SU26 (Sneaker)** | MockAPI, Sneaker Collection (Grid Card, Sort Z-A, Format VND, Badge), Sneaker Management (Table Sort ID, Add/Edit Formik + Yup, Switch, Delete) | [`EXAMS/mock-tests/FER202_SU26_SNEAKER`](./EXAMS/mock-tests/FER202_SU26_SNEAKER) | ✅ Hoàn thành 100% (10/10) |
 
 ### 📝 4. Sổ Tay Ghi Chú & Lý Thuyết (`NOTES/`)
 | STT | Chủ đề | Tóm tắt kiến thức | Thư mục ghi chú |
