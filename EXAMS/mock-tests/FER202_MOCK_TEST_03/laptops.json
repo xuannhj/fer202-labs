@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "laptopName": "MacBook Air M3",
+    "brand": "Apple Computer",
+    "category": "Ultrabook",
+    "imageUrl": "https://placehold.co/300x300/0F172A/F8FAFC?text=MacBook+Air+M3",
+    "priceUSD": 1099,
+    "isBestSeller": true
+  },
+  {
+    "id": "2",
+    "laptopName": "Dell XPS 13",
+    "brand": "Dell Technologies",
+    "category": "Office",
+    "imageUrl": "https://placehold.co/300x300/0284C7/FFFFFF?text=Dell+XPS+13",
+    "priceUSD": 1299,
+    "isBestSeller": false
+  },
+  {
+    "id": "3",
+    "laptopName": "ASUS ROG Zephyrus G14",
+    "brand": "ASUS Republic",
+    "category": "Gaming",
+    "imageUrl": "https://placehold.co/300x300/DC2626/FFFFFF?text=ROG+Zephyrus+G14",
+    "priceUSD": 1699,
+    "isBestSeller": true
+  },
+  {
+    "id": "4",
+    "laptopName": "Lenovo ThinkPad X1 Carbon",
+    "brand": "Lenovo Enterprise",
+    "category": "Office",
+    "imageUrl": "https://placehold.co/300x300/18181B/EF4444?text=ThinkPad+X1",
+    "priceUSD": 1549,
+    "isBestSeller": false
+  },
+  {
+    "id": "5",
+    "laptopName": "HP Pavilion 15",
+    "brand": "HP Corporation",
+    "category": "Student",
+    "imageUrl": "https://placehold.co/300x300/0D9488/FFFFFF?text=HP+Pavilion+15",
+    "priceUSD": 699,
+    "isBestSeller": true
+  },
+  {
+    "id": "6",
+    "laptopName": "Acer Swift Go 14",
+    "brand": "Acer Global",
+    "category": "Student",
+    "imageUrl": "https://placehold.co/300x300/EAB308/000000?text=Acer+Swift+Go",
+    "priceUSD": 749,
+    "isBestSeller": false
+  },
+  {
+    "id": "7",
+    "laptopName": "MSI Katana 15",
+    "brand": "MSI Gaming",
+    "category": "Gaming",
+    "imageUrl": "https://placehold.co/300x300/B91C1C/FFFFFF?text=MSI+Katana+15",
+    "priceUSD": 999,
+    "isBestSeller": true
+  },
+  {
+    "id": "8",
+    "laptopName": "MacBook Pro 16 M3 Max",
+    "brand": "Apple Computer",
+    "category": "Graphic",
+    "imageUrl": "https://placehold.co/300x300/334155/FFFFFF?text=MacBook+Pro+16",
+    "priceUSD": 2499,
+    "isBestSeller": true
+  },
+  {
+    "id": "9",
+    "laptopName": "Razer Blade 14",
+    "brand": "Razer Blade",
+    "category": "Graphic",
+    "imageUrl": "https://placehold.co/300x300/052E16/22C55E?text=Razer+Blade+14",
+    "priceUSD": 1999,
+    "isBestSeller": false
+  },
+  {
+    "id": "10",
+    "laptopName": "LG Gram 16 SuperSlim",
+    "brand": "LG Electronics",
+    "category": "Ultrabook",
+    "imageUrl": "https://placehold.co/300x300/4F46E5/FFFFFF?text=LG+Gram+16",
+    "priceUSD": 1399,
+    "isBestSeller": false
+  }
+]

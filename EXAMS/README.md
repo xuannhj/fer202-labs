@@ -15,9 +15,12 @@ EXAMS/
 └── mock-tests/        # Bài luyện tập trước khi thi theo giới hạn thời gian
     ├── FER202_TRIAL_PE/     # 🔥 Đề PE Trial: Music Library & Management (SE201170)
     │   └── fer/             # Mã nguồn dự án React Vite
-    └── FER202_SU26_SNEAKER/ # 👟 Đề PE SU26: Sneaker Collection & Management (Mã đề: FER202_PE_20060701)
-        ├── a6234c6d-5c46-53fa-852c-7bb3f9a8a5b1.pdf # Đề thi gốc
-        └── sneaker_collection.json # Mock Data 10 mẫu giày
+    ├── FER202_SU26_SNEAKER/ # 👟 Đề PE SU26: Sneaker Collection & Management (Mã đề: FER202_PE_20060701)
+    │   ├── a6234c6d-5c46-53fa-852c-7bb3f9a8a5b1.pdf # Đề thi gốc
+    │   └── sneaker_collection.json # Mock Data 10 mẫu giày
+    └── FER202_MOCK_TEST_03/ # 💻 Đề Mock Test 03: Laptop Collection & Management (Mã đề: FER202_PE_FA26_LAPTOP)
+        ├── DE_THI_MOCK_TEST_03.md # Đề thi chuẩn 85 phút
+        └── laptops.json           # Mock Data 10 mẫu laptop
 ```
 
 ---
@@ -28,6 +31,7 @@ EXAMS/
 | :--- | :--- | :--- | :-: |
 | **FER202 Trial PE** | MockAPI, Music Library (Grid Card), Music Management (Table, CRUD, Formik + Yup) | [📁 Mã nguồn dự án](./mock-tests/FER202_TRIAL_PE/fer/) | ✅ **HOÀN THÀNH 100% (10/10)** |
 | **FER202 PE SU26 (Sneaker)** | MockAPI, Sneaker Collection (Grid Card, Sort Z-A, VND Format, Badge), Sneaker Management (Table Sort ID, Add/Edit Formik + Yup, Switch, Delete) | [📁 Mã nguồn dự án](./mock-tests/FER202_SU26_SNEAKER/se201170/) | ✅ **HOÀN THÀNH 100% (10/10)** |
+| **FER202 Mock Test 03 (Laptop)** | MockAPI, Laptop Collection (Card Grid, Sort A-Z, Format USD, BestSeller), Laptop Management (Table Sort ID desc, Formik + Yup 100-5000, Search/Filter) | [📁 Đề thi & Dữ liệu mẫu](./mock-tests/FER202_MOCK_TEST_03/) | 🆕 **SẴN SÀNG THỰC CHIẾN** |
 
 ---
 
