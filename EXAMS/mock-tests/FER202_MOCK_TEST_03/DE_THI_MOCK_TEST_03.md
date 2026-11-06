@@ -85,3 +85,4 @@
 - [ ] **35 - 55 phút:** Hoàn thiện bảng `LaptopManagement.jsx` (Sort ID giảm dần, ảnh 70x70, chức năng Xóa confirm).
 - [ ] **55 - 75 phút:** Hoàn thiện Form `AddLaptop.jsx` và `EditLaptop.jsx` (Formik + Yup 2 từ, khoảng 100-5000, switch).
 - [ ] **75 - 85 phút:** Kiểm tra F12 console không còn lỗi đỏ, chạy `npm run build` test build thành công.
+
