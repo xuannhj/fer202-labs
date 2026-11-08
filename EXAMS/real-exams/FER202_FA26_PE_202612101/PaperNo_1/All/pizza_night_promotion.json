@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "pizzaName": "Margherita Garden",
+    "crustType": "Neapolitan",
+    "promotionEndDate": "2026-12-31T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1611778948452-ff95cbdfc2cb?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 30,
+    "isVegetarian": true
+  },
+  {
+    "id": "2",
+    "pizzaName": "Pepperoni Classic",
+    "crustType": "Thin Crust",
+    "promotionEndDate": "2027-01-15T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1774806189017-f4c1f2760ad2?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 32,
+    "isVegetarian": false
+  },
+  {
+    "id": "3",
+    "pizzaName": "Four Cheese Melt",
+    "crustType": "Thick Crust",
+    "promotionEndDate": "2026-11-30T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1651978595427-36d1b1ea3862?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 28,
+    "isVegetarian": true
+  },
+  {
+    "id": "4",
+    "pizzaName": "Garden Harvest",
+    "crustType": "Whole Wheat",
+    "promotionEndDate": "2027-02-28T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1651981075280-9a9e01acbff0?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 30,
+    "isVegetarian": true
+  },
+  {
+    "id": "5",
+    "pizzaName": "Olive Pepper Feast",
+    "crustType": "Thin Crust",
+    "promotionEndDate": "2026-12-20T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1658171757201-41b9aa2b3651?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 32,
+    "isVegetarian": true
+  },
+  {
+    "id": "6",
+    "pizzaName": "Sausage Basil Special",
+    "crustType": "Neapolitan",
+    "promotionEndDate": "2027-01-31T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1780642207472-5d2e942e4425?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 30,
+    "isVegetarian": false
+  },
+  {
+    "id": "7",
+    "pizzaName": "Green Pepper Delight",
+    "crustType": "Thick Crust",
+    "promotionEndDate": "2026-11-15T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1778449398976-8f0d267f1903?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 26,
+    "isVegetarian": true
+  },
+  {
+    "id": "8",
+    "pizzaName": "Classic Tomato Pie",
+    "crustType": "Neapolitan",
+    "promotionEndDate": "2027-03-15T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1622971077493-2875eaf9cbc3?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 29,
+    "isVegetarian": true
+  },
+  {
+    "id": "9",
+    "pizzaName": "Mozzarella Garden",
+    "crustType": "Stuffed Crust",
+    "promotionEndDate": "2026-12-10T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1786175246692-95fa6b825636?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 31,
+    "isVegetarian": true
+  },
+  {
+    "id": "10",
+    "pizzaName": "Family Pizza Board",
+    "crustType": "Thick Crust",
+    "promotionEndDate": "2027-02-15T00:00:00.000Z",
+    "imageUrl": "https://images.unsplash.com/photo-1659367736714-e3f0344a6266?auto=format&fit=crop&fm=jpg&q=80&w=800&h=800",
+    "diameterCm": 35,
+    "isVegetarian": true
+  }
+]
